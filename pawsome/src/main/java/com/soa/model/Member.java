@@ -1,0 +1,31 @@
+package com.soa.model;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@AllArgsConstructor
+@Data
+public class Member {
+	private String userId;
+	private String userName;
+	private String userPw;
+	private String userPhone;
+	private String userEmail;
+	private String userImg;
+	private String userNick;
+	private int grade;
+	private String userRegDate;
+	private String delYs;
+
+	public Member(String userID, String userName, String userPw, String userPhone, String userEmail, String userImg,
+			String userNick) {
+		this.userId = userID;
+		this.userName = userName;
+		this.userPw = userPw;
+		this.userPhone = userPhone;
+		this.userEmail = userEmail;
+		this.userImg = userImg;
+		this.userNick = userNick;
+	}
+		
+}
