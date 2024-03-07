@@ -17,7 +17,7 @@ public class JoinController extends HttpServlet {
 			request.setCharacterEncoding("UTF-8");
 			
 			String id = request.getParameter("id");
-			String name = request.getParameter("pw");
+			String name = request.getParameter("name");
 			String pw = request.getParameter("pw");
 			String phone = request.getParameter("phone");
 			String email = request.getParameter("email");

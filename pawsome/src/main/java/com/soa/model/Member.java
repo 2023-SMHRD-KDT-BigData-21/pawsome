@@ -17,9 +17,9 @@ public class Member {
 	private String userRegDate;
 	private String delYs;
 
-	public Member(String userID, String userName, String userPw, String userPhone, String userEmail, String userImg,
+	public Member(String userId, String userName, String userPw, String userPhone, String userEmail, String userImg,
 			String userNick) {
-		this.userId = userID;
+		this.userId = userId;
 		this.userName = userName;
 		this.userPw = userPw;
 		this.userPhone = userPhone;
