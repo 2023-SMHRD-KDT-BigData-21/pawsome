@@ -27,5 +27,9 @@ public class Member {
 		this.userImg = userImg;
 		this.userNick = userNick;
 	}
-		
+
+	public Member(String userId, String userPw) {
+		this.userId = userId;
+		this.userPw = userPw;
+	}
 }
