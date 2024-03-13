@@ -33,15 +33,20 @@ public class JoinController extends HttpServlet {
 			String user_phone = multi.getParameter("userPhone");
 			String user_img = multi.getOriginalFileName("userImg");
 			
-			Member member = new Member(user_id, user_name, user_pw, user_phone, user_email, user_img, user_nick);
+			
+			Member member = new Member(user_id, user_name, user_pw, user_phone, user_email, user_img, user_nick);								
+			
 			MemberDAO dao = new MemberDAO();
 			int res = dao.join(member);
 			
 			
 			if(res>0) {
 				System.out.println("회원가입 완료");
+				response.sendRedirect("start.jsp");
 			}else {
 				System.out.println("회원가입 실패");
+				response.sendRedirect("join.jsp");
+				
 			}
 			
 			

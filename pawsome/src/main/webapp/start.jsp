@@ -20,7 +20,7 @@
 								<h2>PAWSOME</h2>
 								<p>Best choice for your animal</p>
 								<a href="#" class="primary-btn"> 둘러보기 <!-- <span class="arrow_right"></span> --></a>
-								<a href="../PAWSOME/login2.html" class="primary-btn">
+								<a href="login.jsp" class="primary-btn">
 									회원가입/로그인 <!-- <span class="arrow_right"></span> -->
 								</a>
 								<!-- <div class="hero__social">

@@ -19,7 +19,7 @@
 		</h1>
 	</div>
 	<div class="box6">
-		<form action="#">
+		<form action="JoinController" method="post" enctype="multipart/form-data">
 			<div class="join">
 				<div id="joinTitle">
 					<!--회원가입 문구-->
