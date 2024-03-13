@@ -1,3 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.soa.database.MemberMapper"></mapper>
+<mapper namespace="com.soa.database.MemberMapper">
+	
+	<insert id="join" parameterType="com.soa.model.Member">
+		insert into user_info values(#{user_id}, #{user_name}, #{user_pw}, #{user_phone}, #{user_email}, #{user_img}, #{user_nick}, 100, SYSDATE, 'N')
+	</insert>
+	
+	<select id="login" parameterType="com.soa.model.Member"
+						resultType="com.soa.model.Member" >
+		select * from user_info where user_id = #{user_id} and user_pw = #{user_pw}
+	</select>
+	
+	<select id="check" parameterType="String" resultType="com.soa.model.Member">
+		select * from user_info where user_id=#{user_id}
+	</select>
+	
+	<select id="nickCheck" parameterType="String" resultType="com.soa.model.Member">
+		select * from user_info where user_nick=#{user_nick}
+	</select>
+	
+</mapper>

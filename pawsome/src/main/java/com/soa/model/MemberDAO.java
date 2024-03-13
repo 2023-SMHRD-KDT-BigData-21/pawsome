@@ -3,6 +3,7 @@ package com.soa.model;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
+import com.soa.model.Member;
 import com.soa.database.SqlSessionManager;
 
 public class MemberDAO {
@@ -11,20 +12,29 @@ public class MemberDAO {
 
 	public int join(Member member) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-
-		int res = sqlSession.insert("", member);
+		int res = sqlSession.insert("com.soa.database.MemberMapper.join", member);
 		sqlSession.close();
-
 		return res;
 	}
-
+	
 	public Member login(Member member) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-
-		Member res = sqlSession.selectOne("", member);
-		sqlSession.close();
-
-		return res;
-
+		Member res = sqlSession.selectOne("com.soa.database.MemberMapper.login", member);
+		sqlSession.close(); 
+		return res ;
+	}
+	
+	public Member idCheck(String user_id) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		Member res = sqlSession.selectOne("com.soa.database.MemberMapper.check", user_id);
+		sqlSession.close(); 
+		return res ;
+	}
+	
+	public Member nickCheck(String user_nick) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		Member res = sqlSession.selectOne("com.soa.database.MemberMapper.nickCheck", user_nick);
+		sqlSession.close(); 
+		return res ;
 	}
 }
