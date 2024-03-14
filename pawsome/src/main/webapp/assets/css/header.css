@@ -3,10 +3,6 @@
     box-sizing: border-box;
 }
 
-div {
-    display: inline-block;
-}
-
 
 /*헤더 설정*/
 .header {
@@ -86,9 +82,8 @@ svg {
     align-items: center;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 780px) {
 
-    /* 현씨 공유 */
     .box1 h1 {
         font-size: x-large;
     }
@@ -102,7 +97,7 @@ svg {
     }
 }
 
-@media screen and (max-width: 767px){
+@media screen and (max-width: 779px){
     .box1 h1{
         font-size : medium;
     }
@@ -171,7 +166,7 @@ svg {
     background-color: #C0C2A5;
     font-weight: 400;
     color: rgb(37, 37, 37);
-    padding: 10px;
+    /* padding: 10px; */
     width: fit-content;
     text-align: center;
     cursor: pointer;
@@ -207,7 +202,7 @@ svg {
     display: block;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 779px) {
     /* .category {
         height: fit-content;
     } */

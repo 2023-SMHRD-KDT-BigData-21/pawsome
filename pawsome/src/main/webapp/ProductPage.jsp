@@ -16,7 +16,7 @@
 	<div class="container">
 		<!-- checkPage 가운데 정렬 -->
 		<div class="checkPage">
-			<!-- 페이지 공간 -->
+			<!-- 페이지 공간 -->	
 			<div class="topCheck">
 				<!-- 사진 + 제목, 가격 등 div -->
 				<div class="imgBox">
