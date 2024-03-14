@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soa.database.ProductMapper">
+
+	<insert id="insert" parameterType="com.soa.model.Product">
+      	insert into product values(product_id.NEXTVAL, #{product_name}, #{product_price}, #{product_content}, SYSDATE, #{product_cate},#{animal_cate},#{seller_id},review_yn="N")
+    </insert>
+    
+    <select id="select" parameterType="com.soa.model.Product" resultType="String">
+    	select product_id from product where product_name = #{product_name}
+    </select>
+    
+    <select id="list" resultType="com.soa.model.Product">
+    	select * from product
+    </select>
+    
+    <select id="content" parameterType="int" resultType="com.soa.model.Product">
+		select * from product where product_id=#{product_id}
+	</select>
+    
+</mapper>

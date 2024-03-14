@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soa.database.ImageFileMapper">
+
+	<insert id="insert" parameterType="com.soa.model.ImageFile">
+		insert into image_file values(#{product_id}, #{file_name1, jdbcType=NULL}, #{file_name2, jdbcType=NULL}, #{file_name3, jdbcType=NULL}, #{file_name4, jdbcType=NULL}, #{file_name5, jdbcType=NULL})
+	</insert>
+	
+	<select id="list" resultType="String">
+    	select file_name1 from image_file
+    </select>
+	
+	<select id="content" parameterType="int" resultType="com.soa.model.ImageFile">
+		select * from image_file where product_id=#{product_id}
+	</select>
+
+
+</mapper>
