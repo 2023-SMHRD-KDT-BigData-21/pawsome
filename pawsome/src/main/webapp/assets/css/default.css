@@ -1,0 +1,29 @@
+/* 부크크 */
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+
+* {
+    /* background-color: white; */
+    margin: 0;
+    padding: 0;
+    font-family: 'BookkMyungjo-Bd';
+}
+
+.body {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* div { 
+    display:inline-block; 
+} */
+a:link, a:hover, a:visited, a:focus {
+    color:inherit; text-decoration:none;
+}

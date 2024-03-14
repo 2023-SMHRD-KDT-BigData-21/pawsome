@@ -1,0 +1,126 @@
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+.writePage{ /* 페이지 공간*/
+    position : relative ;
+    top: 30px ;
+    background-color: #ECECE0;
+    width: 60%;
+    height: 500px;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+.writePage select{
+    border-radius: 8px;
+    border : 0px;       
+}
+
+
+.writePage>.topWrite, .writePage>.contentWrite, .writePage>.bottomWrite{
+    box-sizing: border-box;
+}
+
+.writePageUnder{
+    /* padding 만큼 따로 주기 */
+    /* padding-right: 10px; */
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 90%;
+}   
+.topWrite,
+.contentWrite,
+.bottomWrite,
+.submitBtn {
+    /* width: fit-content; */
+    margin: 10px;
+    padding: 5px;
+    border-radius: 8px;
+}
+
+
+.topWrite{
+    height: 10%;
+}
+.contentWrite{
+    height: 55%;
+    overflow: auto;
+}
+.bottomWrite{
+    flex-direction: row; 
+    display: inline-block;
+}
+
+.submitBtn{
+    display: flex;
+    justify-content: center;
+}
+
+#btn{
+    margin: 3px;
+    height: 30px;
+    width: 60px;
+    border-radius: 8px;
+    border:0px;
+    color : black;
+    background-color: white;
+    
+}
+
+
+select, #titleInput{
+    position : relative ;
+    top : 5px ; 
+    height: 100%;   
+
+}
+
+#titleInput{
+    width : 65%;
+    border-radius: 8px;
+    border : 0px;
+}
+
+#priceInput{
+    border-radius: 8px;
+    border : 0px;
+    width : 100px;
+    height: 100%;
+    padding: 2px;
+}
+
+.bottomInput{ /* 사진첨부 이름 */
+    margin: 3px;
+    height: 20px;
+}
+
+#productContentBox{
+    background-color: white;
+    padding: 0px;
+
+}
+
+#productContent{
+    margin: 0px;
+    border: 0px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 98%;
+}
+
+@media screen and (max-width: 768px) {
+    .writePage{
+        width: 90%;
+        padding: 0px;
+    }
+    #titleInput{
+        width: 50%;
+    }
+    
+}

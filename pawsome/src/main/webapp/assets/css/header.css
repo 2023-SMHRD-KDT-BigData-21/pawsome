@@ -1,0 +1,220 @@
+/*기본 CSS 설정*/
+* {
+    box-sizing: border-box;
+}
+
+div {
+    display: inline-block;
+}
+
+
+/*헤더 설정*/
+.header {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.box1 {
+    /*로고 설정*/
+    width: 30%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box2 {
+    /*검색창 설정*/
+    width: 40%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search {
+    width: 600px;
+    position: relative;
+}
+
+#inputSearch {
+    width: 100%;
+    border: 1px solid #bbb;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 14px;
+    background-color: #C0C2A5;
+}
+
+svg {
+    position: absolute;
+    width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0;
+    background-color: #C0C2A5;
+}
+
+.box3 {
+    /*상단 우측 버튼 설정*/
+    width: 30%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*  현씨 공유  */
+/* .menu_1,
+.menu_2,
+.menu_3 {
+    width: 33%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.menu {
+    width: 33%;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+
+    /* 현씨 공유 */
+    .box1 h1 {
+        font-size: x-large;
+    }
+
+    .box1 img {
+        display: none;
+    }
+
+    .menu>a {
+        font-size: small;
+    }
+}
+
+@media screen and (max-width: 767px){
+    .box1 h1{
+        font-size : medium;
+    }
+    .menu>a {
+        font-size: 9px;
+        text-align: center;
+    }
+
+}
+
+/*카테고리 설정*/
+.box4 {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.category {
+    width: 98%;
+    height: 50px;
+    border-radius: 8px;
+    background-color: #C0C2A5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
+
+.radix-icons--triangle-down {
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='%23000' d='M4 6h7l-3.5 4.5z'/%3E%3C/svg%3E");
+    background-color: currentColor;
+    -webkit-mask-image: var(--svg);
+    mask-image: var(--svg);
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+}
+
+.innerCategory {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* .dropbtn_icon {
+            font-family: 'Material Icons';
+        } */
+
+.dropbtn {
+    border: 0px;
+    /* border: 1px solid rgb(37, 37, 37);
+            border-radius: 8px; */
+    background-color: #C0C2A5;
+    font-weight: 400;
+    color: rgb(37, 37, 37);
+    padding: 10px;
+    width: fit-content;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+    /*다른 요소들보다 앞에 배치*/
+    font-weight: 400;
+    background-color: #d5d7bc;
+    min-width: 200px;
+    /* margin-top: 8px; */
+    border-radius: 8px;
+}
+
+.dropdown-content a {
+    display: block;
+    text-decoration: none;
+    color: rgb(37, 37, 37);
+    font-size: 12px;
+    padding: 12px 20px;
+}
+
+.dropdown-content a:hover {
+    background-color: #ececec;
+    border-radius: 8px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    /* .category {
+        height: fit-content;
+    } */
+
+    .dropbtn {
+        font-size: 10px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

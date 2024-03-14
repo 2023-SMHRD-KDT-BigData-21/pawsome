@@ -5,8 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/default.css">
+<link rel="stylesheet" href="assets/css/productPage.css">
 </head>
 <body>
+	<div data-include-path="header.html"></div>
+
+
 	<!-- 본문 -->
 	<div class="container">
 		<!-- checkPage 가운데 정렬 -->
@@ -18,35 +23,30 @@
 					<img id="fileId"
 						src="https://image.dongascience.com/Photo/2022/06/6982fdc1054c503af88bdefeeb7c8fa8.jpg"
 						alt="">
-					<!-- https://image.dongascience.com/Photo/2022/06/6982fdc1054c503af88bdefeeb7c8fa8.jpg 
-                        https://png.pngtree.com/thumb_back/fh260/background/20230609/pngtree-three-puppies-with-their-mouths-open-are-posing-for-a-photo-image_2902292.jpg  -->
+					
 				</div>
 				<div class="textBox">
 					<div class="innerBox">
 						<div class="inner">CATE > CATE</div>
+						<!-- ${animal_cate} > ${product_cate} DB에서 불러올 때 이렇게 ?! -->
 						<div class="inner">판매상태</div>
 					</div>
 					<h1 id="productName">제목</h1>
 					<div class="innerBox">
 						<div id="productPrice" class="inner">가격</div>
 						<div class="inner">
-							<a href="#
-                            ">수정하기</a>
+							<!-- 판매자:수정하기 / 구매자:판매자정보 -->
+							<a href="#">수정하기</a>
 						</div>
 					</div>
 					<div class="innerBox">
 						<div class="inner">
-							<button>상태변경</button>
+							<!-- 판매자:상태변경 / 구매자:채팅하기 -->
+							<a href="#">상태변경</a>
 						</div>
 						<div class="inner">찜개수</div>
 					</div>
-					<!-- <span>판매상태<span>
-                            <span>CATE > CATE</span>
-                            <h2 id="productName">제목</h2>
-                            <span id="productPrice">가격<span>
-                                    <a href="#">수정하기</a><br>
-                                    <span>상태변경</span>
-                                    <span>찜개수</span> -->
+
 				</div>
 			</div>
 			<div class="contentBox">
@@ -55,5 +55,26 @@
 			</div>
 		</div>
 	</div>
+
+
+	<script>
+		/*header.html*/
+		window.addEventListener('load', function() {
+			var allElements = document.getElementsByTagName('*');
+			Array.prototype.forEach.call(allElements, function(el) {
+				var includePath = el.dataset.includePath;
+				if (includePath) {
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							el.outerHTML = this.responseText;
+						}
+					};
+					xhttp.open('GET', includePath, true);
+					xhttp.send();
+				}
+			});
+		});
+	</script>
 </body>
 </html>
