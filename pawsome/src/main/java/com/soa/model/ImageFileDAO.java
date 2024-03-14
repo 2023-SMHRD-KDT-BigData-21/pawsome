@@ -17,7 +17,7 @@ public class ImageFileDAO {
 	public int imgInsert(ImageFile imageFile, String pdId) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
 		imageFile.setProduct_id(pdId);
-		int res = sqlSession.insert("com.smhrd.database.ImageFileMapper.insert", imageFile);
+		int res = sqlSession.insert("com.soa.database.ImageFileMapper.insert", imageFile);
 	    sqlSession.close();
 	    return res;
 	}
@@ -25,7 +25,7 @@ public class ImageFileDAO {
 	// 각 게시글의 1번 사진들만 가져오기
 	public List<ImageFile> imageFileList() {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-		List<ImageFile> list = sqlSession.selectList("com.smhrd.database.ImageFileMapper.list");
+		List<ImageFile> list = sqlSession.selectList("com.soa.database.ImageFileMapper.list");
 		sqlSession.close();
 		return list;
 	}
@@ -33,41 +33,41 @@ public class ImageFileDAO {
 	// 한 게시글의 모든 사진 정보 가져오기
 	public List<String> imgContent(int product_id) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-		ImageFile imageFile = sqlSession.selectOne("com.smhrd.database.ImageFileMapper.content", product_id);
+		ImageFile imageFile = sqlSession.selectOne("com.soa.database.ImageFileMapper.content", product_id);
 		sqlSession.close();
 		// 가지고 온 파일 -> 텍스트형태로 변환 (converter - base64)
 		ImageToBase64 converter = new ImageToBase64();
 		
 		List<String> list = new ArrayList<String>();
 		
-		File file1 = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\mavenmember\\uploadtest\\"
+		File file1 = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\pawsome\\upload\\"
 				+imageFile.getFile_name1());
 		String fileStringValue1 = converter.convert(file1);
 		list.add(fileStringValue1);
 		
 		if (imageFile.getFile_name2() != null) {
-			File file2 = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\mavenmember\\uploadtest\\"
+			File file2 = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\pawsome\\upload\\"
 					+imageFile.getFile_name2());
 			String fileStringValue2 = converter.convert(file2);
 			list.add(fileStringValue2);
 			
 		} 
 		if(imageFile.getFile_name3() != null){
-			File file3 = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\mavenmember\\uploadtest\\"
+			File file3 = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\pawsome\\upload\\"
 					+imageFile.getFile_name3());
 			String fileStringValue3 = converter.convert(file3);
 			list.add(fileStringValue3);
 			
 		} 
 		if(imageFile.getFile_name4() != null){
-			File file4 = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\mavenmember\\uploadtest\\"
+			File file4 = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\pawsome\\upload\\"
 					+imageFile.getFile_name4());
 			String fileStringValue4 = converter.convert(file4);
 			list.add(fileStringValue4);
 			
 		} 
 		if(imageFile.getFile_name5() != null){
-			File file5 = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\mavenmember\\uploadtest\\"
+			File file5 = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\pawsome\\upload\\"
 					+imageFile.getFile_name5());
 			String fileStringValue5 = converter.convert(file5);
 			list.add(fileStringValue5);

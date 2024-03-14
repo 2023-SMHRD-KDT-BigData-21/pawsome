@@ -20,7 +20,7 @@ public class ProductController extends HttpServlet {
 		
 		request.setCharacterEncoding("UTF-8");
 		
-		String savePath = request.getServletContext().getRealPath("/uploadtest") ;
+		String savePath = request.getServletContext().getRealPath("/upload") ;
 	    System.out.println(savePath);
 	    int sizeLimit = 5 * 1024 * 1024 ; // 5메가로 제한. 넘어서면 예외 발생
 	    

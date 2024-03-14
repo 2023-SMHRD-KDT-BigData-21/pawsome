@@ -17,5 +17,7 @@
 	</environments>
 	<mappers>
 		<mapper resource="com/soa/database/MemberMapper.xml" />
+		<mapper resource="com/soa/database/ProductMapper.xml" />
+		<mapper resource="com/soa/database/ImageFileMapper.xml" />
 	</mappers>
 </configuration>

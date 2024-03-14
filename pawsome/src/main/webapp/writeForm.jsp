@@ -43,19 +43,60 @@
 					<div class="bottomInput">
 						가격<input type="text" name="product_price" id="priceInput">
 					</div>
+					<button type="button" id="add">파일 추가</button>
+	                <button type="button" id="remove">파일 삭제</button>
 					<div class="bottomInput fileInput">
-						<input type="file" name="file_name" id="file_name" multiple>
+						<input type="file" name="file_name1" id="file_name">
 					</div>
 				</div>
 				<div class="submitBtn writePageUnder">
-					<input type="submit" value="등록" id="btn"> <input
-						type="reset" value="취소" id="btn">
+					<input type="submit" value="등록" id="btn"> 
+					<input type="reset" value="취소" id="btn">
 				</div>
 			</form>
 		</div>
 	</div>
 
+<script>
+	// 버튼 추가 삭제 기능
+    const addButton = document.getElementById('add');
+    const removeButton = document.getElementById('remove');
+    
+    // 현재 파일 입력 필드의 개수를 추적하는 변수
+    let fileInputCount = 1;
 
+    // 파일 추가 버튼 클릭 이벤트 리스너
+    addButton.addEventListener('click', function() {
+        // 파일 입력 필드 개수를 증가
+        if (fileInputCount < 5) {
+	        fileInputCount++;
+	
+	        // 새로운 input 요소 생성
+	        const newInput = document.createElement('input');
+	        newInput.type = 'file';
+	        // 파일 이름을 순차적으로 설정 (file_name1, file_name2, ...)
+	        newInput.name = 'file_name' + fileInputCount;
+	        
+	        // 파일 입력 컨테이너에 새로운 input 요소 추가
+	        document.querySelector('.bottomInput.fileInput').appendChild(newInput);
+        }else {
+        	alert("파일은 최대 5개까지만 첨부할 수 있습니다.")
+        }
+    });
+    
+ 	// 파일 삭제 버튼 클릭 이벤트 리스너
+    removeButton.addEventListener('click', function() {
+        // 파일 입력 필드 개수가 1보다 클 때만 삭제
+        if (fileInputCount > 1) {
+            // 마지막으로 추가된 파일 입력 필드를 선택
+            const lastInput = document.querySelector('.bottomInput.fileInput input:last-child');
+            // 파일 입력 컨테이너에서 해당 입력 필드 제거
+            document.querySelector('.bottomInput.fileInput').removeChild(lastInput);
+            // 파일 입력 필드 개수를 감소
+            fileInputCount--;
+        }
+    });
+</script>
 
 	<script>
         /* 동물 선택에 따라 용품 분류해주기 */

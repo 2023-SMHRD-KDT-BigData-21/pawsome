@@ -13,8 +13,8 @@ public class ProductDAO {
 	// 글 정보 넣기
 	public String insert(Product pd) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-		sqlSession.insert("com.smhrd.database.ProductMapper.insert", pd);
-		String res = sqlSession.selectOne("com.smhrd.database.ProductMapper.select", pd);
+		sqlSession.insert("com.soa.database.ProductMapper.insert", pd);
+		String res = sqlSession.selectOne("com.soa.database.ProductMapper.select", pd);
 		sqlSession.close();
 		return res;
 	}
@@ -22,7 +22,7 @@ public class ProductDAO {
 	// 글 정보들 리스트로 불러오기
 	public List<Product> productList() {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-		List<Product> list = sqlSession.selectList("com.smhrd.database.ProductMapper.list");
+		List<Product> list = sqlSession.selectList("com.soa.database.ProductMapper.list");
 		sqlSession.close();
 		return list;
 	}
@@ -30,7 +30,7 @@ public class ProductDAO {
 	// 한 게시글의 전체 정보 불러오기
 	public Product productContent(int product_id) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-		Product product = sqlSession.selectOne("com.smhrd.database.ProductMapper.content", product_id);
+		Product product = sqlSession.selectOne("com.soa.database.ProductMapper.content", product_id);
 		sqlSession.close();
 		return product;
 	}
