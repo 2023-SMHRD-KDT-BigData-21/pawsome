@@ -19,7 +19,7 @@
 		</h1>
 	</div>
 	<div class="box6">
-		<form action="#">
+		<form action="LoginController" method="post">
 			<div class="join">
 				<div id="joinTitle">
 					<!--로그인 문구-->
@@ -44,7 +44,7 @@
 					<a class="a" href="#">아이디 찾기</a><span style="padding-right: 10px"></span>|
 					<span style="padding-right: 10px"></span> <a class="a" href="#">비밀번호
 						찾기</a><span style="padding-right: 10px"></span>| <span
-						style="padding-right: 10px"></span> <a class="a" href="Join.html">회원가입</a>
+						style="padding-right: 10px"></span> <a class="a" href="join.jsp">회원가입</a>
 				</div>
 				<div class="kakao">
 					<!--카카오 연동 로그인-->

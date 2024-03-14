@@ -3,7 +3,7 @@
 <mapper namespace="com.soa.database.MemberMapper">
 	
 	<insert id="join" parameterType="com.soa.model.Member">
-		insert into user_info values(#{user_id}, #{user_name}, #{user_pw}, #{user_phone}, #{user_email}, #{user_img}, #{user_nick}, 100, SYSDATE, 'N')
+		insert into user_info values(#{user_id}, #{user_name}, #{user_pw}, #{user_phone}, #{user_email}, #{user_img, jdbcType=NULL}, #{user_nick}, 100, SYSDATE, 'N')
 	</insert>
 	
 	<select id="login" parameterType="com.soa.model.Member"
