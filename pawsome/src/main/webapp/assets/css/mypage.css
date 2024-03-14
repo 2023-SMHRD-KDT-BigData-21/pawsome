@@ -1,0 +1,236 @@
+/*하단부*/
+.box5 {
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mypage {
+    /*개인정보란*/
+    width: 75%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left {
+    /*프로필&닉네임 수정칸*/
+    width: 40%;
+    height: 100%;
+}
+
+.up {
+    width: 100%;
+    height: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 150%;
+    background-color: #ECECE0;
+}
+
+.right1 {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #ECECE0;
+}
+
+.modify{
+    font-size: 15px;
+    border: 0px;
+    background-color: #ECECE0;
+}
+
+.down {
+    width: 100%;
+    height: 65%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.left2 {
+    width: 45%;
+    height: 100%;
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    background-color: #ECECE0;
+}
+
+.circle{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+#photo{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+}
+
+.right2 {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background-color: #ECECE0;
+}
+#nickName{
+    font-size: 120%;
+}
+
+.right {
+    /*신뢰도, 판매&구매건수, 찜한 물품 개수*/
+    width: 60%;
+    height: 100%;
+}
+
+.up2 {
+    width: 100%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ECECE0;
+}
+
+.credit {
+    width: 350px;
+    height: 20px;
+    border-radius: 8px;
+    background-color: white;
+}
+
+#gauge{
+    width: 30%;
+    height: 100%;
+    border-radius: 8px;
+    background-color: purple;
+}
+
+.down2 {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.downOne,
+.downTwo {
+    width: 33%;
+}
+
+.downThree {
+    width: 34%;
+}
+
+.downOne,
+.downTwo,
+.downThree {
+    height: 100%;
+    background-color: #ECECE0;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.part1, .part2{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+.part1{
+    align-items: flex-end;
+}
+.part2{
+    align-items: top;
+}
+
+.box6 {
+    /*리스트*/
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+.checkList {
+    width: 75%;
+    display: flex;
+    align-items: top;
+}
+
+.box7 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: top;
+}
+
+
+.merchandiseList {
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: top;
+}
+
+.selling,
+.sellOver,
+.buy,
+.choice {
+    width: 100px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    border-radius: 8px;
+    border: 0px;
+}
+
+.merchandise {
+    width: 150px;
+    padding-bottom: 15px;
+}
+
+.merchandise1 {
+    width: 100%;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+    border: 1px solid black;
+}
+
+.merchandise2 {
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+}
