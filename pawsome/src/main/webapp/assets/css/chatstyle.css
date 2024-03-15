@@ -1,0 +1,184 @@
+@charset "UTF-8";
+
+/* 부크크 */
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+}
+
+* {
+	font-family: 나눔고딕;
+} 
+
+
+#messageWindow {
+	background: black;
+	color: greenyellow;
+}
+	
+#inputMessage {
+	width : 80%;
+	/* width: 500px; */
+	height: 30px;
+	border-radius : 8px;
+}
+
+#btn-submit {
+	background: white;
+	background: #caf097;
+	width : 15%;
+	/* width: 60px; */
+	height: 40px;
+	color: #607080;
+	border: none;
+	border-radius : 10px;
+}
+
+#main-container {
+	max-width: 600px;
+	height: 680px;
+	border: 1px solid black;
+	margin: 10px;
+	display: inline-block;
+	border-radius : 8px;
+}
+
+.profile-container{
+	height : 20%; 
+	display : flex ;
+	flex-direction: row;
+}
+
+
+
+/* .profileImgBox, .productImgBox{
+	border : 1px solid black;
+	width:30%;
+} */
+
+.imgBox{
+	width:30%;
+	padding : 10px;
+	margin-left : 10px;
+}
+
+.imgBox > img{
+	position: relative;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+.profileImgBox > img {
+    border-radius: 50%;
+}
+
+
+.profile-container>.contentBox{
+	font-family: 'BookkMyungjo-Bd' !important;
+	width:40% ;
+}
+
+.contentBox > .title{
+	height : 70%;
+	width:100%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentBox > .confirmBtn{
+	height : 30%;
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#chat-container {
+	vertical-align: bottom;
+	/* border: 1px solid black; */
+	margin: 10px;
+	/* min-height: 600px;
+	max-height: 600px; */
+	height : 65%;
+	overflow: scroll;
+	overflow-x: hidden;
+	background: #f5f5dc; /* 노란색 */
+	border-radius : 8px;
+}
+
+/* #chat-container::-webkit-scrollbar {
+	display: none;
+} */
+
+#chat-container::-webkit-scrollbar {
+    width: 10px;
+  }
+
+#chat-container::-webkit-scrollbar-thumb {
+    background-color: #caf097; /* 연두색 */
+    border-radius: 10px;
+    background-clip : padding-box;
+    border : 2px solid transparent;
+  }
+
+#chat-container::-webkit-scrollbar-track {
+    background-color: #f5f5dc;
+    border-radius: 10px;
+    /* box-shadow: inset 0px 0px 5px white; */
+  }
+
+.chat {
+	font-size: 20px;
+	color: black;
+	margin: 5px;
+	min-height: 20px;
+	padding: 5px;
+	min-width: 50px;
+	text-align: left;
+	height: auto;
+	word-break: break-all;
+	background: #ffffff;
+	width: auto;
+	display: inline-block;
+	border-radius: 10px 10px 10px 10px;
+}
+
+.notice {
+	color: #607080;
+	font-weight: bold;
+	border: none;
+	text-align: center;
+	background-color: #9bbbd4;
+	display: block;
+}
+
+.my-chat {
+	text-align: right;
+	background: #fbe099;
+	border-radius: 10px 10px 10px 10px;
+}
+
+#bottom-container {
+	margin: 10px;
+	height : 15%;
+}
+
+.chat-info {
+	color: #556677;
+	font-size: 10px;
+	text-align: right;
+	padding: 5px;
+	padding-top: 0px;
+}
+
+.chat-box {
+	text-align: left;
+}
+
+.my-chat-box {
+	text-align: right;
+}

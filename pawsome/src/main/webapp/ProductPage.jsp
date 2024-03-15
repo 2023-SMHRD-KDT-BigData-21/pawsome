@@ -16,14 +16,14 @@
 	<div class="container">
 		<!-- checkPage 가운데 정렬 -->
 		<div class="checkPage">
-			<!-- 페이지 공간 -->	
+			<!-- 페이지 공간 -->
 			<div class="topCheck">
 				<!-- 사진 + 제목, 가격 등 div -->
 				<div class="imgBox">
 					<img id="fileId"
 						src="https://image.dongascience.com/Photo/2022/06/6982fdc1054c503af88bdefeeb7c8fa8.jpg"
 						alt="">
-					
+
 				</div>
 				<div class="textBox">
 					<div class="innerBox">
@@ -42,7 +42,7 @@
 					<div class="innerBox">
 						<div class="inner">
 							<!-- 판매자:상태변경 / 구매자:채팅하기 -->
-							<a href="#">상태변경</a>
+							<a href="#" onclick="chat()">상태변경</a>
 						</div>
 						<div class="inner">찜개수</div>
 					</div>
@@ -58,6 +58,12 @@
 
 
 	<script>
+		function chat() {
+			// 채팅창 띄워기(사이즈 지정)
+			window.open("chat.jsp", "채팅하기", "width=500, height=750") // 새로운 창 띄우기 
+			// getContextPath : 현재위치,  채팅하기 : 창의 이름
+		}
+
 		/*header.html*/
 		window.addEventListener('load', function() {
 			var allElements = document.getElementsByTagName('*');

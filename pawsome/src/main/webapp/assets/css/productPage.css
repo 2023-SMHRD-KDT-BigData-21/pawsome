@@ -6,6 +6,7 @@
 
 .checkPage {
     /* 페이지 공간*/
+    border-radius: 8px;
     position: relative;
     top: 30px;
     background-color: #ECECE0;
