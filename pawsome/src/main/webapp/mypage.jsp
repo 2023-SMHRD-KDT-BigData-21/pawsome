@@ -8,7 +8,7 @@
 <link rel="stylesheet" type="text/css" href="assets/css/mypage.css">
 </head>
 <body>
-	<div data-include-path="header.html"></div>
+	<div data-include-path="header.jsp"></div>
     <!--하단부-->
     <div class="box5">
         <div class="mypage"><!--개인 정보란-->
@@ -151,7 +151,7 @@
     </div>
 
     <script>
-        /*header.html*/
+        /*header.jsp*/
         window.addEventListener('load', function () {
             var allElements = document.getElementsByTagName('*');
             Array.prototype.forEach.call(allElements, function (el) {

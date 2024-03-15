@@ -11,7 +11,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-	<div data-include-path="header.html"></div>
+	<div data-include-path="header.jsp"></div>
 
 	<!-- 본문 -->
 	<div class="container">
@@ -131,7 +131,7 @@
         }
 
 
-        /*header.html*/
+        /*header.jsp*/
         window.addEventListener('load', function () {
             var allElements = document.getElementsByTagName('*');
             Array.prototype.forEach.call(allElements, function (el) {

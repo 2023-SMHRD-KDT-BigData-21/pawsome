@@ -29,7 +29,7 @@
 
 </head>
 <body>
-	<div data-include-path="header.html"></div>
+	<div data-include-path="header.jsp"></div>
 
 	<!-- 상품list Section Begin -->
 	<div class="spad-align">
@@ -154,7 +154,7 @@
 	<script src="assets/js/owl.carousel.min.js"></script>
 	<script src="assets/js/main.js"></script>
 	<script>
-		/*header.html*/
+		/*header.jsp*/
 		window.addEventListener('load', function() {
 			var allElements = document.getElementsByTagName('*');
 			Array.prototype.forEach.call(allElements, function(el) {

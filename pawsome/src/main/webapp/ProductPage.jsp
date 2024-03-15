@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="assets/css/productPage.css">
 </head>
 <body>
-	<div data-include-path="header.html"></div>
+	<div data-include-path="header.jsp"></div>
 
 
 	<!-- 본문 -->
@@ -64,7 +64,7 @@
 			// getContextPath : 현재위치,  채팅하기 : 창의 이름
 		}
 
-		/*header.html*/
+		/*header.jsp*/
 		window.addEventListener('load', function() {
 			var allElements = document.getElementsByTagName('*');
 			Array.prototype.forEach.call(allElements, function(el) {
