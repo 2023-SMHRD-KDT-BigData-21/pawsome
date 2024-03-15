@@ -51,7 +51,7 @@
                 <div class="down">
                     <div class="left2">
                         <div class="circle">
-                            <div id="photo"><img id="photo" src="https://i.namu.wiki/i/P4EcUkE1smLslPIYuzQV5tXGpN1lpszX202_nioWCfKlQkQH_e373do_I51rnuSuGTj5wvd1zH3jryD9bpDDVw.webp"></div>
+                            <div id="photo"><img id="photo" src="https://www.studiopeople.kr/common/img/default_profile.png"></div>
                         </div>
                     </div>
                     <div class="right2"><span style="padding-right: 20px"></span>
