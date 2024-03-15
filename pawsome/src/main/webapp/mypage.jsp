@@ -1,3 +1,6 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.soa.model.Member"%>
+<%@page import="com.soa.model.MemberDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -8,6 +11,14 @@
 <link rel="stylesheet" type="text/css" href="assets/css/mypage.css">
 </head>
 <body>
+<%
+	String user_id = (String)session.getAttribute("member");
+	MemberDAO dao = new MemberDAO();
+	Member member = dao.idCheck(user_id);
+	System.out.println(member);
+	pageContext.setAttribute("member", member);
+	
+%>
 	<div data-include-path="header.jsp"></div>
     <!--하단부-->
     <div class="box5">
@@ -28,7 +39,7 @@
                         </div>
                     </div>
                     <div class="right2"><span style="padding-right: 20px"></span>
-                        <div id="nickName">Death</div>
+                        <div id="nickName"><%=member.getUser_nick() %></div>
                     </div>
                 </div>
             </div>
