@@ -188,7 +188,7 @@
 
 				},
 				error : function() {
-					console.log("통신실패!")
+					console.error()
 				}
 			})
 		}
