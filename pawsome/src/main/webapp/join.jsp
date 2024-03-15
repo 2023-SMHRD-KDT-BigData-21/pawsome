@@ -138,7 +138,7 @@
 
 				},
 				error : function() {
-					console.log("통신실패!")
+					console.error()
 				}
 			})
 		}
@@ -163,7 +163,7 @@
 
 				},
 				error : function() {
-					console.log("통신실패!")
+					console.error()
 				}
 			})
 		}
@@ -175,7 +175,7 @@
 			$.ajax({
 				type : "get", //요청방식
 				data : {
-					"nick" : input.value
+					"email" : input.value
 				}, //요청 데이터
 				url : "IdCheckController", //요청경로
 				dataType : "text", //응답받을 데이터 형식("json")

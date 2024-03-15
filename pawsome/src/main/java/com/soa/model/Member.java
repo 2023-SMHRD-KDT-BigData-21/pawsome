@@ -35,8 +35,8 @@ public class Member {
 		this.user_pw = user_pw;
 	}
 
-	public Member(String user_id2, String user_name2, String user_pw2, String user_phone2, String user_email2,
-			String user_nick2) {
+	public Member(String user_id, String user_name, String user_pw, String user_phone, String user_email,
+			String user_nick) {
 		this.user_id = user_id;
 		this.user_name = user_name;
 		this.user_pw = user_pw;
