@@ -22,12 +22,13 @@ public class Product {
 	private String buyer_id;
 	private String review_yn;
 	   
-	public Product(String product_name, String product_price, String product_content, String product_cate, String animal_cate ) {
+	public Product(String product_name, String product_price, String product_content, String product_cate, String animal_cate, String seller_id ) {
 		this.product_name = product_name;
 		this.product_price = product_price;
 		this.product_content = product_content;
 		this.product_cate = product_cate;
 		this.animal_cate = animal_cate;
+		this.seller_id = seller_id;
    }
 	
 }

@@ -1,3 +1,5 @@
+<%@page import="com.soa.model.Member"%>
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,12 +13,17 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
+
+<%
+	String id = (String)session.getAttribute("member");
+%>
+
 	<div data-include-path="header.jsp"></div>
 
 	<!-- 본문 -->
 	<div class="container">
 		<div class="writePage">
-			<form action="ProductController" method="post"
+			<form action="ProductController?seller_id=<%=id%>" method="post"
 				enctype="multipart/form-data" class="writePageUnder formCSS">
 				<div class="topWrite writePageUnder">
 					<select name="g001" id="g001" onchange="loadAnimalPd();">
@@ -46,7 +53,7 @@
 					<button type="button" id="add">파일 추가</button>
 	                <button type="button" id="remove">파일 삭제</button>
 					<div class="bottomInput fileInput">
-						<input type="file" name="file_name1" id="file_name">
+						<input type="file" value="대표 사진" name="file_name1" id="file_name">
 					</div>
 				</div>
 				<div class="submitBtn writePageUnder">

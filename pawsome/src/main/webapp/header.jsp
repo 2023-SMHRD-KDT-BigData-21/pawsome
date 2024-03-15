@@ -1,6 +1,6 @@
 <%@page import="com.soa.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8" isELIgnored="false"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,7 +11,7 @@
 </head>
 <body>
 <%
-	Member member = (Member)session.getAttribute("member");
+	String id = (String)session.getAttribute("member");
 %>
 	<!--헤더-->
 	<div class="header">
@@ -44,14 +44,7 @@
 		</div>
 		<!--상단 우측 버튼-->
 		<div class="box3">
-			<%if(member == null) { %>
-			<div class="menu">
-				<a href="join.jsp">회원가입</a>
-			</div>
-			<div class="menu">
-				<a href="login.jsp">로그인</a>
-			</div>
-			<%} else {%>
+			<%if(id != null) { %>
 			<div class="menu">
 				<a onclick="chatlist()">채팅하기</a>
 			</div>
@@ -60,6 +53,13 @@
 			</div>
 			<div class="menu">
 				<a href="mypage.jsp">마이페이지</a>
+			</div>
+			<%} else {%>
+			<div class="menu">
+				<a href="join.jsp">회원가입</a>
+			</div>
+			<div class="menu">
+				<a href="login.jsp">로그인</a>
 			</div>
 			<%} %>
 		</div>

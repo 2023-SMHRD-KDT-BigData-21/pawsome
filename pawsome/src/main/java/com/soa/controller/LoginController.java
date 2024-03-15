@@ -30,7 +30,7 @@ public class LoginController extends HttpServlet {
 			if (res != null) {
 				System.out.println(" 로그인 성공");
 				HttpSession session = request.getSession();
-				session.setAttribute("member", res);
+				session.setAttribute("member", res.getUser_id());
 				response.sendRedirect("main.jsp?id="+user_id);
 			} else {
 				System.out.println("로그인 실패");

@@ -1,6 +1,8 @@
 package com.soa.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -32,6 +34,7 @@ public class ProductController extends HttpServlet {
 		String product_content = multi.getParameter("product_content");
 		String animal_cate = multi.getParameter("g001");
 		String product_cate = multi.getParameter("g002");
+		String seller_id = multi.getParameter("seller_id");
 		
 		// 사진 정보
 		String file_name1 = multi.getOriginalFileName("file_name1");
@@ -41,7 +44,7 @@ public class ProductController extends HttpServlet {
 		String file_name5 = multi.getOriginalFileName("file_name5");
 		
 		ImageFile imageFile = new ImageFile(file_name1, file_name2, file_name3, file_name4, file_name5);
-		Product pd = new Product(product_name, product_price, product_content, product_cate, animal_cate);
+		Product pd = new Product(product_name, product_price, product_content, product_cate, animal_cate, seller_id);
 		
 		System.out.println(pd);
 		System.out.println(imageFile);
@@ -52,7 +55,18 @@ public class ProductController extends HttpServlet {
 		
 		// 사진 정보 DAO로 insert
 		ImageFileDAO imgdao = new ImageFileDAO();
-		imgdao.imgInsert(imageFile,res);
+		int result = imgdao.imgInsert(imageFile,res);
+		
+		PrintWriter writer = response.getWriter();
+		response.setContentType("text/html; charset=UTF-8");
+		System.out.println(res);
+		if (result > 0) { // 게시글 등록 성공
+		    System.out.println(result);
+		    writer.println("<script>alert('게시글이 성공적으로 등록되었습니다.'); location.href='main.jsp';</script>");
+		} else { // 게시글 등록 실패
+		    System.out.println(result);
+		    writer.println("<script>alert('게시글 등록에 실패했습니다.'); location.href='main.jsp';</script>");
+		}
 		
 	}
 
