@@ -1,6 +1,7 @@
 package com.soa.model;
 
 import java.io.File;
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +76,21 @@ public class ImageFileDAO {
 		
 		return list;
 		
+	}
+	
+	// 내 게시글의 1번 사진들만 가져오기
+	public String myProductImage(BigDecimal product_id) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		String myProductImage = sqlSession.selectOne("com.soa.database.ImageFileMapper.mylist", product_id);
+		sqlSession.close();
+		
+		ImageToBase64 converter = new ImageToBase64();
+		
+		File file = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\pawsome\\upload\\"
+				+myProductImage);
+		String fileStringValue = converter.convert(file);
+		
+		return fileStringValue;
 	}
 	
 }

@@ -24,7 +24,6 @@
 	ProductDAO pdao = new ProductDAO();
 	Product product = pdao.productContent(product_id);
 	pageContext.setAttribute("product", product);
-	product.getProduct_cate();
 %>
 	<div data-include-path="header.jsp"></div>
 

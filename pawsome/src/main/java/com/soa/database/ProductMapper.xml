@@ -12,11 +12,15 @@
     </select>
     
     <select id="list" resultType="com.soa.model.Product">
-    	select * from product
+    	select * from product order by product_id desc
     </select>
     
     <select id="content" parameterType="int" resultType="com.soa.model.Product">
 		select * from product where product_id=#{product_id}
 	</select>
     
+    <select id="mycontent" parameterType="String" resultType="com.soa.model.Product">
+		select * from product where seller_id=#{user_id} order by product_id desc
+	</select>
+	
 </mapper>

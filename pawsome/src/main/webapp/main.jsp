@@ -56,11 +56,8 @@
 	System.out.println(list.get(i));
 	}
 	
-	
 	pageContext.setAttribute("plist", plist);
 	pageContext.setAttribute("list", list);
-	
-	System.out.println(list);
 %>
 	<div data-include-path="header.jsp"></div>
 

@@ -7,12 +7,15 @@
 	</insert>
 	
 	<select id="list" resultType="String">
-    	select file_name1 from image_file
+    	select file_name1 from image_file order by product_id desc
     </select>
 	
 	<select id="content" parameterType="int" resultType="com.soa.model.ImageFile">
 		select * from image_file where product_id=#{product_id}
 	</select>
 
+	<select id="mylist" parameterType="BigDecimal" resultType="String">
+    	select file_name1 from image_file where product_id=#{product_id}
+    </select>
 
 </mapper>

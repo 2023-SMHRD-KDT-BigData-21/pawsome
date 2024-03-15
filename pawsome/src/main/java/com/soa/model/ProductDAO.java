@@ -35,4 +35,12 @@ public class ProductDAO {
 		return product;
 	}
 	
+	// user_id에 맞는 게시글 정보 불러오기
+	public List<Product> myProduct(String user_id) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		List<Product> list = sqlSession.selectList("com.soa.database.ProductMapper.mycontent", user_id);
+		sqlSession.close();
+		return list;
+	}
+	
 }

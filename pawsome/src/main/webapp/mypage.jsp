@@ -1,3 +1,9 @@
+<%@page import="com.soa.model.ImageFile"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="com.soa.model.ImageFileDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.soa.model.Product"%>
+<%@page import="com.soa.model.ProductDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.soa.model.Member"%>
 <%@page import="com.soa.model.MemberDAO"%>
@@ -17,6 +23,16 @@
 	Member member = dao.idCheck(user_id);
 	System.out.println(member);
 	pageContext.setAttribute("member", member);
+	
+	ProductDAO pdao = new ProductDAO();
+	List<Product> plist = pdao.myProduct(user_id);
+	pageContext.setAttribute("plist", plist);
+	
+	ImageFileDAO idao = new ImageFileDAO();
+	List<String> ilist = new ArrayList();
+	for(int i = 0; i < plist.size(); i++) {
+		ilist.add(idao.myProductImage(plist.get(i).getProduct_id()));
+	}
 	
 %>
 	<div data-include-path="header.jsp"></div>
@@ -56,7 +72,7 @@
                     <div class="downOne">
                         <div class="circle">
                             <div class="part1">판매건수</div>
-                            <div class="part2" id="sellCount">N</div>
+                            <div class="part2" id="sellCount"><%=plist.size() %></div>
                         </div>
                     </div>
                     <div class="downTwo">
@@ -77,9 +93,7 @@
     </div>
     <div class="box6"><!--선택 버튼 목록-->
         <div class="checkList">
-            <button class="selling">판매중</button>
-            <span style="padding-right: 20px"></span>
-            <button class="sellOver">판매완료</button>
+            <button class="selling">판매</button>
             <span style="padding-right: 20px"></span>
             <button class="buy">구매</button>
             <span style="padding-right: 20px"></span>
@@ -88,75 +102,24 @@
     </div>
     <div class="box7"><!--상품 이미지 및 게시글 링크-->
         <div class="merchandiseList">
-            <div class="merchandise">
-                <div class="merchandise1">상품 이미지</div>
-                <div class="merchandise2">
-                    게시글 제목<br>
-                    게시글 가격<br>
-                    날짜
-                </div>
-            </div>
-            <span style="padding-right: 20px"></span>
 
+            <%for(int i = 0; i < plist.size(); i++) {%>
             <div class="merchandise">
-                <div class="merchandise1">상품 이미지</div>
+                <div class="merchandise1"><img width="150px" height="150px" src="data:image/jpg;base64,<%=ilist.get(i)%>"></div>
                 <div class="merchandise2">
-                    게시글 제목<br>
-                    게시글 가격<br>
-                    날짜
+                <%if(plist.get(i).getProduct_status().equals("N")) {%>
+					판매상태 : 판매중<br>
+				<%}else {%>
+					판매상태 : 판매완료<br>
+				<%} %>
+                    제목 : <%=plist.get(i).getProduct_name() %><br>
+                    가격 : <%=plist.get(i).getProduct_price() %><br>
+                    등록일 : <%=plist.get(i).getProduct_reg_date().getMonth()+1 %>월
+                    <%=plist.get(i).getProduct_reg_date().getDate() %>일
                 </div>
             </div>
             <span style="padding-right: 20px"></span>
-
-            <div class="merchandise">
-                <div class="merchandise1">상품 이미지</div>
-                <div class="merchandise2">
-                    게시글 제목<br>
-                    게시글 가격<br>
-                    날짜
-                </div>
-            </div>
-            <span style="padding-right: 20px"></span>
-
-            <div class="merchandise">
-                <div class="merchandise1">상품 이미지</div>
-                <div class="merchandise2">
-                    게시글 제목<br>
-                    게시글 가격<br>
-                    날짜
-                </div>
-            </div>
-            <span style="padding-right: 20px"></span>
-
-            <div class="merchandise">
-                <div class="merchandise1">상품 이미지</div>
-                <div class="merchandise2">
-                    게시글 제목<br>
-                    게시글 가격<br>
-                    날짜
-                </div>
-            </div>
-            <span style="padding-right: 20px"></span>
-
-            <div class="merchandise">
-                <div class="merchandise1">상품 이미지</div>
-                <div class="merchandise2">
-                    게시글 제목<br>
-                    게시글 가격<br>
-                    날짜
-                </div>
-            </div>
-            <span style="padding-right: 20px"></span>
-
-            <div class="merchandise">
-                <div class="merchandise1">상품 이미지</div>
-                <div class="merchandise2">
-                    게시글 제목<br>
-                    게시글 가격<br>
-                    날짜
-                </div>
-            </div>
-            <span style="padding-right: 20px"></span>
+            <%} %>
             
         </div>
     </div>
