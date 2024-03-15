@@ -9,10 +9,10 @@
     border-radius: 8px;
     position: relative;
     top: 30px;
-    background-color: #ECECE0;
+    background-color: white;
     width: 60%;
     height: max-content;
-    padding: 10px;
+    /* padding: 10px; */
     display: flex;
     flex-direction: column;
 }
@@ -20,15 +20,32 @@
 
 .topCheck {
     /* border: 1px solid black; */
+    background-color: #ECECE0;
+    border : 1px outset #ECECE0;
+    padding : 10px; 
     display: flex;
     height: 350px;
+    border-radius: 8px;
+}
 
+.noUse{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.underbar{
+    width: 98%;
+    /* border: 3px groove #ECECE0; */
+    border-width: 0 0 3px;
 }
 
 .contentBox {
     margin: 10px;
-    padding: 5px;
+    background-color: #ECECE0;
+    border : 1px outset #ECECE0;
+    padding: 20px;
     border-radius: 8px;
+    /* border : 3px solid white; */
     /* border: 1px solid black; */
     height: auto;
 }
@@ -37,7 +54,9 @@
     /* border: 1px solid black; */
     width: 50%;
     margin: 10px;
+    border-radius: 8px;
 }
+
 
 .imgBox>img {
     /* div에 이미지 꽉 차게 설정 */
@@ -55,6 +74,7 @@
     padding: 5px;
     border-radius: 8px;
     width: 50%;
+    
 
 }
 
@@ -69,7 +89,6 @@ h1 {
     margin: 5px;
     padding: 5px;
     /* border: 1px solid black; */
-
     display: flex;
     justify-content: center;
 }
@@ -80,6 +99,22 @@ h1 {
     margin: 5px;
     padding: 10px;
 }
+
+/* 변경begin */
+.secondImgBox>img {
+    max-width: 100%;
+    width: 300x;
+    height: 300px;
+}
+
+.likeCnt{
+    align-items: center;
+}
+
+.chatBtn{
+    margin-top: 20px;
+}
+/* 변경end */
 
 @media screen and (max-width: 768px) {
     .checkPage {
@@ -106,11 +141,12 @@ h1 {
     .imgBox>img {
         /* div에 이미지 꽉 차게 설정 */
         position: relative;
-        top: 0; 
+        top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         border-radius: 8px;
+        object-fit: cover;
         max-width: 100%;
         max-height: 100%;
     }
@@ -157,3 +193,151 @@ h1 {
 
 
 }
+
+
+
+/* 상태변경 버튼 CSS */
+.modalBtn {
+    background-color: #C0C2A5;
+    /* background-color: #F9B514; */
+    margin-top: 5px;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+}
+
+.modal .bg {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    
+}
+
+.modalBox {
+    position: absolute;
+    background-color: #fff;
+    width: 400px;
+    height: 200px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.modalBox button {
+    /* display: block; */
+    width: 100px;
+    margin: 0 auto;
+}
+
+.hidden {
+    display: none;
+}
+/* 상태변경 버튼 CSS end */
+
+
+/* 찜하기 버튼 CSS */
+.btn_like {
+    position: relative;
+    /* margin: 100px auto; */
+    margin-top : 5px;
+    display: block;
+    width: 44px;
+    height: 44px;
+    border: 1px solid #e8e8e8;
+    border-radius: 44px;
+    font-family: notokr-bold, sans-serif;
+    font-size: 14px;
+    line-height: 16px;
+    background-color: #fff;
+    color: #DD5D54;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.03);
+    transition: border .2s ease-out, box-shadow .1s ease-out, background-color .4s ease-out;
+    cursor: pointer;
+}
+
+.btn_like:hover {
+    border: 1px solid rgba(228, 89, 89, 0.3);
+    background-color: rgba(228, 89, 89, 0.02);
+    box-shadow: 0 2px 4px 0 rgba(228, 89, 89, 0.2);
+}
+
+.btn_unlike .img_emoti {
+    background-position: -30px -120px;
+}
+
+.img_emoti {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 0;
+    line-height: 0;
+    background: url(https://mk.kakaocdn.net/dn/emoticon/static/images/webstore/img_emoti.png?v=20180410) no-repeat;
+    text-indent: -9999px;
+    vertical-align: top;
+    width: 20px;
+    height: 17px;
+    margin-top: 1px;
+    background-position: 0px -120px;
+    text-indent: 0;
+}
+
+.btn_like .ani_heart_m {
+    margin: -63px 0 0 -63px;
+}
+
+.ani_heart_m {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 125px;
+    height: 125px;
+    margin: -63px 0 0 -63px;
+    pointer-events: none;
+}
+
+.ani_heart_m.hi {
+    background-image: url(https://mk.kakaocdn.net/dn/emoticon/static/images/webstore/retina/zzim_on_m.png);
+    -webkit-background-size: 9000px 125px;
+    background-size: 9000px 125px;
+    animation: on_m 1.06s steps(72);
+}
+
+.ani_heart_m.bye {
+    background-image: url(https://mk.kakaocdn.net/dn/emoticon/static/images/webstore/retina/zzim_off_m.png);
+    -webkit-background-size: 8250px 125px;
+    background-size: 8250px 125px;
+    animation: off_m 1.06s steps(66);
+}
+
+@keyframes on_m {
+    from {
+        background-position: 0
+    }
+
+    to {
+        background-position: -9000px
+    }
+}
+
+@keyframes off_m {
+    from {
+        background-position: 0
+    }
+
+    to {
+        background-position: -8250px
+    }
+}
+/* 찜하기 버튼 CSS */
