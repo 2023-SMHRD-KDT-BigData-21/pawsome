@@ -26,7 +26,7 @@ public class MemberDAO {
 	
 	public Member idCheck(String user_id) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-		Member res = sqlSession.selectOne("com.soa.database.MemberMapper.check", user_id);
+		Member res = sqlSession.selectOne("com.soa.database.MemberMapper.idcheck", user_id);
 		sqlSession.close(); 
 		return res ;
 	}
@@ -36,5 +36,19 @@ public class MemberDAO {
 		Member res = sqlSession.selectOne("com.soa.database.MemberMapper.nickCheck", user_nick);
 		sqlSession.close(); 
 		return res ;
+	}
+	
+	public Member emailCheck(String user_email) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		Member res = sqlSession.selectOne("com.soa.database.MemberMapper.emailCheck", user_email);
+		sqlSession.close();
+		return res;
+	}
+
+	public int MemberUp(Member member) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		int res = sqlSession.update("com.soa.database.MemberMapper.memberUpdate", member);
+		sqlSession.close();
+		return res;
 	}
 }

@@ -31,7 +31,7 @@ public class LoginController extends HttpServlet {
 				System.out.println(" 로그인 성공");
 				HttpSession session = request.getSession();
 				session.setAttribute("member", res);
-				response.sendRedirect("index.jsp");
+				response.sendRedirect("update.jsp?id="+user_id);
 			} else {
 				System.out.println("로그인 실패");
 				response.sendRedirect("LoginController");

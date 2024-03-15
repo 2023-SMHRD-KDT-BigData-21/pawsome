@@ -11,12 +11,18 @@
 		select * from user_info where user_id = #{user_id} and user_pw = #{user_pw}
 	</select>
 	
-	<select id="check" parameterType="String" resultType="com.soa.model.Member">
+	<select id="idcheck" parameterType="String" resultType="com.soa.model.Member">
 		select * from user_info where user_id=#{user_id}
 	</select>
 	
 	<select id="nickCheck" parameterType="String" resultType="com.soa.model.Member">
 		select * from user_info where user_nick=#{user_nick}
 	</select>
+	<select id="emailCheck" parameterType="String" resultType="com.soa.model.Member">
+		select * from user_info where user_email=#{user_email}
+	</select>
+	<update id="memberUpdate" parameterType="com.soa.model.Member">
+		update user_info set user_pw=#{user_pw}, user_nick=#{user_nick}, user_email=#{user_email},user_phone=#{user_phone}, user_img=#{user_img, jdbcType=NULL} where user_id=#{user_id}
+	</update>
 	
 </mapper>
