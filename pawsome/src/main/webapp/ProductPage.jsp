@@ -1,3 +1,7 @@
+<%@page import="com.soa.model.Product"%>
+<%@page import="com.soa.model.ProductDAO"%>
+<%@page import="java.util.List"%>
+<%@page import="com.soa.model.ImageFileDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -11,6 +15,17 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
+<%
+	int product_id = Integer.parseInt(request.getParameter("product_id"));
+	ImageFileDAO idao = new ImageFileDAO();
+	List<String> list = idao.imgContent(product_id);
+	pageContext.setAttribute("list", list);
+	
+	ProductDAO pdao = new ProductDAO();
+	Product product = pdao.productContent(product_id);
+	pageContext.setAttribute("product", product);
+	product.getProduct_cate();
+%>
 	<div data-include-path="header.jsp"></div>
 
 
@@ -23,20 +38,21 @@
 				<!-- 사진 + 제목, 가격 등 div -->
 				<div class="imgBox">
 					<img id="fileId"
-						src="https://image.dongascience.com/Photo/2022/06/6982fdc1054c503af88bdefeeb7c8fa8.jpg"
+						src="data:image/jpg;base64,<%=list.get(0) %>"
 						alt="">
-					<!-- https://image.dongascience.com/Photo/2022/06/6982fdc1054c503af88bdefeeb7c8fa8.jpg 
-                        https://png.pngtree.com/thumb_back/fh260/background/20230609/pngtree-three-puppies-with-their-mouths-open-are-posing-for-a-photo-image_2902292.jpg  -->
 				</div>
 				<div class="textBox">
 					<div class="innerBox">
-						<div class="inner">강아지 > 사료</div>
-						<!-- ${animal_cate} > ${product_cate} DB에서 불러올 때 이렇게 ?! -->
+						<div class="inner"><%=product.getAnimal_cate() %> > <%=product.getProduct_cate() %></div>
+						<%if(product.getProduct_status().equals("N")) {%>
 						<div class="inner">판매중</div>
+						<%}else {%>
+						<div class="inner">판매완료</div>
+						<%} %>
 					</div>
-					<h1 id="productName">한번 먹은 사료 팝니다</h1>
+					<h1 id="productName"><%=product.getProduct_name() %></h1>
 					<div class="innerBox">
-						<div id="productPrice" class="inner">5000원</div>
+						<div id="productPrice" class="inner"><%=product.getProduct_price() %></div>
 						<div class="inner">
 							<!-- 판매자:수정하기 / 구매자:판매자정보 -->
 							<a href="#">수정하기</a>
@@ -87,19 +103,15 @@
 				<!-- 변경begin -->
 				<div class="contentCheck">
 					<!-- 불러올 사진들 : secondImgBox > img -->
+					<%for(int i = 1; i < list.size(); i++) {%>
 					<div class="secondImgBox">
 						<img id="fileId"
-							src="https://png.pngtree.com/thumb_back/fh260/background/20230609/pngtree-three-puppies-with-their-mouths-open-are-posing-for-a-photo-image_2902292.jpg"
-							alt="">
+						src="data:image/jpg;base64,<%=list.get(i) %>"
+						alt="">
 					</div>
-					<div class="secondImgBox">
-						<img id="fileId"
-							src="https://png.pngtree.com/thumb_back/fh260/background/20230609/pngtree-three-puppies-with-their-mouths-open-are-posing-for-a-photo-image_2902292.jpg"
-							alt="">
-					</div>
-					<!-- 글내용은 div 안에 불러오면 됩니닷 -->
+					<%} %>
 					<div>
-						내용넣기<br> <br> <br> <br>내용넣기
+						<%=product.getProduct_content() %>
 					</div>
 					<!-- 변경end -->
 				</div>

@@ -70,11 +70,11 @@
 			<div class="pdContainer">
 				<div class="row product__filter">
 
-					<%for(int i = 0; i < 2; i++) { %>
+					<%for(int i = 0; i < plist.size(); i++) { %>
 					<!-- 상품 div begin / 여기서부터 반복해서 쓰면 됩니다! -->
 					<div class="align2 col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
 						<div class="product__item">
-							<a href="#"> <!-- a : 해당 게시글페이지로 이동 --> <!-- data-setbg : "사진 경로" -->
+							<a href="ProductPage.jsp?product_id=<%=plist.get(i).getProduct_id()%>"> <!-- a : 해당 게시글페이지로 이동 --> <!-- data-setbg : "사진 경로" -->
 								<div class="product__item__pic set-bg"
 									data-setbg="data:image/jpg;base64,<%=list.get(i)%>">
 									
