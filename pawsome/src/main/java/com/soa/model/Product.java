@@ -29,5 +29,5 @@ public class Product {
 		this.product_cate = product_cate;
 		this.animal_cate = animal_cate;
    }
-
+	
 }
