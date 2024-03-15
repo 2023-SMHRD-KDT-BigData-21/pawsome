@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+/*하단부*/
+.box5 {
+    /*회원가입 창 상단의 PAWSOME 로고*/
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.box6 {
+    width: 100%;
+    height: 550px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join {
+    /*회원가입란*/
+    width: 550px;
+    height: 550px;
+    background-color: #ECECE0;
+}
+
+#joinTitle {
+    /*회원가입 문구*/
+    font-size: 120%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ECECE0;
+}
+
+.joinInput,
+#joinTitle {
+    background-color: #ECECE0;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.word {
+    /*입력란 앞의 글귀*/
+    white-space: nowrap;
+    background-color: #ECECE0;
+}
+
+.input {
+    /*입력란*/
+    width: 250px;
+    height: 30px;
+    font-size: 13px;
+    border: 0px;
+    border-radius: 15px;
+    padding-left: 15px;
+    background-color: white;
+}
+
+.button {
+    /*중복 확인 버튼*/
+    width: 80px;
+    height: 20px;
+    font-size: 13px;
+    border-radius: 15px;
+    border: 0px;
+    outline: none;
+    background-color: #D9D9D9;
+}
+
+.inputBtn{
+    border-radius: 8px;
+    padding : 3px;
+}
+
+
+.pwResult {
+    /*비밀번호 일치 불일치 확인*/
+    width: 250px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #D9D9D9; */
+    font-size: 80%;
+    color: red;
+}
+
+.joinInput2 {
+    /*반려동물 선택란*/
+    background-color: #ECECE0;
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join1 {
+    width: 40%;
+    height: 70px;
+    font-size: 13px;
+    border-radius: 15px;
+    padding-left: 10px;
+    background-color: white;
+}
+
+.animalChoice {
+    /*반려동물 선택칸*/
+    height: 20px;
+}
+
+.success{
+    width: 100px;
+    height: 30px;
+    border: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D9D9;
+}

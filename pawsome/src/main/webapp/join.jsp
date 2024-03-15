@@ -5,9 +5,13 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/default.css">
+<link rel="stylesheet" href="assets/css/join.css">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
+	<div data-include-path="header.jsp"></div>
+
 	<!--하단부 게시글-->
 	<div class="box5">
 		<!--회원가입 창 상단의 PAWSOME-->
@@ -20,7 +24,8 @@
 		</h1>
 	</div>
 	<div class="box6">
-		<form action="JoinController" method="post" enctype="multipart/form-data">
+		<form action="JoinController" method="post"
+			enctype="multipart/form-data">
 			<div class="join">
 				<div id="joinTitle">
 					<!--회원가입 문구-->
@@ -33,19 +38,19 @@
 					<span style="padding-right: 10px"></span> <input class="input"
 						type="text" name="userId" id="idInput" placeholder="아이디를 입력하세요">
 					<span style="padding-right: 10px"></span> <input type="button"
-						name="idTest" value="ID 중복확인" onclick="idCheck()">
+						name="idTest" class="inputBtn" value="중복확인" onclick="idCheck()">
 				</div>
 				<div class="joinInput">
 					<!--비밀번호 입력란-->
 					<div class="word">비밀번호</div>
-					<span style="padding-right: 10px"></span> <input class="pw"
+					<span style="padding-right: 10px"></span> <input class="pw input"
 						type="password" name="userPw" id="pw" placeholder="비밀번호를 입력하세요">
 					<span style="padding-right: 70px"></span>
 				</div>
 				<div class="joinInput">
 					<!--비밀번호 확인란-->
 					<div class="word">비밀번호 확인</div>
-					<span style="padding-right: 10px"></span> <input class="pw"
+					<span style="padding-right: 10px"></span> <input class="pw input"
 						type="password" name="pwCheck" id="pwCheck"
 						placeholder="비밀번호를 다시 입력하세요"> <span
 						style="padding-right: 105px"></span>
@@ -71,7 +76,7 @@
 						type="text" name="userNick" id="nickInput"
 						placeholder="닉네임을 입력하세요"> <span
 						style="padding-right: 10px"></span> <input type="button"
-						name="nickTest" value="NickName 중복확인" onclick="nickCheck()">
+						name="nickTest" class="inputBtn" value="중복확인" onclick="nickCheck()">
 				</div>
 				<div class="joinInput">
 					<!--이메일 입력란-->
@@ -81,7 +86,7 @@
 						type="text" name="userEmail" id="emailInput"
 						placeholder="이메일을 입력하세요"> <span
 						style="padding-right: 10px"></span> <input type="button"
-						name="emailTest" value="이메일 중복확인" onclick="emailCheck()">
+						name="emailTest" class="inputBtn" value="중복확인" onclick="emailCheck()">
 				</div>
 				<div class="joinInput">
 					<!--전화번호 입력란-->
@@ -210,6 +215,24 @@
 
 		})
 	</script>
-
+	<script>
+		/*header.jsp*/
+		window.addEventListener('load', function() {
+			var allElements = document.getElementsByTagName('*');
+			Array.prototype.forEach.call(allElements, function(el) {
+				var includePath = el.dataset.includePath;
+				if (includePath) {
+					var xhttp = new XMLHttpRequest();
+					xhttp.onreadystatechange = function() {
+						if (this.readyState == 4 && this.status == 200) {
+							el.outerHTML = this.responseText;
+						}
+					};
+					xhttp.open('GET', includePath, true);
+					xhttp.send();
+				}
+			});
+		});
+	</script>
 </body>
 </html>
