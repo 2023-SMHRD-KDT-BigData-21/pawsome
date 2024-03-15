@@ -156,6 +156,7 @@
             });
         });
     </script>
+    <script>chatlist();</script>
 
 </body>
 </html>

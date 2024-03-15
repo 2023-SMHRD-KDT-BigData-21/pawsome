@@ -6,8 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="assets/css/header.css">
 <link rel="stylesheet" href="assets/css/default.css">
+<link rel="stylesheet" href="assets/css/header.css">
+<link rel="stylesheet" href="assets/js/header.js">
 </head>
 <body>
 <%
@@ -46,7 +47,7 @@
 		<div class="box3">
 			<%if(id != null) { %>
 			<div class="menu">
-				<a onclick="chatlist()">채팅하기</a>
+				<a onclick="chatlist()" style="cursor: pointer;">채팅하기</a>
 			</div>
 			<div class="menu">
 				<a href="writeForm.jsp">판매하기</a>
