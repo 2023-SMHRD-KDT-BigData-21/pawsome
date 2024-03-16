@@ -142,6 +142,23 @@
 
 
 	<script>
+	
+	$.ajax({
+        url:'UserLikeController', 
+        type:'post',
+        data:{
+           "product_id":"<%=product_id%>",
+           "user_id":"<%=sender%>",
+           "check":"c"
+        },
+        success:function(){
+        	$('.likeBtn').addClass('btn_unlike')
+        },
+        error:function(){
+           console.log("요청실패!");   
+        }
+     })
+	
 	<%if(sender.equals(receiver)) {%>
 	/* (판매자시점)일 때만 함수를 실행해야 함. 안 그러면 오류*/
 	/* (판매자시점) 상태변경 버튼 클릭시 실행되는 함수 */

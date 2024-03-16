@@ -4,10 +4,11 @@
 	<insert id="insert" parameterType="com.soa.model.UserLike">
 		insert into user_like values(#{user_id},#{product_id},sysdate)
 	</insert>
-	<select id="check" parameterType="com.soa.model.UserLike">
+	<select id="check" parameterType="com.soa.model.UserLike"
+						resultType="com.soa.model.UserLike">
 		select * from user_like where user_id=#{user_id} and product_id=#{product_id}
 	</select>
-	<delete id="delete" >
-		delete from user_like where user_id=#{user_like} and product_id=#{product_id}
+	<delete id="delete" parameterType="com.soa.model.UserLike">
+		delete from user_like where user_id=#{user_id} and product_id=#{product_id}
 	</delete>
 </mapper>

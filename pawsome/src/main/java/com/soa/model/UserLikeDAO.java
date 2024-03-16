@@ -22,4 +22,16 @@ public class UserLikeDAO {
 		sqlSession.close();
 	}
 
+	public UserLike checkLike(UserLike like) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		
+		UserLike islike = sqlSession.selectOne("com.soa.database.UserLikeMapper.check",like);
+		
+		sqlSession.close();
+		
+		return islike;
+	}
+	
+	
+
 }

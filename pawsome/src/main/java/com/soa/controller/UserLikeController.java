@@ -15,11 +15,17 @@ public class UserLikeController extends HttpServlet {
 		protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 			String product_id = request.getParameter("product_id");
 			String user_id = request.getParameter("user_id");
+			String check = request.getParameter("check");
+			
 			
 			UserLike like = new UserLike(product_id,user_id);
 			UserLikeDAO dao = new UserLikeDAO();
 			
-			dao.updateLike(like);
+			if(check != null) {
+				dao.checkLike(like);
+			} else {
+				dao.updateLike(like);			
+			}
 	}
 
 }
