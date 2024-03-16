@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soa.database.ChatRoomMapper">
+	<select id="select" parameterType="com.soa.model.MessageRoom" resultType="com.soa.model.MessageRoom">
+		select * from test_mroom where sender=#{sender} and receiver=#{receiver}
+	</select>
+	<select id="checkrnum" parameterType="com.soa.model.MessageRoom" resultType="String">
+		select room_no from test_mroom where sender=#{sender} and receiver=#{receiver}
+	</select>
+	<insert id="create" parameterType="com.soa.model.MessageRoom">
+		insert into test_mroom values(#{sender},#{receiver},SYSDATE,test_mroom_seq.NEXTVAL)
+	</insert>
+
+</mapper>

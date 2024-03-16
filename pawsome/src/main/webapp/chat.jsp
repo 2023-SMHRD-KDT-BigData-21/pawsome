@@ -1,3 +1,8 @@
+<%@page import="java.util.List"%>
+<%@page import="com.soa.model.MessageLogDAO"%>
+<%@page import="com.soa.model.MessageLog"%>
+<%@page import="com.soa.model.MessageRoomDAO"%>
+<%@page import="com.soa.model.MessageRoom"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,6 +14,24 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" href="assets/css/chatstyle.css">
 </head>
+<%
+	String sender = request.getParameter("sender");
+	String receiver = request.getParameter("receiver");
+	
+	MessageRoom room = new MessageRoom(sender,receiver);
+	MessageRoomDAO dao = new MessageRoomDAO();
+	
+	int res = dao.createRoom(room);
+	int rnum = dao.roomCheck(room);
+	String room_no = Integer.toString(rnum);
+	System.out.println(rnum);
+	
+	MessageLog log = new MessageLog(room_no,sender);
+	MessageLogDAO ldao = new MessageLogDAO();
+	List<MessageLog> list = ldao.getLog(log);
+	pageContext.setAttribute("list",list);
+	System.out.println(list.size());
+%>
 <body>
 	<div id="main-container">
 		<div class="profile-container">

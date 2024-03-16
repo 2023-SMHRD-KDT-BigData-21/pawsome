@@ -19,5 +19,7 @@
 		<mapper resource="com/soa/database/MemberMapper.xml" />
 		<mapper resource="com/soa/database/ProductMapper.xml" />
 		<mapper resource="com/soa/database/ImageFileMapper.xml" />
+		<mapper resource="com/soa/database/ChatRoomMapper.xml" />
+		<mapper resource="com/soa/database/MessageLogMapper.xml" />
 	</mappers>
 </configuration>
