@@ -68,6 +68,7 @@
 				<div class="row product__filter">
 
 					<%for(int i = 0; i < plist.size(); i++) { %>
+					<%if(plist.get(i).getProduct_status().equals("N")) { %>
 					<!-- 상품 div begin / 여기서부터 반복해서 쓰면 됩니다! -->
 					<div class="align2 col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
 						<div class="product__item">
@@ -92,6 +93,8 @@
 						</div>
 					</div>
 					<!-- 상품 div end / 여기까지 반복! -->
+					<%}else { %>
+					<%} %>
 					<%} %>
 					
 				</div>
