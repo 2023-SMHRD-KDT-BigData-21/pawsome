@@ -58,6 +58,18 @@
   	<description></description>
   	<servlet-class>com.soa.controller.MessageLogController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>LogoutController</servlet-name>
+  	<display-name>LogoutController</display-name>
+  	<description></description>
+  	<servlet-class>com.soa.controller.MessageLogController</servlet-class>
+  </servlet>
+  <servlet>
+  	<servlet-name>UpdateStatusController</servlet-name>
+  	<display-name>UpdateStatusController</display-name>
+  	<description></description>
+  	<servlet-class>com.soa.controller.UpdateStatusController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinController</servlet-name>
   	<url-pattern>/JoinController</url-pattern>
@@ -93,5 +105,13 @@
   <servlet-mapping>
   	<servlet-name>MessageLogController</servlet-name>
   	<url-pattern>/MessageLogController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>LogoutController</servlet-name>
+  	<url-pattern>/LogoutController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UpdateStatusController</servlet-name>
+  	<url-pattern>/UpdateStatusController</url-pattern>
   </servlet-mapping>
 </web-app>
