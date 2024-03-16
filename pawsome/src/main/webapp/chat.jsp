@@ -128,16 +128,12 @@
 		/* 구매 확정 메시지 띄우기 */
 		function confirmMessage(){
 			if(confirm("구매를 확정하시겠습니까?")){
-				<%-- <%
-					ProductDAO pdao = new ProductDAO();
-					int result = pdao.updateStatus(product_id);
-					System.out.println(result);
-				%>	 --%>
 				$.ajax({
 			         url:'UpdateStatusController', 
 			         type:'post',
 			         data:{
-			            "product_id":'<%=product_id%>'
+			            "product_id":'<%=product_id%>',
+			            "buyer_id":'<%=sender%>'
 			         },
 			         success:function(){
 			        	console.log("요청성공!");

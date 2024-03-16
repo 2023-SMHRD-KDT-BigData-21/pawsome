@@ -52,9 +52,9 @@ public class ProductDAO {
 	}
 	
 	// 판매완료 상태로 변경하기 ( chat창에서 product_status 변경 )
-	public int updateStatus(String product_id) {
+	public int updateStatus(Product product) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-		int res = sqlSession.update("com.soa.database.ProductMapper.updateproduct", product_id);
+		int res = sqlSession.update("com.soa.database.ProductMapper.updateproduct", product);
 		sqlSession.close();
 		return res;
 	}

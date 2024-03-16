@@ -31,5 +31,9 @@ public class Product {
 		this.animal_cate = animal_cate;
 		this.seller_id = seller_id;
    }
+	public Product(BigDecimal product_id, String buyer_id) {
+		this.product_id = product_id;
+		this.buyer_id = buyer_id;
+	}
 	
 }
