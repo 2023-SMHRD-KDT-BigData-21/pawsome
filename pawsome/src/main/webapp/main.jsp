@@ -68,7 +68,7 @@
 				<div class="row product__filter">
 
 					<%for(int i = 0; i < plist.size(); i++) { %>
-					<%if(plist.get(i).getProduct_status().equals("N")) { %>
+					<%if(plist.get(i).getDel_yn().equals("N")) { %>
 					<!-- 상품 div begin / 여기서부터 반복해서 쓰면 됩니다! -->
 					<div class="align2 col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
 						<div class="product__item">
@@ -79,6 +79,11 @@
 								</div>
 							</a>
 							<div class="product__item__text">
+								<%if(plist.get(i).getProduct_id().equals("N")) { %>
+									<h6>판매중</h6>
+								<%}else {%>
+									<h6>판매완료</h6>
+								<%} %>
 								<a href="ProductPage.jsp?product_id=<%=plist.get(i).getProduct_id()%>"> <!-- a : 게시글페이지로 이동 -->
 									<h6>
 										<%=plist.get(i).getProduct_name()%>
