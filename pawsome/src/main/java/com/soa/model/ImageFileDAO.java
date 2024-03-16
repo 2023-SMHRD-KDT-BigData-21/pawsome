@@ -93,4 +93,12 @@ public class ImageFileDAO {
 		return fileStringValue;
 	}
 	
+	// 게시글 사진 삭제(del_yn업데이트)
+	public int deleteImage(String product_id) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		int res = sqlSession.update("com.soa.database.ImageFileMapper.deleteimage", product_id);
+		sqlSession.close();
+		return res;
+	}
+	
 }

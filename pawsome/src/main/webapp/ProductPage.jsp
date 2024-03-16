@@ -16,6 +16,7 @@
 </head>
 <body>
 <%
+	String sender = (String) session.getAttribute("member");
 	int product_id = Integer.parseInt(request.getParameter("product_id"));
 	ImageFileDAO idao = new ImageFileDAO();
 	List<String> list = idao.imgContent(product_id);
@@ -24,6 +25,7 @@
 	ProductDAO pdao = new ProductDAO();
 	Product product = pdao.productContent(product_id);
 	pageContext.setAttribute("product", product);
+	String receiver = product.getSeller_id();
 %>
 	<div data-include-path="header.jsp"></div>
 
@@ -55,6 +57,7 @@
 						<div class="inner">
 							<!-- 판매자:수정하기 / 구매자:판매자정보 -->
 							<a href="#">수정하기</a>
+							<a href="ProductDeleteController?product_id=<%=product.getProduct_id()%>">삭제하기</a>
 						</div>
 					</div>
 					<div class="innerBox">
@@ -150,11 +153,15 @@
 			}
 		});
 
-		function chat() {
-			// 채팅창 띄워기(사이즈 지정)
-			window.open("chat.jsp", "채팅하기", "width=500, height=750") // 새로운 창 띄우기 
-			// getContextPath : 현재위치,  채팅하기 : 창의 이름
-		}
+		 function chatlist() {
+             // 채팅창 띄워기(사이즈 지정)
+             if('<%=sender%>' != null && '<%=receiver%>' != null){
+             var sender = '<%=sender%>';                  
+             var receiver = '<%=receiver%>';                  
+             var childWindow = window.open("chatlist.jsp?sender="+sender+"&recevier="+receiver, "채팅하기", "width=640, height=800") // 새로운 창 띄우기 
+             // getContextPath : 현재위치,  채팅하기 : 창의 이름
+             }
+    	}
 
 		/*header.jsp*/
 		window.addEventListener('load', function() {

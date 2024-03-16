@@ -23,4 +23,8 @@
 		select * from product where seller_id=#{user_id} order by product_id desc
 	</select>
 	
+	<update id="deleteproduct" parameterType="String">
+		update product set del_yn='Y' where product_id=#{product_id}
+	</update>
+	
 </mapper>

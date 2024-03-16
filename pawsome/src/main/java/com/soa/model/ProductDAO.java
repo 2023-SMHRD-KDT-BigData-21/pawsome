@@ -43,4 +43,13 @@ public class ProductDAO {
 		return list;
 	}
 	
+	// 게시글 정보 삭제(del_yn업데이트)
+	public int deleteProduct(String product_id) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		int res = sqlSession.update("com.soa.database.ProductMapper.deleteproduct", product_id);
+		sqlSession.close();
+		return res;
+	}
+	
+	
 }
