@@ -37,7 +37,7 @@
 	</div>
 	<script>
 		//1. 소켓 객체 생성
-		var webSocket = new WebSocket("ws://localhost:8081/mavenmember/chat")
+		var webSocket = new WebSocket("ws://localhost:8081/pawsome/chat")
 
 		var input = document.getElementById("inputMessage")
 
