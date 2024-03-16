@@ -1,3 +1,5 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="com.soa.model.UserLike"%>
 <%@page import="com.soa.model.Product"%>
 <%@page import="com.soa.model.ProductDAO"%>
 <%@page import="java.util.List"%>
@@ -27,8 +29,11 @@
 	pageContext.setAttribute("product", product);
 	String receiver = product.getSeller_id();
 	
+	UserLike check = (UserLike)session.getAttribute("check");
+	
 	System.out.println(sender);
 	System.out.println(receiver);
+	System.out.println("check : " + check);
 %>
 	<div data-include-path="header.jsp"></div>
 
@@ -143,6 +148,8 @@
 
 	<script>
 	
+	// 페이지 처음 실행할 때 좋아요 눌렀던 상품인지 체크 및 좋아요 상태 반영
+	let check = "<%=check%>";
 	$.ajax({
         url:'UserLikeController', 
         type:'post',
@@ -151,8 +158,10 @@
            "user_id":"<%=sender%>",
            "check":"c"
         },
-        success:function(){
-        	$('.likeBtn').addClass('btn_unlike')
+        success:function(response){
+        	if(response.check != null){
+        		$('.likeBtn').addClass('btn_unlike')        		
+        	} 
         },
         error:function(){
            console.log("요청실패!");   
