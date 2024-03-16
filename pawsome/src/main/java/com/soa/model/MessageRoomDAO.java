@@ -11,13 +11,13 @@ public class MessageRoomDAO {
 
 	public int createRoom(MessageRoom room) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-		MessageRoom res1 = sqlSession.selectOne("com.smhrd.database.ChatRoomMapper.select", room);
+		MessageRoom res1 = sqlSession.selectOne("com.soa.database.ChatRoomMapper.select", room);
 		int res = 0;
 
 		if (res1 != null) {
 
 		} else {
-			res = sqlSession.insert("com.smhrd.database.ChatRoomMapper.create", room);
+			res = sqlSession.insert("com.soa.database.ChatRoomMapper.create", room);
 			sqlSession.close();
 		}
 
@@ -28,7 +28,7 @@ public class MessageRoomDAO {
 		SqlSession sqlSession = sessionFactory.openSession(true);
 		System.out.println(room.getBuyer());
 		
-		String res = sqlSession.selectOne("com.smhrd.database.ChatRoomMapper.checkrnum", room);
+		String res = sqlSession.selectOne("com.soa.database.ChatRoomMapper.checkrnum", room);
 		System.out.println(res);
 		int rnum = Integer.parseInt(res);
 //		System.out.println(rnum);

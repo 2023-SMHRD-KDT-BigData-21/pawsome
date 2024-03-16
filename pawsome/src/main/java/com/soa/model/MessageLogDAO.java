@@ -13,7 +13,7 @@ public class MessageLogDAO {
 	public void mLog(MessageLog log) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
 		
-		int res = sqlSession.insert("com.smhrd.database.MessageLogMapper.insert",log);
+		int res = sqlSession.insert("com.soa.database.MessageLogMapper.insert",log);
 		
 		sqlSession.close();
 	}
@@ -21,7 +21,7 @@ public class MessageLogDAO {
 	public List<MessageLog> getLog(MessageLog log) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
 		
-		List<MessageLog> list = sqlSession.selectList("com.smhrd.database.MessageLogMapper.getlog",log);
+		List<MessageLog> list = sqlSession.selectList("com.soa.database.MessageLogMapper.getlog",log);
 		
 		sqlSession.close();
 		

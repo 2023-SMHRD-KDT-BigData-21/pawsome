@@ -7,11 +7,11 @@ import lombok.Data;
 @Data
 public class MessageRoom {
 
-	String room_no;
-	String product_id;
-	String buyer;
-	String seller;
-	String create_date;
+	private String room_no;
+	private String product_id;
+	private String buyer;
+	private String seller;
+	private java.sql.Timestamp create_date;
 	
 	public MessageRoom(String buyer, String seller) {
 		this.buyer = buyer;
