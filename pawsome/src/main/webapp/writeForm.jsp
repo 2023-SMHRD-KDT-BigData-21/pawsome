@@ -106,36 +106,150 @@
 </script>
 
 	<script>
-        /* 동물 선택에 따라 용품 분류해주기 */
-        let g002_01 = [
-            { v: "01", t: "사료" },
-            { v: "02", t: "간식" },
-            { v: "03", t: "영양제" }
-        ];
+	/* 동물 선택에 따라 용품 분류해주기 */
+    /* 강아지 */
+    let g002_01 = [
+        { v: "01", t: "사료" },
+        { v: "02", t: "간식" },
+        { v: "03", t: "영양제" },
+        { v: "04", t: "장난감" },
+        { v: "05", t: "급식기" },
+        { v: "06", t: "의류" },
+        { v: "07", t: "악세서리" },
+        { v: "08", t: "외출용품" },
+        { v: "09", t: "하우스" },
+        { v: "10", t: "미용용품" },
+        { v: "11", t: "목욕용품" },
+        { v: "12", t: "배변용품" },
+        { v: "13", t: "훈련용품" },
+        { v: "31", t: "기타" }
+    ];
+    /* 고양이 */
+    let g002_02 = [
+        { v: "14", t: "건사료" },
+        { v: "15", t: "습식사료" },
+        { v: "02", t: "간식" },
+        { v: "03", t: "영양제" },
+        { v: "04", t: "장난감" },
+        { v: "05", t: "급식기" },
+        { v: "06", t: "의류" },
+        { v: "07", t: "악세서리" },
+        { v: "08", t: "외출용품" },
+        { v: "16", t: "캣타워" },
+        { v: "09", t: "하우스" },
+        { v: "10", t: "미용용품" },
+        { v: "11", t: "목욕용품" },
+        { v: "12", t: "배변용품" },
+        { v: "13", t: "훈련용품" },
+        { v: "31", t: "기타" }
+    ];
+    /* 관상어 */
+    let g002_03 = [
+        { v: "01", t: "사료" },
+        { v: "17", t: "수초" },
+        { v: "18", t: "수조/어항" },
+        { v: "19", t: "수질관리용품" },
+        { v: "20", t: "여과용품" },
+        { v: "21", t: "수조장식" },
+        { v: "22", t: "온도계" },
+        { v: "23", t: "청소용품" },
+        { v: "24", t: "부화용품" },
+        { v: "31", t: "기타" }
+    ];
+    /* 반려조 */
+    let g002_04 = [
+        { v: "01", t: "사료" },
+        { v: "02", t: "간식" },
+        { v: "03", t: "영양제" },
+        { v: "04", t: "장난감" },
+        { v: "05", t: "급식기" },
+        { v: "08", t: "외출용품" },
+        { v: "11", t: "목욕용품" },
+        { v: "13", t: "훈련용품" },
+        { v: "25", t: "새장" },
+        { v: "26", t: "횃대" },
+        { v: "27", t: "보온용품" },
+        { v: "31", t: "기타" }
+    ];
+    /* 파충류 */
+    let g002_05 = [
+        { v: "01", t: "사료" },
+        { v: "02", t: "간식" },
+        { v: "03", t: "영양제" },
+        { v: "04", t: "장난감" },
+        { v: "05", t: "급식기" },
+        { v: "09", t: "하우스" },
+        { v: "22", t: "온도계" },
+        { v: "23", t: "청소용품" },
+        { v: "28", t: "채집통" },
+        { v: "29", t: "바닥재" },
+        { v: "31", t: "기타" }
+    ];
 
-        let g002_02 = [
-            { v: "01", t: "사료" },
-            { v: "02", t: "간식" },
-            { v: "03", t: "영양제" },
-            { v: "04", t: "캣휠" }
-        ];
+    /* 설치류 */
+    let g002_06 = [
+        { v: "01", t: "사료" },
+        { v: "02", t: "간식" },
+        { v: "03", t: "영양제" },
+        { v: "04", t: "장난감" },
+        { v: "05", t: "급식기" },
+        { v: "08", t: "외출용품" },
+        { v: "09", t: "하우스" },
+        { v: "30", t: "베딩" },
+        { v: "31", t: "기타" }
+    ];
 
-        function loadAnimalPd() {
-            let animal_cate = document.getElementById("g001").value;
-            let h = [];
+    /* 기타 */
+    let g002_07 = [
+        { v: "01", t: "사료" },
+        { v: "02", t: "간식" },
+        { v: "03", t: "영양제" },
+        { v: "04", t: "장난감" },
+        { v: "05", t: "급식기" },
+        { v: "06", t: "의류" },
+        { v: "08", t: "외출용품" },
+        { v: "09", t: "하우스" },
+        { v: "12", t: "배변용품" },
+        { v: "13", t: "훈련용품" },
+        { v: "31", t: "기타" }
+    ];
 
-            if (animal_cate == "01") {
-                g002_01.forEach(item => {
-                    h.push(`<option value=${item.v}>${item.t}</option>`)
-                });
-            } else if (animal_cate == "02") {
-                g002_02.forEach(item => {
-                    h.push(`<option value=${item.v}>${item.t}</option>`)
-                });
-            }
+    function loadAnimalPd() {
+        let animal_cate = document.getElementById("g001").value;
+        let h = [];
 
-            document.getElementById("g002").innerHTML = h.join("");
+        if (animal_cate == "01") {
+            g002_01.forEach(item => {
+                h.push(`<option value=${item.v}>${item.t}</option>`)
+            });
+        } else if (animal_cate == "02") {
+            g002_02.forEach(item => {
+                h.push(`<option value=${item.v}>${item.t}</option>`)
+            });
+        } else if (animal_cate == "03") {
+            g002_03.forEach(item => {
+                h.push(`<option value=${item.v}>${item.t}</option>`)
+            });
+        } else if (animal_cate == "04") {
+            g002_04.forEach(item => {
+                h.push(`<option value=${item.v}>${item.t}</option>`)
+            });
+        } else if (animal_cate == "05") {
+            g002_05.forEach(item => {
+                h.push(`<option value=${item.v}>${item.t}</option>`)
+            });
+        } else if (animal_cate == "06") {
+            g002_06.forEach(item => {
+                h.push(`<option value=${item.v}>${item.t}</option>`)
+            });
+        } else {
+            g002_07.forEach(item => {
+                h.push(`<option value=${item.v}>${item.t}</option>`)
+            });
         }
+
+        document.getElementById("g002").innerHTML = h.join("");
+    }
 
 
         /*header.jsp*/
