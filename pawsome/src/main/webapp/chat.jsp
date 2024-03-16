@@ -59,8 +59,8 @@
 		</div>
 		<div id="chat-container"></div>
 		<div id="bottom-container">
-			<input id="inputMessage" type="text" autofocus> <input
-				id="btn-submit" type="submit" value="전송">
+			<input id="inputMessage" type="text" autofocus> 
+			<input id="btn-submit" type="submit" value="전송">
 		</div>
 	</div>
 	<script>
@@ -69,20 +69,42 @@
 
 		var input = document.getElementById("inputMessage")
 
-		$("#btn-submit").click(
-			function() {
-				var msg = input.value
-				webSocket.send(msg) // 소켓서버로 msg를 보냄
+		$("#btn-submit").click(function() {
+			var msg = input.value
+			
+			$.ajax({
+		         url:'MessageLogController', 
+		         type:'get',
+		         data:{
+		            "m_content":msg,
+		            "room_no":"<%=rnum%>",
+		            "sender":"<%=sender%>"
+		         },
+		         success:function(){
+		        	console.log("요청성공!");
+		         },
+		         error:function(){
+		            console.log("요청실패!");   
+		         }
+		      })
+			
+			webSocket.send(msg) // 소켓서버로 msg를 보냄
 
-				var chat = "<div class='my-chat-box'><div class='chat my-chat'>"+ msg + "</div></div>"
-				$("#chat-container").append(chat)
-					input.value = "" // 채팅 input 비우기
-					input.focus();
+			var chat = "<div class='my-chat-box'><div class='chat my-chat'>"+ msg + "</div></div>"
+			$("#chat-container").append(chat)
+				input.value = "" // 채팅 input 비우기
+				input.focus();
 			})
 
 		// onOpen, onClose, onError, onMessage
 		webSocket.onopen = function(e) {//소켓 서버에 연결이 되면 실행
 			console.log("Socket 연결")
+			let temp =""
+			<%for(int i = 0; i < list.size(); i++){%>
+			temp = "<%=list.get(i).getM_content()%>"
+			var chat = "<div class='my-chat-box'><div class='chat my-chat'>"+ temp + "</div></div>"
+			$("#chat-container").append(chat)
+			<%}%>
 		}
 
 		webSocket.onclose = function(e) {
