@@ -19,7 +19,7 @@
 	String sender = request.getParameter("sender");
 	String receiver = request.getParameter("receiver");
 	String product_id = request.getParameter("product_id");
-	//System.out.println(sender + receiver);
+	System.out.println(sender + receiver);
 	
 	MessageRoom room = new MessageRoom(sender,receiver,product_id);
 	System.out.println(room);
