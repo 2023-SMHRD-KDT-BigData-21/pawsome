@@ -3,7 +3,7 @@
 <mapper namespace="com.soa.database.ImageFileMapper">
 
 	<insert id="insert" parameterType="com.soa.model.ImageFile">
-		insert into image_file values(#{product_id}, #{file_name1, jdbcType=NULL}, #{file_name2, jdbcType=NULL}, #{file_name3, jdbcType=NULL}, #{file_name4, jdbcType=NULL}, #{file_name5, jdbcType=NULL})
+		insert into image_file values(#{product_id}, #{file_name1, jdbcType=NULL}, #{file_name2, jdbcType=NULL}, #{file_name3, jdbcType=NULL}, #{file_name4, jdbcType=NULL}, #{file_name5, jdbcType=NULL},'N')
 	</insert>
 	
 	<select id="list" resultType="String">

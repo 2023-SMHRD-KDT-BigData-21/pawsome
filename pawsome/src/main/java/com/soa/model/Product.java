@@ -21,6 +21,7 @@ public class Product {
 	private String seller_id;
 	private String buyer_id;
 	private String review_yn;
+	private String del_yn;
 	   
 	public Product(String product_name, String product_price, String product_content, String product_cate, String animal_cate, String seller_id ) {
 		this.product_name = product_name;

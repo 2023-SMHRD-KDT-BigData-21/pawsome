@@ -12,6 +12,7 @@ public class ImageFile {
 	private String file_name3;
 	private String file_name4;
 	private String file_name5;
+	private String del_yn;
 	
 	public ImageFile(String file_name1, String file_name2, String file_name3, String file_name4, String file_name5) {
 		this.file_name1 = file_name1;

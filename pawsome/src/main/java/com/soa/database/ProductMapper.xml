@@ -4,7 +4,7 @@
 
 	<insert id="insert" parameterType="com.soa.model.Product">
       	insert into product values(product_id.NEXTVAL, #{product_name}, #{product_price}, #{product_content}, SYSDATE, 
-      	#{product_cate}, #{animal_cate}, 'N', #{seller_id}, #{buyer_id, jdbcType=NULL}, 'N')
+      	#{product_cate}, #{animal_cate}, 'N', #{seller_id}, #{buyer_id, jdbcType=NULL}, 'N' ,'N')
     </insert>
     
     <select id="select" parameterType="com.soa.model.Product" resultType="String">
