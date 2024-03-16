@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.soa.database.UserLikeMapper">
+	<insert id="insert" parameterType="com.soa.model.UserLike">
+		insert into user_like values(#{user_id},#{product_id},sysdate)
+	</insert>
+	<select id="check" parameterType="com.soa.model.UserLike">
+		select * from user_like where user_id=#{user_id} and product_id=#{product_id}
+	</select>
+	<delete id="delete" >
+		delete from user_like where user_id=#{user_like} and product_id=#{product_id}
+	</delete>
+</mapper>

@@ -70,6 +70,12 @@
   	<description></description>
   	<servlet-class>com.soa.controller.UpdateStatusController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>UserLikeController</servlet-name>
+  	<display-name>UserLikeController</display-name>
+  	<description></description>
+  	<servlet-class>com.soa.controller.UserLikeController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinController</servlet-name>
   	<url-pattern>/JoinController</url-pattern>
@@ -113,5 +119,9 @@
   <servlet-mapping>
   	<servlet-name>UpdateStatusController</servlet-name>
   	<url-pattern>/UpdateStatusController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>UserLikeController</servlet-name>
+  	<url-pattern>/UserLikeController</url-pattern>
   </servlet-mapping>
 </web-app>

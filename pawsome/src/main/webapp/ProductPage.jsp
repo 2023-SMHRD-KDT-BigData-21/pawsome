@@ -167,10 +167,42 @@
 			$(this).removeClass('btn_unlike');
 			$('.ani_heart_m').removeClass('hi');
 			$('.ani_heart_m').addClass('bye');
+			
+			$.ajax({
+		         url:'UserLikeController', 
+		         type:'post',
+		         data:{
+		            "product_id":"<%=product_id%>",
+		            "user_id":"<%=sender%>"
+		         },
+		         success:function(){
+		        	console.log("요청성공!");
+		         },
+		         error:function(){
+		            console.log("요청실패!");   
+		         }
+		      })
+			
 		} else {
 			$(this).addClass('btn_unlike');
 			$('.ani_heart_m').addClass('hi');
 			$('.ani_heart_m').removeClass('bye');
+			
+			$.ajax({
+		         url:'UserLikeController', 
+		         type:'post',
+		         data:{
+		            "product_id":"<%=product_id%>",
+		            "user_id":"<%=sender%>"
+		         },
+		         success:function(){
+		        	console.log("요청성공!");
+		         },
+		         error:function(){
+		            console.log("요청실패!");   
+		         }
+		      })
+		      
 		}
 	});
 	<%} %>

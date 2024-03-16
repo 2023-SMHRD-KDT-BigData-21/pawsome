@@ -21,5 +21,6 @@
 		<mapper resource="com/soa/database/ImageFileMapper.xml" />
 		<mapper resource="com/soa/database/ChatRoomMapper.xml" />
 		<mapper resource="com/soa/database/MessageLogMapper.xml" />
+		<mapper resource="com/soa/database/UserLikeMapper.xml" />
 	</mappers>
 </configuration>
