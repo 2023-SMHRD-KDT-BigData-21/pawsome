@@ -57,6 +57,8 @@
 					<h1 id="productName"><%=product.getProduct_name() %></h1>
 					<div class="innerBox">
 						<div id="productPrice" class="inner"><%=product.getProduct_price() %></div>
+							<!-- 판매자:상태변경 / 구매자:채팅하기 -->
+						<%if(sender.equals(receiver)) {%>
 						<div class="inner">
 							<!-- 판매자:수정하기 / 구매자:판매자정보 -->
 							<a href="#">수정하기</a>
@@ -65,12 +67,9 @@
 					</div>
 					<div class="innerBox">
 						<div class="inner">
-							<!-- 판매자:상태변경 / 구매자:채팅하기 -->
-							<!-- 구매자일 때 -->
-							<a href="#" onclick="chat()" class="chatBtn">구매신청</a>
 
 							<!-- 판매자일 때 -->
-							<!-- <button class="openBtn modalBtn">상태 변경</button>
+							<button class="openBtn modalBtn">상태 변경</button>
                             <div class="modal hidden">
                                 <div class="bg"></div>
                                 <div class="modalBox">
@@ -80,23 +79,27 @@
                                         <button class="closeBtn modalBtn closeBtn2">판매완료</button>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div> 
+						<%}else { %>
+							<!-- 구매자일 때 -->
+							<a href="#" onclick="chat()" class="chatBtn">구매신청</a>
+						<%} %>
 
 						</div>
 
 						<!-- 판매자 : 찜개수 확인 / 구매자 : 찜하기 버튼 -->
+						<%if(sender.equals(receiver)) {%>
+						<!-- 판매자일 때 -->
+						<div class="inner likeCnt">찜개수</div>
+						<%}else { %>
 						<!-- 구매자일 때 -->
 						<div class="inner">
 							<button type="button" class="btn_like likeBtn">
 								<span class="img_emoti">좋아요</span> <span class="ani_heart_m"></span>
 							</button>
 						</div>
-
-						<!-- 판매자일 때 -->
-						<!-- <div class="inner likeCnt">찜개수</div> -->
-
+						<%} %>
 					</div>
-
 				</div>
 			</div>
 
@@ -126,35 +129,38 @@
 
 
 	<script>
-		/* (판매자시점)일 때만 함수를 실행해야 함. 안 그러면 오류*/
-		/* (판매자시점) 상태변경 버튼 클릭시 실행되는 함수 */
-		/*
-		const open = () => {
-		    document.querySelector(".modal").classList.remove("hidden");
+	<%if(sender.equals(receiver)) {%>
+	/* (판매자시점)일 때만 함수를 실행해야 함. 안 그러면 오류*/
+	/* (판매자시점) 상태변경 버튼 클릭시 실행되는 함수 */
+
+	const open = () => {
+	    document.querySelector(".modal").classList.remove("hidden");
+	}
+
+	const close = () => {
+	    document.querySelector(".modal").classList.add("hidden");
+	}
+
+	document.querySelector(".openBtn").addEventListener("click", open);
+	document.querySelector(".closeBtn").addEventListener("click", close);
+	document.querySelector(".closeBtn2").addEventListener("click", close);
+	document.querySelector(".bg").addEventListener("click", close);
+
+	<%}else { %>
+
+	/* (구매자시점) 찜하기 버튼 클릭시 실행되는 함수 */
+	$('.likeBtn').click(function() {
+		if ($(this).hasClass('btn_unlike')) {
+			$(this).removeClass('btn_unlike');
+			$('.ani_heart_m').removeClass('hi');
+			$('.ani_heart_m').addClass('bye');
+		} else {
+			$(this).addClass('btn_unlike');
+			$('.ani_heart_m').addClass('hi');
+			$('.ani_heart_m').removeClass('bye');
 		}
-
-		const close = () => {
-		    document.querySelector(".modal").classList.add("hidden");
-		}
-
-		document.querySelector(".openBtn").addEventListener("click", open);
-		document.querySelector(".closeBtn").addEventListener("click", close);
-		document.querySelector(".closeBtn2").addEventListener("click", close);
-		document.querySelector(".bg").addEventListener("click", close);
-		 */
-
-		/* (구매자시점) 찜하기 버튼 클릭시 실행되는 함수 */
-		$('.likeBtn').click(function() {
-			if ($(this).hasClass('btn_unlike')) {
-				$(this).removeClass('btn_unlike');
-				$('.ani_heart_m').removeClass('hi');
-				$('.ani_heart_m').addClass('bye');
-			} else {
-				$(this).addClass('btn_unlike');
-				$('.ani_heart_m').addClass('hi');
-				$('.ani_heart_m').removeClass('bye');
-			}
-		});
+	});
+	<%} %>
 
 		 function chat() {
              // 채팅창 띄워기(사이즈 지정)
