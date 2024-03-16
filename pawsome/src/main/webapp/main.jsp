@@ -79,7 +79,7 @@
 								</div>
 							</a>
 							<div class="product__item__text">
-								<%if(plist.get(i).getProduct_id().equals("N")) { %>
+								<%if(plist.get(i).getProduct_status().equals("N")) { %>
 									<h6>판매중</h6>
 								<%}else {%>
 									<h6>판매완료</h6>
