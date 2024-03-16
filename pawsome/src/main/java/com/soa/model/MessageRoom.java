@@ -17,6 +17,14 @@ public class MessageRoom {
 		this.buyer = buyer;
 		this.seller = seller;
 	}
+
+	public MessageRoom(String buyer, String seller, String product_id) {
+		this.product_id = product_id;
+		this.buyer = buyer;
+		this.seller = seller;
+	}
+	
+	
 	
 	public MessageRoom() {
 		

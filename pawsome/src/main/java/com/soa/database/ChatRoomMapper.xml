@@ -8,7 +8,7 @@
 		select room_no from message_room where buyer=#{buyer} and seller=#{seller}
 	</select>
 	<insert id="create" parameterType="com.soa.model.MessageRoom">
-		insert into message_room values(#{buyer},#{seller},SYSDATE,message_room_seq.NEXTVAL)
+		insert into message_room values(message_room_seq.NEXTVAL,#{product_id},#{buyer},#{seller},SYSDATE)
 	</insert>
 
 </mapper>

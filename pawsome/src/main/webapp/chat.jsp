@@ -1,3 +1,4 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@page import="com.soa.model.MessageLogDAO"%>
 <%@page import="com.soa.model.MessageLog"%>
@@ -17,8 +18,12 @@
 <%
 	String sender = request.getParameter("sender");
 	String receiver = request.getParameter("receiver");
+	String product_id = request.getParameter("product_id");
+	//System.out.println(sender + receiver);
 	
-	MessageRoom room = new MessageRoom(sender,receiver);
+	MessageRoom room = new MessageRoom(sender,receiver,product_id);
+	System.out.println(room);
+	
 	MessageRoomDAO dao = new MessageRoomDAO();
 	
 	int res = dao.createRoom(room);
@@ -64,18 +69,16 @@
 
 		var input = document.getElementById("inputMessage")
 
-		$("#btn-submit")
-				.click(
-						function() {
-							var msg = input.value
-							webSocket.send(msg) // 소켓서버로 msg를 보냄
+		$("#btn-submit").click(
+			function() {
+				var msg = input.value
+				webSocket.send(msg) // 소켓서버로 msg를 보냄
 
-							var chat = "<div class='my-chat-box'><div class='chat my-chat'>"
-									+ msg + "</div></div>"
-							$("#chat-container").append(chat)
-							input.value = "" // 채팅 input 비우기
-							input.focus();
-						})
+				var chat = "<div class='my-chat-box'><div class='chat my-chat'>"+ msg + "</div></div>"
+				$("#chat-container").append(chat)
+					input.value = "" // 채팅 input 비우기
+					input.focus();
+			})
 
 		// onOpen, onClose, onError, onMessage
 		webSocket.onopen = function(e) {//소켓 서버에 연결이 되면 실행

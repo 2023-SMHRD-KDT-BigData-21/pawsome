@@ -13,7 +13,7 @@ public class MessageRoomDAO {
 		SqlSession sqlSession = sessionFactory.openSession(true);
 		MessageRoom res1 = sqlSession.selectOne("com.soa.database.ChatRoomMapper.select", room);
 		int res = 0;
-
+		
 		if (res1 != null) {
 
 		} else {

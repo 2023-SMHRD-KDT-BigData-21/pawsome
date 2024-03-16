@@ -26,6 +26,9 @@
 	Product product = pdao.productContent(product_id);
 	pageContext.setAttribute("product", product);
 	String receiver = product.getSeller_id();
+	
+	System.out.println(sender);
+	System.out.println(receiver);
 %>
 	<div data-include-path="header.jsp"></div>
 
@@ -153,14 +156,15 @@
 			}
 		});
 
-		 function chatlist() {
+		 function chat() {
              // 채팅창 띄워기(사이즈 지정)
-             if('<%=sender%>' != null && '<%=receiver%>' != null){
+             
              var sender = '<%=sender%>';                  
-             var receiver = '<%=receiver%>';                  
-             var childWindow = window.open("chatlist.jsp?sender="+sender+"&recevier="+receiver, "채팅하기", "width=640, height=800") // 새로운 창 띄우기 
+             var receiver = '<%=receiver%>';             
+             var product_id = '<%=product.getProduct_id()%>';
+             window.open("chat.jsp?sender="+sender+"&receiver="+receiver+"&product_id="+product_id, "채팅하기", "width=640, height=800") // 새로운 창 띄우기 
+             //var childWindow = window.open("chatlist.jsp?sender="+sender+"&recevier="+receiver, "채팅하기", "width=640, height=800") // 새로운 창 띄우기 
              // getContextPath : 현재위치,  채팅하기 : 창의 이름
-             }
     	}
 
 		/*header.jsp*/
