@@ -11,9 +11,9 @@
 <link rel="stylesheet" href="assets/js/header.js">
 </head>
 <body>
-<%
-	String id = (String)session.getAttribute("member");
-%>
+	<%
+	String id = (String) session.getAttribute("member");
+	%>
 	<!--헤더-->
 	<div class="header">
 		<!--상단 좌측 로고-->
@@ -45,7 +45,9 @@
 		</div>
 		<!--상단 우측 버튼-->
 		<div class="box3">
-			<%if(id != null) { %>
+			<%
+			if (id != null) {
+			%>
 			<div class="menu">
 				<a onclick="chatlist()" style="cursor: pointer;">채팅하기</a>
 			</div>
@@ -55,14 +57,31 @@
 			<div class="menu">
 				<a href="mypage.jsp">마이페이지</a>
 			</div>
-			<%} else {%>
+			<!-- <div class="menu">
+				<div class="setting">
+					<div class="dropdown1">
+						<span class="dropbtn1"> 
+						<img class="picture2" src="https://mblogthumb-phinf.pstatic.net/20160901_157/pullkkot_1472657744392oNX00_JPEG/37B5753700000578-3764718-image-a-8_1472547994466.jpg?type=w420">
+						</span>
+						<div class="dropdown1-content">
+							<a class="warp" href="mypage.jsp">마이페이지</a> 
+							<a class="warp" href="#">로그아웃</a>
+						</div>
+					</div>
+				</div>
+			</div> -->
+			<%
+			} else {
+			%>
 			<div class="menu">
 				<a href="join.jsp">회원가입</a>
 			</div>
 			<div class="menu">
 				<a href="login.jsp">로그인</a>
 			</div>
-			<%} %>
+			<%
+			}
+			%>
 		</div>
 	</div>
 	<!--중앙부 카테고리-->

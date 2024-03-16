@@ -42,10 +42,10 @@
                         style="padding-right: 10px"></span>
                     <a class="a" href="#">비밀번호 찾기</a><span style="padding-right: 10px"></span>| <span
                         style="padding-right: 10px"></span>
-                    <a class="a" href="Join.html">회원가입</a>
+                    <a class="a" href="join.jsp">회원가입</a>
                 </div>
-                <div class="kakao"><!--카카오 연동 로그인-->
-                    <a href="#">
+                <div class="kakao button-login"><!--카카오 연동 로그인-->
+                    <a href="javascript:kakaoLogin();" id="kakao-login-btn">
                         <img class="img"
                             src="https://developers.kakao.com/tool/resource/static/img/button/login/full/ko/kakao_login_medium_wide.png"
                             alt="KAKAOLOGIN">
