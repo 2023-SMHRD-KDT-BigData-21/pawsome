@@ -27,4 +27,8 @@
 		update product set del_yn='Y' where product_id=#{product_id}
 	</update>
 	
+	<update id="updateproduct" parameterType="String">
+		update product set product_status='Y' where product_id=#{product_id}
+	</update>
+	
 </mapper>

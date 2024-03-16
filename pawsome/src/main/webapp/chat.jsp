@@ -1,3 +1,4 @@
+<%@page import="com.soa.model.ProductDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
 <%@page import="com.soa.model.MessageLogDAO"%>
@@ -126,7 +127,13 @@
 		
 		/* 구매 확정 메시지 띄우기 */
 		function confirmMessage(){
-			confirm("구매를 확정하시겠습니까?")
+			if(confirm("구매를 확정하시겠습니까?")){
+				<%
+					ProductDAO pdao = new ProductDAO();
+					int result = pdao.updateStatus(product_id);
+					System.out.println(result);
+				%>	
+			}
 		}
 		
 		/* '글제목' 클릭 시 해당 게시글 창 띄우기 */

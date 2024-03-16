@@ -51,5 +51,13 @@ public class ProductDAO {
 		return res;
 	}
 	
+	// 판매완료 상태로 변경하기 ( product_status 변경 )
+	public int updateStatus(String product_id) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		int res = sqlSession.update("com.soa.database.ProductMapper.updateproduct", product_id);
+		sqlSession.close();
+		return res;
+	}
+	
 	
 }
