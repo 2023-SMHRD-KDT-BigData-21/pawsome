@@ -6,6 +6,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/default.css">
 <link rel="stylesheet" href="assets/css/header.css">
 <link rel="stylesheet" href="assets/js/header.js">
@@ -34,13 +35,7 @@
 		<div class="box2">
 			<div class="search">
 				<input id="inputSearch" type="text" placeholder="찾으시는 상품을 입력해 주세요">
-				<button id="search">
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
-						fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                    <path
-							d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                </svg>
-				</button>
+				<i class="icon ion-md-search"></i>
 			</div>
 		</div>
 		<!--상단 우측 버튼-->
@@ -54,22 +49,15 @@
 			<div class="menu">
 				<a href="writeForm.jsp">판매하기</a>
 			</div>
-			<div class="menu">
-				<a href="mypage.jsp">마이페이지</a>
-			</div>
-			<!-- <div class="menu">
-				<div class="setting">
-					<div class="dropdown1">
-						<span class="dropbtn1"> 
-						<img class="picture2" src="https://mblogthumb-phinf.pstatic.net/20160901_157/pullkkot_1472657744392oNX00_JPEG/37B5753700000578-3764718-image-a-8_1472547994466.jpg?type=w420">
-						</span>
-						<div class="dropdown1-content">
-							<a class="warp" href="mypage.jsp">마이페이지</a> 
-							<a class="warp" href="#">로그아웃</a>
-						</div>
-					</div>
+			<div class="dropdown">
+				<button class="dropbtn menuBtn">
+					<img id="headerProfile"
+						src="https://mblogthumb-phinf.pstatic.net/20160901_157/pullkkot_1472657744392oNX00_JPEG/37B5753700000578-3764718-image-a-8_1472547994466.jpg?type=w420">
+				</button>
+				<div class="dropdown-content menu-dropdown-content">
+					<a href="mypage.jsp">마이페이지</a> <a href="LogoutController">로그아웃</a>
 				</div>
-			</div> -->
+			</div>
 			<%
 			} else {
 			%>
@@ -156,6 +144,7 @@
 			// getContextPath : 현재위치,  채팅하기 : 창의 이름
 		}
 	</script>
+	<!-- <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script> -->
 
 </body>
 </html>
