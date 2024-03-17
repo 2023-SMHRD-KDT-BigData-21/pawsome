@@ -45,7 +45,39 @@
                     <img id="fileId"
                         src="data:image/jpg;base64,<%=list.get(0) %>" alt="">
                 </div>
-				<%if(sender.equals(receiver)) {%>
+				<%if(sender == null){%>
+                <!-- 비로그인 상태 -->
+                <div class="textBox">
+                    <div class="innerBox">
+                        <div class="inner">
+                        <%=product.getAnimal_cate() %> > 
+                        <%=product.getProduct_cate() %></div>
+                        <%if(product.getProduct_status().equals("N")) {%>
+						<div class="inner">판매중</div>
+						<%}else {%>
+						<div class="inner">판매완료</div>
+						<%} %>
+                    </div>
+                    <h1 id="productName"><%=product.getProduct_name() %></h1>
+                    <div class="innerBox">
+                        <div id="productPrice" class="inner"><%=product.getProduct_price() %>원</div>
+                        <div class="inner">
+                        </div>
+                    </div>
+                    <div class="innerBox">
+                        <div class="inner">
+                            <a href="#" onclick="" class="chatBtn">구매신청</a>
+                        </div>
+                        <div class="inner">
+                            <button type="button" class="btn_like likeBtn">
+                                <span class="img_emoti">좋아요</span>
+                                <span class="ani_heart_m"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- 비로그인 상태 -->
+				<%}else if(sender.equals(receiver)) {%>
                 <!-- 판매자일 때 영역 begin -->
                 <div class="textBox">
                     <div class="innerBox">
