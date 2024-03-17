@@ -46,8 +46,8 @@
 					alt="">
 			</div>
 			<div class="contentBox">
-				<div class="title" align="center" onclick="productPage()">제목</div>
-				<div class="confirmBtn" onclick="confirmMessage()">거래확정
+				<div class="title" align="center" onclick="productPage()"><span>제목</span></div>
+				<div class="confirmBtn" onclick="confirmMessage()"><span>거래확정</span>
 				</div>
 			</div>
 			<div class="imgBox productImgBox">
@@ -137,6 +137,9 @@
 			         },
 			         success:function(){
 			        	console.log("요청성공!");
+			        	if(confirm("구매를 확정하시겠습니까?")==true){
+			        		window.open("review.jsp", "후기보내기", "width=550, height=250");
+			        	}
 			         },
 			         error:function(){
 			            console.log("요청실패!");   

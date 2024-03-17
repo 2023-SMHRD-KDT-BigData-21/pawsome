@@ -270,7 +270,7 @@
             });
         });
     </script>
-    <script>chatlist();</script>
+    <script src="assets/js/header.js"></script>
 
 </body>
 </html>

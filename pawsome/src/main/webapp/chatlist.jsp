@@ -25,8 +25,8 @@
 				</div>
 				<div class="middle">
 					<!--상대 닉네임 & 채팅 마지막 내용-->
-					<div class="nickname">닉네임</div>
-					<div class="last">마지막 내용</div>
+					<div class="nickname"><span>닉네임</span></div>
+					<div class="last"><span>마지막 내용</span></div>
 				</div>
 				<div class="right">
 					<!--제품 이미지-->

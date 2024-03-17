@@ -77,6 +77,11 @@
     background-color: #EEEFD4;
 }
 
+.nickname>span,
+.last>span{
+	cursor: pointer;
+}
+
 .nickname {
     font-size: 100%;
     line-height: 100px;

@@ -9,7 +9,6 @@
 <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/default.css">
 <link rel="stylesheet" href="assets/css/header.css">
-<link rel="stylesheet" href="assets/js/header.js">
 </head>
 <body>
 	<%
@@ -44,7 +43,7 @@
 			if (id != null) {
 			%>
 			<div class="menu">
-				<a onclick="chatlist()" style="cursor: pointer;">채팅하기</a>
+				<a href="#" onclick="chatlist()" style="cursor: pointer;">채팅하기</a>
 			</div>
 			<div class="menu">
 				<a href="writeForm.jsp">판매하기</a>
@@ -220,6 +219,6 @@
 			// getContextPath : 현재위치,  채팅하기 : 창의 이름
 		}
 	</script>
-
+	<script src="assets/js/header.js"></script>
 </body>
 </html>
