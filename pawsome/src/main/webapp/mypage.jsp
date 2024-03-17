@@ -62,7 +62,7 @@
                 <div class="down">
                     <div class="left2">
                         <div class="circle">
-                        <%if(member.getUser_img().equals(null)) {%>
+                        <%if(member.getUser_img()==null) {%>
                             <div id="photo"><img id="photo" src="https://www.studiopeople.kr/common/img/default_profile.png"></div>
                         <%}else { %>
                             <div id="photo"><img id="photo" src="data:image/jpg;base64,<%=member.getUser_img() %>"></div>

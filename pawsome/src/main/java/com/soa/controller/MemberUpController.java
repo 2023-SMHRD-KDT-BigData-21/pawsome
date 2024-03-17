@@ -41,7 +41,7 @@ public class MemberUpController extends HttpServlet {
 		if(res>0) {
 			HttpSession session = request.getSession();
 			session.setAttribute("member", member);
-			response.sendRedirect("index.jsp");
+			response.sendRedirect("mypage.jsp");
 		}else {
 			response.sendRedirect("update.jsp");
 		}
