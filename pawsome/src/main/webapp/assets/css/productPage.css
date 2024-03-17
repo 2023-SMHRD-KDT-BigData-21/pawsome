@@ -48,6 +48,7 @@
     /* border : 3px solid white; */
     /* border: 1px solid black; */
     height: auto;
+    min-height: 300px;
 }
 
 .topCheck>.imgBox {
@@ -111,10 +112,45 @@ h1 {
     align-items: center;
 }
 
-.chatBtn{
-    margin-top: 20px;
+
+.chatBtn, .sellerInfo{
+    margin-top: 10px;
+    border-top : 1px solid black;
+    border-bottom : 1px solid black;
+    padding : 5px 7px; 
+    /* border-radius : 8px; */
+    /* color : #DD5D54 !important ; */
+    background-color: #ECECE0;
+    /* background-color: #C0C2A5; */
 }
 /* 변경end */
+
+.h1size{
+	position: relative;
+	top : 10px;
+}
+
+.productPageContent{
+    margin-bottom: 50px;
+}
+.bottomBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnalign{
+    position: absolute;
+    bottom: 30px;
+}
+
+#updateBtn, #delBtn{
+    margin: 5px;
+    padding: 5px;
+    background-color: #C0C2A5;
+    border-radius: 4px;
+    cursor: pointer;
+}
 
 @media screen and (max-width: 768px) {
     .checkPage {
@@ -192,6 +228,7 @@ h1 {
     }
 
 
+
 }
 
 
@@ -251,7 +288,7 @@ h1 {
 .btn_like {
     position: relative;
     /* margin: 100px auto; */
-    margin-top : 5px;
+    /* margin-top : 5px; */
     display: block;
     width: 44px;
     height: 44px;

@@ -17,7 +17,7 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 </head>
 <body>
-<%
+<%	
 	String sender = (String) session.getAttribute("member");
 	int product_id = Integer.parseInt(request.getParameter("product_id"));
 	ImageFileDAO idao = new ImageFileDAO();
@@ -60,9 +60,9 @@
                     </div>
                     <h1 id="productName"><%=product.getProduct_name() %></h1>
                     <div class="innerBox">
-                        <div id="productPrice" class="inner"><%=product.getProduct_price() %>원</div>
-                        <div class="inner">
-                        </div>
+                        <div id="productPrice" class="inner"><h1><%=product.getProduct_price() %>원</h1></div>
+                        <!-- <div class="inner">
+                        </div> -->
                     </div>
                     <div class="innerBox">
                         <div class="inner">
@@ -92,10 +92,10 @@
                     </div>
                     <h1 id="productName"><%=product.getProduct_name() %></h1>
                     <div class="innerBox">
-                        <div id="productPrice" class="inner"><%=product.getProduct_price() %>원</div>
-                        <div class="inner">
+                        <div id="productPrice" class="inner"><h1><%=product.getProduct_price() %>원</h1></div>
+                        <%-- <div class="inner">
 							<a href="ProductDeleteController?product_id=<%=product.getProduct_id()%>">삭제하기</a>
-                        </div>
+                        </div> --%>
                     </div>
                     <div class="innerBox">
                         <div class="inner">
@@ -131,21 +131,30 @@
                     </div>
                     <h1 id="productName"><%=product.getProduct_name() %></h1>
                     <div class="innerBox">
-                        <div id="productPrice" class="inner"><%=product.getProduct_price() %>원</div>
-                        <div class="inner">
-                            <a href="#">수정하기</a>
-                        </div>
-                    </div>
-                    <div class="innerBox">
-                        <div class="inner">
-                            <a href="#" onclick="chat()" class="chatBtn">구매신청</a>
-                        </div>
+                        <div id="productPrice" class="inner h1size"><h1><%=product.getProduct_price() %>원</h1></div>
                         <div class="inner">
                             <button type="button" class="btn_like likeBtn">
                                 <span class="img_emoti">좋아요</span>
                                 <span class="ani_heart_m"></span>
                             </button>
                         </div>
+                        <!-- <div class="inner">
+                            <a href="#">판매자정보</a>
+                        </div> -->
+                    </div>
+                    <div class="innerBox">
+                        <div class="inner">
+                            <a href="#" onclick="chat()" class="chatBtn">구매신청</a>
+                        </div>
+                        <div class="inner">
+                            <a href="#" onclick="sellerInfo()" class="sellerInfo">판매자정보</a>
+                        </div>
+                        <!-- <div class="inner">
+                            <button type="button" class="btn_like likeBtn">
+                                <span class="img_emoti">좋아요</span>
+                                <span class="ani_heart_m"></span>
+                            </button>
+                        </div> -->
                     </div>
                 </div>
                 <!-- 구매자일 때 영역 end -->
@@ -167,9 +176,18 @@
 						alt="">
 					</div>
 					<%} %>
-					<div>
+					<div class="productPageContent">
 						<%=product.getProduct_content() %>
 					</div>
+					
+					<% if(sender.equals(receiver)){%>
+					<div class="bottomBtn">
+                        <div class="btnalign">
+                            <button id="updateBtn">수정하기</button>
+                            <button id="delBtn"><a href="ProductDeleteController?product_id=<%=product.getProduct_id()%>">삭제하기</a></button>
+                        </div>
+                    </div>
+                    <% } %>
 					<!-- 변경end -->
 				</div>
 			</div>
@@ -208,6 +226,9 @@
 	     	
 	}
 	
+	function sellerInfo(){
+		window.open("sellerInfo.jsp", "판매자정보", "width=500, height=230")
+	}
 	
 	<%if(sender.equals(receiver)) {%>
 	/* (판매자시점)일 때만 함수를 실행해야 함. 안 그러면 오류*/
