@@ -185,8 +185,7 @@
 	
 	function check(){
 		let check = "<%=check%>";
-		
-		console.log(check.value)
+		console.log(check)
 		
 		$.ajax({
 	        url:'UserLikeController', 
@@ -198,15 +197,15 @@
 	        },
 	        success:function(response){
 	        	check = "<%=check%>";
-	        	if(response.check == null){
-	        		$('.likeBtn').addClass('btn_unlike')        		
-	        	} 
+	        	if(response.check != null){
+	        		 $('.likeBtn').addClass('btn_unlike')
+	        	}
 	        },
 	        error:function(){
 	           console.log("요청실패!");   
 	        }
 	     })
-		
+	     	
 	}
 	
 	
