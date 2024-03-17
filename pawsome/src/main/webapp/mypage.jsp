@@ -116,7 +116,7 @@
                     <div class="downThree">
                         <div class="circle">
                             <div class="part1">찜한 물건</div>
-                            <div class="part2" id="checkCount">N</div>
+                            <div class="part2" id="checkCount"><%=likelist.size() %></div>
                         </div>
                     </div>
                 </div>

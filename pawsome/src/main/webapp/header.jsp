@@ -1,3 +1,4 @@
+<%@page import="com.soa.model.MemberDAO"%>
 <%@page import="com.soa.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8" isELIgnored="false"%>
@@ -13,6 +14,9 @@
 <body>
 	<%
 	String id = (String) session.getAttribute("member");
+	MemberDAO dao = new MemberDAO();
+	Member member = dao.idCheck(id);
+	pageContext.setAttribute("member", member);
 	%>
 	<!--헤더-->
 	<div class="header">
@@ -50,8 +54,11 @@
 			</div>
 			<div class="dropdown">
 				<button class="dropbtn menuBtn">
-					<img id="headerProfile"
-						src="https://mblogthumb-phinf.pstatic.net/20160901_157/pullkkot_1472657744392oNX00_JPEG/37B5753700000578-3764718-image-a-8_1472547994466.jpg?type=w420">
+				<%if(member.getUser_img()==null) {%>
+                	<img id="headerProfile" src="https://www.studiopeople.kr/common/img/default_profile.png">
+                <%}else { %>
+                	<img id="headerProfile" src="data:image/jpg;base64,<%=member.getUser_img() %>">
+                <%} %>
 				</button>
 				<div class="dropdown-content menu-dropdown-content">
 					<a href="mypage.jsp">마이페이지</a> <a href="LogoutController">로그아웃</a>
