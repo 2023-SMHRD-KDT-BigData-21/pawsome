@@ -24,8 +24,6 @@ public class MessageRoom {
 		this.seller = seller;
 	}
 	
-	
-	
 	public MessageRoom() {
 		
 	}

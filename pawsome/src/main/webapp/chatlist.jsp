@@ -1,3 +1,7 @@
+<%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
+<%@page import="java.util.List"%>
+<%@page import="com.soa.model.MessageRoomDAO"%>
+<%@page import="com.soa.model.MessageRoom"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -9,10 +13,19 @@
 <link rel="stylesheet" href="assets/css/chatlist.css">
 </head>
 <body>
+<%
+	String id = (String) session.getAttribute("member");
+	String counpart_id = "";                                 //대화 상대 id 
+	MessageRoomDAO dao = new MessageRoomDAO();
+	
+	List<MessageRoom> list = dao.getList(id);
+	
+	System.out.println(id);
+%>
 	<div class="chatListContainer">
 		<div class="chatting">
 			<!--채팅 목록 리스트-->
-
+			<%for(int i = 0; i < list.size(); i++) { %>
 			<div class="case">
 				<!-- 여기서부터 반복 시작 -->
 				<div class="left">
@@ -25,8 +38,13 @@
 				</div>
 				<div class="middle">
 					<!--상대 닉네임 & 채팅 마지막 내용-->
-					<div class="nickname"><span>닉네임</span></div>
+					<%if(list.get(i).getBuyer().equals(id)){ %>
+					<div class="nickname"><span><%=list.get(i).getSeller() %></span></div>
 					<div class="last"><span>마지막 내용</span></div>
+					<%} else{ %>
+					<div class="nickname"><span><%=list.get(i).getBuyer() %></span></div>
+					<div class="last"><span>마지막 내용</span></div>
+					<%} %>
 				</div>
 				<div class="right">
 					<!--제품 이미지-->
@@ -40,6 +58,7 @@
 					</a>
 				</div>
 			</div>
+			<%} %>
 			<!-- 여기까지 반복 -->
 
 

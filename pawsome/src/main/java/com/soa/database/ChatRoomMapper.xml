@@ -10,5 +10,8 @@
 	<insert id="create" parameterType="com.soa.model.MessageRoom">
 		insert into message_room values(message_room_seq.NEXTVAL,#{product_id},#{buyer},#{seller},SYSDATE)
 	</insert>
+	<select id="getlist" parameterType="String" resultType="com.soa.model.MessageRoom">
+		select * from message_room where (seller=#{id})or(buyer=#{id}) order by create_date desc
+	</select>
 
 </mapper>
