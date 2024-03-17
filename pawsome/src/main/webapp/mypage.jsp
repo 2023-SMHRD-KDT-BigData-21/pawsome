@@ -24,16 +24,27 @@
 	System.out.println(member);
 	pageContext.setAttribute("member", member);
 	
-	ProductDAO pdao = new ProductDAO();
-	List<Product> plist = pdao.myProduct(user_id);
-	pageContext.setAttribute("plist", plist);
+	//판매목록 불러오기
+	ProductDAO mypdao = new ProductDAO();
+	List<Product> myplist = mypdao.myProduct(user_id);
+	pageContext.setAttribute("myplist", myplist);
 	
-	ImageFileDAO idao = new ImageFileDAO();
-	List<String> ilist = new ArrayList();
-	for(int i = 0; i < plist.size(); i++) {
-		ilist.add(idao.myProductImage(plist.get(i).getProduct_id()));
+	ImageFileDAO myidao = new ImageFileDAO();
+	List<String> myilist = new ArrayList();
+	for(int i = 0; i < myplist.size(); i++) {
+		myilist.add(myidao.myProductImage(myplist.get(i).getProduct_id()));
 	}
 	
+	//구매목록 불러오기
+	ProductDAO buypdao = new ProductDAO();
+	List<Product> buyplist = mypdao.myBuyProduct(user_id);
+	pageContext.setAttribute("buyplist", buyplist);
+	
+	ImageFileDAO buyidao = new ImageFileDAO();
+	List<String> buyilist = new ArrayList();
+	for(int i = 0; i < buyplist.size(); i++) {
+		buyilist.add(buyidao.myBuyProductImage(buyplist.get(i).getProduct_id()));
+	}
 %>
 	<div data-include-path="header.jsp"></div>
     <!--하단부-->
@@ -43,7 +54,7 @@
                 <div class="up">
                     <div class="left1"><span class="padding" style="padding-right: 50px"></span>MY PAGE</div>
                     <div class="right1">
-                        <a href="correction.html">
+                        <a href="update.jsp?id=<%=user_id%>">
                             <button class="modify">수정</button>
                         </a>
                     </div>
@@ -51,7 +62,11 @@
                 <div class="down">
                     <div class="left2">
                         <div class="circle">
+                        <%if(member.getUser_img().equals(null)) {%>
                             <div id="photo"><img id="photo" src="https://www.studiopeople.kr/common/img/default_profile.png"></div>
+                        <%}else { %>
+                            <div id="photo"><img id="photo" src="data:image/jpg;base64,<%=member.getUser_img() %>"></div>
+                        <%} %>
                         </div>
                     </div>
                     <div class="right2"><span class="padding2" style="padding-right: 20px"></span>
@@ -72,13 +87,13 @@
                     <div class="downOne">
                         <div class="circle">
                             <div class="part1">판매건수</div>
-                            <div class="part2" id="sellCount"><%=plist.size() %></div>
+                            <div class="part2" id="sellCount"><%=myplist.size() %></div>
                         </div>
                     </div>
                     <div class="downTwo">
                         <div class="circle">
                             <div class="part1">구매건수</div>
-                            <div class="part2" id="buyCount">N</div>
+                            <div class="part2" id="buyCount"><%=buyplist.size() %></div>
                         </div>
                     </div>
                     <div class="downThree">
@@ -100,22 +115,23 @@
             <button class="choice">찜 목록</button>
         </div>
     </div>
+    <!-- 판매게시글 정보 -->
     <div class="box7"><!--상품 이미지 및 게시글 링크-->
         <div class="merchandiseList">
 
-            <%for(int i = 0; i < plist.size(); i++) {%>
+            <%for(int i = 0; i < myplist.size(); i++) {%>
             <div class="merchandise">
-                <div class="merchandise1"><img width="150px" height="150px" src="data:image/jpg;base64,<%=ilist.get(i)%>"></div>
+                <div class="merchandise1"><img width="150px" height="150px" src="data:image/jpg;base64,<%=myilist.get(i)%>"></div>
                 <div class="merchandise2">
-                <%if(plist.get(i).getProduct_status().equals("N")) {%>
+                <%if(myplist.get(i).getProduct_status().equals("N")) {%>
 					판매상태 : 판매중<br>
 				<%}else {%>
 					판매상태 : 판매완료<br>
 				<%} %>
-                    제목 : <%=plist.get(i).getProduct_name() %><br>
-                    가격 : <%=plist.get(i).getProduct_price() %><br>
-                    등록일 : <%=plist.get(i).getProduct_reg_date().getMonth()+1 %>월
-                    <%=plist.get(i).getProduct_reg_date().getDate() %>일
+                    제목 : <%=myplist.get(i).getProduct_name() %><br>
+                    가격 : <%=myplist.get(i).getProduct_price() %><br>
+                    등록일 : <%=myplist.get(i).getProduct_reg_date().getMonth()+1 %>월
+                    <%=myplist.get(i).getProduct_reg_date().getDate() %>일
                 </div>
             </div>
             <span style="padding-right: 20px"></span>
@@ -123,7 +139,27 @@
             
         </div>
     </div>
+    <!-- 구매게시글 정보 -->
+	<div class="box7"><!--상품 이미지 및 게시글 링크-->
+        <div class="merchandiseList">
 
+            <%for(int i = 0; i < myplist.size(); i++) {%>
+            <div class="merchandise">
+                <div class="merchandise1"><img width="150px" height="150px" src="data:image/jpg;base64,<%=buyilist.get(i)%>"></div>
+                <div class="merchandise2">
+					판매상태 : 판매완료<br>
+                    제목 : <%=buyplist.get(i).getProduct_name() %><br>
+                    가격 : <%=buyplist.get(i).getProduct_price() %><br>
+                    등록일 : <%=buyplist.get(i).getProduct_reg_date().getMonth()+1 %>월
+                    <%=buyplist.get(i).getProduct_reg_date().getDate() %>일
+                </div>
+            </div>
+            <span style="padding-right: 20px"></span>
+            <%} %>
+            
+        </div>
+    </div>
+    
     <script>
         /*header.jsp*/
         window.addEventListener('load', function () {

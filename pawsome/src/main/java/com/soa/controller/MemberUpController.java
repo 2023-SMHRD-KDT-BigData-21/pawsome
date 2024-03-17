@@ -19,7 +19,7 @@ public class MemberUpController extends HttpServlet {
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		
-		String savePath = request.getServletContext().getRealPath("/upload") ;
+		String savePath = request.getServletContext().getRealPath("/profile") ;
 		System.out.println(savePath);
 		int sizeLimit = 5 * 1024 * 1024 ; // 5메가로 제한. 넘어서면 예외 발생
 		

@@ -1,9 +1,12 @@
 package com.soa.model;
 
+import java.io.File;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.soa.model.Member;
+import com.soa.converter.ImageToBase64;
 import com.soa.database.SqlSessionManager;
 
 public class MemberDAO {
@@ -28,6 +31,12 @@ public class MemberDAO {
 		SqlSession sqlSession = sessionFactory.openSession(true);
 		Member res = sqlSession.selectOne("com.soa.database.MemberMapper.idcheck", user_id);
 		sqlSession.close(); 
+		ImageToBase64 converter = new ImageToBase64();
+
+		File file = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\pawsome\\profile\\"
+				+res.getUser_img());
+		String fileStringValue = converter.convert(file);
+		res.setUser_img(fileStringValue);
 		return res ;
 	}
 	

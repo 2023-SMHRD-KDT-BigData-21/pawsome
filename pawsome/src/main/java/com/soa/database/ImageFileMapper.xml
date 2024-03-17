@@ -18,6 +18,10 @@
     	select file_name1 from image_file where product_id=#{product_id}
     </select>
     
+	<select id="mybuylist" parameterType="BigDecimal" resultType="String">
+    	select file_name1 from image_file where product_id=#{product_id}
+    </select>
+    
     <update id="deleteimage" parameterType="String">
 		update image_file set del_yn='Y' where product_id=#{product_id}
 	</update>
