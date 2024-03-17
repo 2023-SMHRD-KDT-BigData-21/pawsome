@@ -1,3 +1,5 @@
+<%@page import="java.math.BigDecimal"%>
+<%@page import="com.soa.model.UserLikeDAO"%>
 <%@page import="com.soa.model.ImageFile"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.soa.model.ImageFileDAO"%>
@@ -25,26 +27,41 @@
 	pageContext.setAttribute("member", member);
 	
 	//판매목록 불러오기
-	ProductDAO mypdao = new ProductDAO();
-	List<Product> myplist = mypdao.myProduct(user_id);
+	ProductDAO pdao = new ProductDAO();
+	List<Product> myplist = pdao.myProduct(user_id);
 	pageContext.setAttribute("myplist", myplist);
 	
-	ImageFileDAO myidao = new ImageFileDAO();
+	ImageFileDAO idao = new ImageFileDAO();
 	List<String> myilist = new ArrayList();
 	for(int i = 0; i < myplist.size(); i++) {
-		myilist.add(myidao.myProductImage(myplist.get(i).getProduct_id()));
+		myilist.add(idao.myProductImage(myplist.get(i).getProduct_id()));
 	}
 	
 	//구매목록 불러오기
-	ProductDAO buypdao = new ProductDAO();
-	List<Product> buyplist = mypdao.myBuyProduct(user_id);
+	List<Product> buyplist = pdao.myBuyProduct(user_id);
 	pageContext.setAttribute("buyplist", buyplist);
 	
-	ImageFileDAO buyidao = new ImageFileDAO();
 	List<String> buyilist = new ArrayList();
 	for(int i = 0; i < buyplist.size(); i++) {
-		buyilist.add(buyidao.myBuyProductImage(buyplist.get(i).getProduct_id()));
+		buyilist.add(idao.myBuyProductImage(buyplist.get(i).getProduct_id()));
 	}
+	
+	//찜목록 불러오기
+	UserLikeDAO udao = new UserLikeDAO();
+	List<BigDecimal> likelist = udao.likeProduct(user_id);
+	
+	List<Product> likeplist = new ArrayList();
+	for(int i = 0; i < likelist.size(); i++) {
+		likeplist.add(pdao.likeProduct(likelist.get(i)));
+	}
+	pageContext.setAttribute("likeplist", likeplist);
+	
+	List<String> likeilist = new ArrayList();
+	for(int i = 0; i < likeplist.size(); i++) {
+		likeilist.add(idao.likeProductImage(likelist.get(i)));
+	}
+	pageContext.setAttribute("likeilist", likeilist);
+	
 %>
 	<div data-include-path="header.jsp"></div>
     <!--하단부-->
@@ -152,6 +169,26 @@
                     가격 : <%=buyplist.get(i).getProduct_price() %><br>
                     등록일 : <%=buyplist.get(i).getProduct_reg_date().getMonth()+1 %>월
                     <%=buyplist.get(i).getProduct_reg_date().getDate() %>일
+                </div>
+            </div>
+            <span style="padding-right: 20px"></span>
+            <%} %>
+            
+        </div>
+    </div>
+    <!-- 찜목록 게시글 정보 -->
+	<div class="box7"><!--상품 이미지 및 게시글 링크-->
+        <div class="merchandiseList">
+
+            <%for(int i = 0; i < likeplist.size(); i++) {%>
+            <div class="merchandise">
+                <div class="merchandise1"><img width="150px" height="150px" src="data:image/jpg;base64,<%=likeilist.get(i)%>"></div>
+                <div class="merchandise2">
+					판매상태 : 판매완료<br>
+                    제목 : <%=likeplist.get(i).getProduct_name() %><br>
+                    가격 : <%=likeplist.get(i).getProduct_price() %><br>
+                    등록일 : <%=likeplist.get(i).getProduct_reg_date().getMonth()+1 %>월
+                    <%=likeplist.get(i).getProduct_reg_date().getDate() %>일
                 </div>
             </div>
             <span style="padding-right: 20px"></span>

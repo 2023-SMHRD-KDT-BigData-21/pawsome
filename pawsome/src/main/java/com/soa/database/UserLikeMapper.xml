@@ -11,4 +11,8 @@
 	<delete id="delete" parameterType="com.soa.model.UserLike">
 		delete from user_like where user_id=#{user_id} and product_id=#{product_id}
 	</delete>
+	
+	<select id="likeproduct" parameterType="String" resultType="BigDecimal">
+		select product_id from user_like where user_id=#{user_id}
+	</select>
 </mapper>

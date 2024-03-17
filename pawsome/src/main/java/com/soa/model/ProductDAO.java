@@ -1,5 +1,6 @@
 package com.soa.model;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -49,6 +50,15 @@ public class ProductDAO {
 		List<Product> list = sqlSession.selectList("com.soa.database.ProductMapper.mybuycontent", user_id);
 		sqlSession.close();
 		return list;
+	}
+	
+	// 유저가 찜한 product_id에 해당하는 게시글 정보 불러오기
+	public Product likeProduct(BigDecimal product_id) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		Product product = sqlSession.selectOne("com.soa.database.ProductMapper.likecontent", product_id);
+		sqlSession.close();
+		return product;
+		
 	}
 	
 	// 게시글 정보 삭제(del_yn업데이트)

@@ -96,7 +96,22 @@ public class ImageFileDAO {
 	// 내 구매 게시글의 1번 사진들만 가져오기
 	public String myBuyProductImage(BigDecimal product_id) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-		String myProductImage = sqlSession.selectOne("com.soa.database.ImageFileMapper.mylist", product_id);
+		String myProductImage = sqlSession.selectOne("com.soa.database.ImageFileMapper.mybuylist", product_id);
+		sqlSession.close();
+		
+		ImageToBase64 converter = new ImageToBase64();
+		
+		File file = new File("C:\\Users\\user\\Desktop\\Web(Server)\\.metadata\\.plugins\\org.eclipse.wst.server.core\\tmp0\\wtpwebapps\\pawsome\\upload\\"
+				+myProductImage);
+		String fileStringValue = converter.convert(file);
+		
+		return fileStringValue;
+	}
+	
+	// 내가 찜한 게시글의 1번 사진들만 가져오기
+	public String likeProductImage(BigDecimal product_id) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		String myProductImage = sqlSession.selectOne("com.soa.database.ImageFileMapper.likelist", product_id);
 		sqlSession.close();
 		
 		ImageToBase64 converter = new ImageToBase64();

@@ -27,6 +27,10 @@
 		select * from product where buyer_id=#{user_id} order by product_id desc
 	</select>
 	
+	<select id="likecontent" parameterType="BigDecimal" resultType="com.soa.model.Product">
+		select * from product where product_id=#{product_id} order by product_id desc
+	</select>
+	
 	<update id="deleteproduct" parameterType="String">
 		update product set del_yn='Y' where product_id=#{product_id}
 	</update>
