@@ -16,9 +16,11 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="assets/css/default.css">
 <link rel="stylesheet" type="text/css" href="assets/css/mypage.css">
 </head>
 <body>
+	<div data-include-path="header.jsp"></div>
 <%
 	String user_id = (String)session.getAttribute("member");
 	MemberDAO dao = new MemberDAO();
@@ -63,7 +65,7 @@
 	pageContext.setAttribute("likeilist", likeilist);
 	
 %>
-	<div data-include-path="header.jsp"></div>
+	
     <!--하단부-->
     <div class="box5">
         <div class="mypage"><!--개인 정보란-->
