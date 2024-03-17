@@ -28,7 +28,6 @@
 	Product product = pdao.productContent(product_id);
 	pageContext.setAttribute("product", product);
 	String receiver = product.getSeller_id();
-	
 	UserLike check = (UserLike)session.getAttribute("check");
 	
 	System.out.println(sender);
@@ -149,24 +148,35 @@
 	<script>
 	
 	// 페이지 처음 실행할 때 좋아요 눌렀던 상품인지 체크 및 좋아요 상태 반영
-	let check = "<%=check%>";
-	$.ajax({
-        url:'UserLikeController', 
-        type:'post',
-        data:{
-           "product_id":"<%=product_id%>",
-           "user_id":"<%=sender%>",
-           "check":"c"
-        },
-        success:function(response){
-        	if(response.check != null){
-        		$('.likeBtn').addClass('btn_unlike')        		
-        	} 
-        },
-        error:function(){
-           console.log("요청실패!");   
-        }
-     })
+	
+	check();
+	
+	function check(){
+		let check = "<%=check%>";
+		
+		console.log(check.value)
+		
+		$.ajax({
+	        url:'UserLikeController', 
+	        type:'post',
+	        data:{
+	           "product_id":"<%=product_id%>",
+	           "user_id":"<%=sender%>",
+	           "check":"c"
+	        },
+	        success:function(response){
+	        	check = "<%=check%>";
+	        	if(response.check == null){
+	        		$('.likeBtn').addClass('btn_unlike')        		
+	        	} 
+	        },
+	        error:function(){
+	           console.log("요청실패!");   
+	        }
+	     })
+		
+	}
+	
 	
 	<%if(sender.equals(receiver)) {%>
 	/* (판매자시점)일 때만 함수를 실행해야 함. 안 그러면 오류*/
