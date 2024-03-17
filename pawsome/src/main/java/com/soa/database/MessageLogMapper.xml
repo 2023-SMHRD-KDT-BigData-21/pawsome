@@ -9,4 +9,8 @@
 						resultType="com.soa.model.MessageLog">
 		select * from message_log where room_no=#{room_no} and sender=#{sender}
 	</select>
+	<select id="getlast" parameterType="String"
+						resultType="String">
+		select m_content from (SELECT m_content FROM message_log WHERE room_no=#{rnum} ORDER BY seq DESC) WHERE ROWNUM = 1
+	</select>
 </mapper>

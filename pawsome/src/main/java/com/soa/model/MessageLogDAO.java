@@ -27,4 +27,11 @@ public class MessageLogDAO {
 		
 		return list;
 	}
+	
+	public String getLast(String rnum) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		String log = sqlSession.selectOne("com.soa.database.MessageLogMapper.getlast",rnum);
+		
+		return log;
+	}
 }
