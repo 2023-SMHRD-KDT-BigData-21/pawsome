@@ -3,12 +3,23 @@
 	box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight:700;
+    font-style:normal;
+}
+
 /*헤더 설정*/
 .header {
 	height: 100px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+}
+
+.logo h1{
+    font-family: 'BookkMyungjo-Bd';
 }
 
 .box1 {
@@ -40,7 +51,7 @@
 	border-radius: 8px;
 	padding: 10px 12px;
 	font-size: 14px;
-	background-color: #C0C2A5;
+	background-color: #EEEFD4;
 }
 
 .ion-md-search {
@@ -50,7 +61,6 @@
 	top: 10px;
 	right: 12px;
 	margin: 0;
-	/* background-color: #C0C2A5; */
 }
 
 .box3 {
@@ -122,7 +132,7 @@
 	width: 98%;
 	height: 50px;
 	border-radius: 8px;
-	background-color: #C0C2A5;
+	background-color: #EEEFD4;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -164,7 +174,7 @@
 	border: 0px;
 	/* border: 1px solid rgb(37, 37, 37);
             border-radius: 8px; */
-	background-color: #C0C2A5;
+	background-color: #EEEFD4;
 	font-weight: 400;
 	color: rgb(37, 37, 37);
 	/* padding: 10px; */
@@ -180,7 +190,7 @@
 	z-index: 1;
 	/*다른 요소들보다 앞에 배치*/
 	font-weight: 400;
-	background-color: #d5d7bc;
+	background-color: #EEEFD4;
 	min-width: 200px;
 	/* margin-top: 8px; */
 	border-radius: 8px;
@@ -195,7 +205,7 @@
 }
 
 .dropdown-content a:hover {
-	background-color: #ececec;
+	background-color: #d5d7bc;
 	border-radius: 8px;
 }
 

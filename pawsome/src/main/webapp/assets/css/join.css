@@ -1,5 +1,12 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight:700;
+    font-style:normal;
+}
+
 /*하단부*/
 .box5 {
     /*회원가입 창 상단의 PAWSOME 로고*/
@@ -8,6 +15,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top : 10px;
+    margin-bottom : 10px;
+}
+
+.box5>h1{
+	font-family: 'BookkMyungjo-Bd';
 }
 
 .box6 {

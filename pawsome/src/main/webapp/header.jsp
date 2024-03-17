@@ -82,7 +82,20 @@
 						강아지 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#" name="g002">사료</a> <a href="#">간식</a> <a href="#">영양제</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">의류</a>
+                        <a href="#" name="g002">악세서리</a>
+                        <a href="#" name="g002">외출용품</a>
+                        <a href="#" name="g002">하우스</a>
+                        <a href="#" name="g002">미용용품</a>
+                        <a href="#" name="g002">목욕용품</a>
+                        <a href="#" name="g002">배변용품</a>
+                        <a href="#" name="g002">훈련용품</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -90,7 +103,22 @@
 						고양이 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#">사료</a> <a href="#">이동장</a>
+						<a href="#" name="g002">건사료</a>
+                        <a href="#" name="g002">습식사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">의류</a>
+                        <a href="#" name="g002">악세서리</a>
+                        <a href="#" name="g002">외출용품</a>
+                        <a href="#" name="g002">캣타워</a>
+                        <a href="#" name="g002">하우스</a>
+                        <a href="#" name="g002">미용용품</a>
+                        <a href="#" name="g002">목욕용품</a>
+                        <a href="#" name="g002">배변용품</a>
+                        <a href="#" name="g002">훈련용품</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -98,7 +126,16 @@
 						관상어 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#">사료</a> <a href="#">이동장</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">수초</a>
+                        <a href="#" name="g002">수조/어항</a>
+                        <a href="#" name="g002">수질관리용품</a>
+                        <a href="#" name="g002">여과용품</a>
+                        <a href="#" name="g002">수조장식</a>
+                        <a href="#" name="g002">온도계</a>
+                        <a href="#" name="g002">청소용품</a>
+                        <a href="#" name="g002">부화용품</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -106,7 +143,18 @@
 						반려조 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#">사료</a> <a href="#">이동장</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">외출용품</a>
+                        <a href="#" name="g002">목욕용품</a>
+                        <a href="#" name="g002">훈련용품</a>
+                        <a href="#" name="g002">새장</a>
+                        <a href="#" name="g002">횃대</a>
+                        <a href="#" name="g002">보온용품</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -114,7 +162,17 @@
 						파충류 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#">사료</a> <a href="#">이동장</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">하우스</a>
+                        <a href="#" name="g002">온도계</a>
+                        <a href="#" name="g002">청소용품</a>
+                        <a href="#" name="g002">채집통</a>
+                        <a href="#" name="g002">바닥재</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -122,7 +180,15 @@
 						설치류 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#">사료</a> <a href="#">이동장</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">외출용품</a>
+                        <a href="#" name="g002">하우스</a>
+                        <a href="#" name="g002">베딩</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
@@ -130,7 +196,17 @@
 						기타 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#">사료</a> <a href="#">이동장</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">의류</a>
+                        <a href="#" name="g002">외출용품</a>
+                        <a href="#" name="g002">하우스</a>
+                        <a href="#" name="g002">배변용품</a>
+                        <a href="#" name="g002">훈련용품</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 			</div>
@@ -144,7 +220,6 @@
 			// getContextPath : 현재위치,  채팅하기 : 창의 이름
 		}
 	</script>
-	<!-- <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script> -->
 
 </body>
 </html>

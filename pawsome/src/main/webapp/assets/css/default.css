@@ -5,14 +5,19 @@
     font-weight: 700;
     font-style: normal;
 }
-
+/* 강원도 - 메인 폰트 */
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
 
 
 * {
-    /* background-color: white; */
     margin: 0;
     padding: 0;
-    font-family: 'BookkMyungjo-Bd';
+    font-family: 'GangwonEdu_OTFBoldA';
 }
 
 .body {
@@ -21,9 +26,6 @@
     box-sizing: border-box;
 }
 
-/* div { 
-    display:inline-block; 
-} */
 a:link, a:hover, a:visited, a:focus {
     color:inherit; text-decoration:none;
 }

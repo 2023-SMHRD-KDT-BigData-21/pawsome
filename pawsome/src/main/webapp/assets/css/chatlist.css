@@ -41,7 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ECECE0;
+    background-color: #EEEFD4;
 }
 
 .circle {
@@ -74,7 +74,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ECECE0;
+    background-color: #EEEFD4;
 }
 
 .nickname {
@@ -89,7 +89,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #ECECE0;
+    background-color: #EEEFD4;
 }
 
 .photo {

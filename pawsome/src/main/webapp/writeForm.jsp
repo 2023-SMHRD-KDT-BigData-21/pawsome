@@ -48,7 +48,7 @@
 				</div>
 				<div class="bottomWrite writePageUnder">
 					<div class="bottomInput">
-						가격<input type="text" name="product_price" id="priceInput">
+						가격<input type="text" name="product_price" id="priceInput" dir="rtl">
 					</div>
 					<button type="button" id="add">파일 추가</button>
 	                <button type="button" id="remove">파일 삭제</button>

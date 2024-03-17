@@ -1,5 +1,12 @@
 @charset "UTF-8";
-/*하단부*/
+
+@font-face {
+    font-family: 'BookkMyungjo-Bd';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
+    font-weight:700;
+    font-style:normal;
+}
+
 .box5 {
     /*로그인칸 상단의 로고*/
     width: 100%;
@@ -9,6 +16,11 @@
     justify-content: center;
     align-items: center;
 }
+
+.box5>h1{
+	font-family: 'BookkMyungjo-Bd';
+}
+
 
 .box6 {
     width: 100%;
@@ -27,7 +39,6 @@
 #loginTitle {
     /*로그인 문구*/
     font-size: 140%;
-    font-family: BookkMyungjo-Bd;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -52,7 +63,6 @@
 #id,
 #pw {
     /*아이디&비밀번호 입력란*/
-    font-family: BookkMyungjo-Bd;
     border-radius: 15px;
     border: 0px;
     width: 250px;
@@ -72,7 +82,6 @@
 .loginButton {
     width: 150px;
     height: 30px;
-    font-family: BookkMyungjo-Bd;
     border: 0px;
     background-color: #D9D9D9;
 }

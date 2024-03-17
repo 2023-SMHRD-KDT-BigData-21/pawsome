@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
-/* 부크크 */
 @font-face {
-    font-family: 'BookkMyungjo-Bd';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
-    font-weight: 700;
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 }
+
 
 * {
 	font-family: 나눔고딕;
@@ -78,7 +78,7 @@
 
 
 .profile-container>.contentBox{
-	font-family: 'BookkMyungjo-Bd' !important;
+	font-family: 'GangwonEdu_OTFBoldA' !important;
 	width:40% ;
 }
 

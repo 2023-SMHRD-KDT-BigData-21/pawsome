@@ -33,7 +33,7 @@
 				</div>
 				<div class="joinInput">
 					<!--아이디 입력란-->
-					<span style="padding-left: 35px"></span>
+					<span style="padding-right: 5px"></span>
 					<div class="word">아이디</div>
 					<span style="padding-right: 10px"></span> <input class="input"
 						type="text" name="userId" id="idInput" placeholder="아이디를 입력하세요">
@@ -70,7 +70,7 @@
 				</div>
 				<div class="joinInput">
 					<!--닉네임 입력란-->
-					<span style="padding-right: 35px"></span>
+					<span style="padding-right: 5px"></span>
 					<div class="word">닉네임</div>
 					<span style="padding-right: 10px"></span> <input class="input"
 						type="text" name="userNick" id="nickInput"
@@ -80,7 +80,7 @@
 				</div>
 				<div class="joinInput">
 					<!--이메일 입력란-->
-					<span style="padding-right: 35px"></span>
+					<span style="padding-right: 5px"></span>
 					<div class="word">이메일</div>
 					<span style="padding-right: 10px"></span> <input class="input"
 						type="text" name="userEmail" id="emailInput"

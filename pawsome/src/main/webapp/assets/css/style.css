@@ -605,6 +605,18 @@ ol {
 	width: 100%;
 }
 
+/* 내가 지정해준 거 */
+.hero__text{
+	position: relative;
+	top:100px;
+}
+
+.arrow_left, .arrow_right{
+	color: whitesmoke;
+}
+
+/* 지정 end */
+
 .hero__text h6 {
 	color: #e53637;
 	font-size: 14px;
@@ -625,6 +637,13 @@ ol {
     font-family: 'BookkMyungjo-Bd';
     src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2302@1.0/BookkMyungjo-Bd.woff2') format('woff2');
     font-weight: 700;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'GangwonEdu_OTFBoldA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/GangwonEdu_OTFBoldA.woff') format('woff');
+    font-weight: normal;
     font-style: normal;
 }
 
@@ -658,7 +677,7 @@ ol {
 }
 
 .hero__text .primary-btn { /* 둘러보기, 회원가입 버튼 */
-	font-family: 'BookkMyungjo-Bd';
+	font-family: 'GangwonEdu_OTFBoldA';
 	position: relative;
 	top: 100px;
 	opacity: 0;

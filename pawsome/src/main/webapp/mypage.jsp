@@ -54,7 +54,7 @@
                             <div id="photo"><img id="photo" src="https://www.studiopeople.kr/common/img/default_profile.png"></div>
                         </div>
                     </div>
-                    <div class="right2"><span style="padding-right: 20px"></span>
+                    <div class="right2"><span class="padding2" style="padding-right: 20px"></span>
                         <div id="nickName"><%=member.getUser_nick() %></div>
                     </div>
                 </div>
