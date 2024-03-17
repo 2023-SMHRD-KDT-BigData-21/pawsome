@@ -1,5 +1,7 @@
 package com.soa.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
@@ -36,5 +38,14 @@ public class MessageRoomDAO {
 		sqlSession.close();
 		
 		return rnum;
+	}
+	
+	public List<MessageRoom> getList(String id) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		
+		List<MessageRoom> list = sqlSession.selectList("com.soa.database.ChatRoomMapper.getlist", id);
+		sqlSession.close();
+		
+		return list;
 	}
 }

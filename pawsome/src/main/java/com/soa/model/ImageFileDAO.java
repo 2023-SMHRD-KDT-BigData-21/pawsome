@@ -78,7 +78,7 @@ public class ImageFileDAO {
 		
 	}
 	
-	// 내 판매 게시글의 1번 사진들만 가져오기
+	// 내 판매 게시글의 1번 사진만 가져오기
 	public String myProductImage(BigDecimal product_id) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
 		String myProductImage = sqlSession.selectOne("com.soa.database.ImageFileMapper.mylist", product_id);
@@ -93,7 +93,7 @@ public class ImageFileDAO {
 		return fileStringValue;
 	}
 	
-	// 내 구매 게시글의 1번 사진들만 가져오기
+	// 내 구매 게시글의 1번 사진만 가져오기
 	public String myBuyProductImage(BigDecimal product_id) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
 		String myProductImage = sqlSession.selectOne("com.soa.database.ImageFileMapper.mybuylist", product_id);
@@ -108,7 +108,7 @@ public class ImageFileDAO {
 		return fileStringValue;
 	}
 	
-	// 내가 찜한 게시글의 1번 사진들만 가져오기
+	// 내가 찜한 게시글의 1번 사진만 가져오기(product_id에 해당하는 1번사진 가져오기)
 	public String likeProductImage(BigDecimal product_id) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
 		String myProductImage = sqlSession.selectOne("com.soa.database.ImageFileMapper.likelist", product_id);

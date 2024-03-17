@@ -1,3 +1,9 @@
+<%@page import="oracle.net.aso.p"%>
+<%@page import="com.soa.model.Product"%>
+<%@page import="java.math.BigDecimal"%>
+<%@page import="com.soa.model.ImageFileDAO"%>
+<%@page import="com.soa.model.Member"%>
+<%@page import="com.soa.model.MemberDAO"%>
 <%@page import="com.soa.model.ProductDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="java.util.List"%>
@@ -37,23 +43,39 @@
 	List<MessageLog> list = ldao.getLog(log);
 	pageContext.setAttribute("list",list);
 	System.out.println(list.size());
+	
+	//상대방(판매자)프로필사진 불러오기
+	MemberDAO mdao = new MemberDAO();
+	Member member = mdao.idCheck(receiver);
+	pageContext.setAttribute("member", member);
+	
+	//해당 게시글 정보,1번사진 불러오기
+	ProductDAO pdao = new ProductDAO();
+	ImageFileDAO idao = new ImageFileDAO();
+	BigDecimal p_id = new BigDecimal(product_id);
+	Product product = pdao.likeProduct(p_id);
+	String imageFile = idao.likeProductImage(p_id);
+	pageContext.setAttribute("product", product);
+	pageContext.setAttribute("imageFile", imageFile);
+	
 %>
 <body>
 	<div id="main-container">
 		<div class="profile-container">
 			<div class="imgBox profileImgBox">
-				<img src="https://i.ytimg.com/vi/K19h13qQy9Y/maxresdefault.jpg"
-					alt="">
+			<%if(member.getUser_img()==null) {%>
+              	<img src="https://www.studiopeople.kr/common/img/default_profile.png">
+            <%}else { %>
+                <img src="data:image/jpg;base64,<%=member.getUser_img() %>" alt="">
+            <%} %>
 			</div>
 			<div class="contentBox">
-				<div class="title" align="center" onclick="productPage()"><span>제목</span></div>
+				<div class="title" align="center" onclick="productPage()"><span><%=product.getProduct_name() %></span></div>
 				<div class="confirmBtn" onclick="confirmMessage()"><span>거래확정</span>
 				</div>
 			</div>
 			<div class="imgBox productImgBox">
-				<img
-					src="https://previews.123rf.com/images/yuliaavgust/yuliaavgust1303/yuliaavgust130300070/18411573-%EC%83%88%EC%9E%A5%EC%97%90-%EB%B3%B5%EA%B3%A0-%EC%BC%80%EC%9D%B4%EC%A7%80-%EB%B9%85-%EB%B8%94%EB%A3%A8-%EB%A8%B8-%EC%BD%94-%EC%95%84-%EB%9D%BC-ararauna%EC%97%90-%EC%95%B5%EB%AC%B4%EC%83%88.jpg"
-					alt="">
+				<img src="data:image/jpg;base64,<%=imageFile%>" alt="">
 			</div>
 
 
@@ -150,7 +172,7 @@
 		
 		/* '글제목' 클릭 시 해당 게시글 창 띄우기 */
 		function productPage(){ 
-			window.open("boardlist.jsp")
+			window.open("ProductPage.jsp?product_id=<%=product.getProduct_id()%>")
 		}
 		
 		
