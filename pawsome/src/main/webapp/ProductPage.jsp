@@ -229,7 +229,7 @@
 	function sellerInfo(){
 		var seller_id = '<%=product.getSeller_id()%>';
 		console.log(seller_id);
-		window.open("sellerInfo.jsp?seller_id="+seller_id, "판매자정보", "width=500, height=600")
+		window.open("sellerInfo.jsp?seller_id="+seller_id, "판매자정보", "width=500, height=530")
 	}
 	
 	<%if(sender.equals(receiver)) {%>

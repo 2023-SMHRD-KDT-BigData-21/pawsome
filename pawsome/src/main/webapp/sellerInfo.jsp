@@ -52,9 +52,6 @@
                         <div id="gauge"></div>
                     </div>
                 </div>
-                <div class="down">
-                    <a href="#">판매글 리스트</a>
-                </div>
             </div>
         </div>
     </div>
@@ -62,7 +59,7 @@
     
     <!-- 판매글 리스트 불러오기 begin -->
     <div  class="listBox">
-        <h3 class="listBoxTitle">판매글<span class="radix-icons--chevron-down"></span></h3>
+        <h3 class="listBoxTitle">판매글 리스트</h3>
         <div class="listalign">
 
             <!-- productList 클래스를 반복시켜주면 돼요 -->

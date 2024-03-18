@@ -30,28 +30,47 @@ a:focus {
 }
 
 .listBox {
-    width: 500px; 
+    width: 490px;
+    height: 300px;
+    border-radius: 15px;
+    background-color: #EEEFD4;
+    border: 3px outset white;
+    overflow-y: scroll;
    
 }
+
+.listBox::-webkit-scrollbar {
+    width: 10px;
+  }
+
+.listBox::-webkit-scrollbar-thumb {
+    background-color: #caf097; /* 연두색 */
+    border-radius: 10px;
+    background-clip : padding-box;
+    border : 2px solid transparent;
+  }
+
+.listBox::-webkit-scrollbar-track {
+    margin: 5px;
+    background-color: #EEEFD4;
+    border-radius: 10px;
+  }
 
 .listBoxTitle {
     text-align: center;
     margin: 20px;
-    border-top : 2px solid gray;
-    border-bottom : 2px solid gray;
 }
 
 
 .listalign {
     display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
+    justify-content: space-around;
     flex-wrap: wrap;
 }
 
 .productList {
-    width: 230px;
-    margin: 5px;
+    width: 150px;
+    margin: 10px;
 }
 
 .productImg {
@@ -71,19 +90,6 @@ a:focus {
     margin-top: 5px;
 }
 
-.radix-icons--chevron-down {
-    display: inline-block;
-    width: 1em;
-    height: 1em;
-    --svg: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 15 15'%3E%3Cpath fill='%23000' fill-rule='evenodd' d='M3.135 6.158a.5.5 0 0 1 .707-.023L7.5 9.565l3.658-3.43a.5.5 0 0 1 .684.73l-4 3.75a.5.5 0 0 1-.684 0l-4-3.75a.5.5 0 0 1-.023-.707' clip-rule='evenodd'/%3E%3C/svg%3E");
-    background-color: currentColor;
-    -webkit-mask-image: var(--svg);
-    mask-image: var(--svg);
-    -webkit-mask-repeat: no-repeat;
-    mask-repeat: no-repeat;
-    -webkit-mask-size: 100% 100%;
-    mask-size: 100% 100%;
-}
 
 .card {
     width: 490px;
@@ -130,7 +136,7 @@ a:focus {
 }
 
 .up, .down {
-    height: 40%;
+    height: 50%;
 }
 
 .up {
