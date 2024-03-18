@@ -15,8 +15,13 @@
 	<%
 	String id = (String) session.getAttribute("member");
 	MemberDAO dao = new MemberDAO();
-	Member member = dao.idCheck(id);
-	pageContext.setAttribute("member", member);
+	Member member = new Member();
+	if(id!=null){
+		member = dao.idCheck(id);
+	}
+	if(member!=null){
+		pageContext.setAttribute("member", member);
+	}
 	%>
 	<!--헤더-->
 	<div class="header">
