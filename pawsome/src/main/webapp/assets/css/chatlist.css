@@ -87,6 +87,11 @@
     line-height: 100px;
 }
 
+.nickname>span{
+	font-weight: bolder;
+	text-decoration: underline;
+}
+
 .right {
     /*제품 이미지*/
     width: 30%;
