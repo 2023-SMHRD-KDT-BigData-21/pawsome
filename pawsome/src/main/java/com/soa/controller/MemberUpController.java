@@ -39,8 +39,6 @@ public class MemberUpController extends HttpServlet {
 		int res = dao.MemberUp(member);
 		
 		if(res>0) {
-			HttpSession session = request.getSession();
-			session.setAttribute("member", member);
 			response.sendRedirect("mypage.jsp");
 		}else {
 			response.sendRedirect("update.jsp");

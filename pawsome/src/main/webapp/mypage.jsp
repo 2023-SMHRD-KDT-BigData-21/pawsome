@@ -73,7 +73,7 @@
                 <div class="up">
                     <div class="left1"><span class="padding" style="padding-right: 50px"></span>MY PAGE</div>
                     <div class="right1">
-                        <a href="update.jsp?id=<%=user_id%>">
+                        <a href="update.jsp">
                             <button class="modify">수정</button>
                         </a>
                     </div>
@@ -162,7 +162,7 @@
 	<div class="box7"><!--상품 이미지 및 게시글 링크-->
         <div class="merchandiseList">
 
-            <%for(int i = 0; i < myplist.size(); i++) {%>
+            <%for(int i = 0; i < buyplist.size(); i++) {%>
             <div class="merchandise">
                 <div class="merchandise1"><img width="150px" height="150px" src="data:image/jpg;base64,<%=buyilist.get(i)%>"></div>
                 <div class="merchandise2">

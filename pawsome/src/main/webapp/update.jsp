@@ -15,14 +15,14 @@
 	<div data-include-path="header.jsp"></div>
 
 	<%
-	String id = request.getParameter("id");
-	System.out.println(id);
+	String user_id = (String)session.getAttribute("member");
+	System.out.println(user_id);
 	%>
 
 	<div class="box6">
 		<form action="MemberUpController" method="post"
 			enctype="multipart/form-data">
-			<input type="hidden" name="userId" value="<%=id %>">
+			<input type="hidden" name="userId" value="<%=user_id %>">
 			<div class="join">
 				<div id="joinTitle">개인정보 수정</div>
 				<div class="joinInput">
@@ -30,7 +30,7 @@
 					<div class="word">
 						<h4>
 							아이디 :
-							<%=id%></h4>
+							<%=user_id%></h4>
 					</div>
 				</div>
 				<div class="joinInput">
