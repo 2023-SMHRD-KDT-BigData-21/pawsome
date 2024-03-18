@@ -90,7 +90,7 @@
 	</div>
 	<script>
 		//1. 소켓 객체 생성
-		var webSocket = new WebSocket("ws://localhost:8081/pawsome/chat")
+		var webSocket = new WebSocket("ws://172.30.1.94:8081/pawsome/chat")
 
 		var input = document.getElementById("inputMessage")
 
@@ -119,6 +119,8 @@
 			$("#chat-container").append(chat)
 				input.value = "" // 채팅 input 비우기
 				input.focus();
+			
+				scrollToEnd();
 			})
 		
 			$(function() {
@@ -148,6 +150,7 @@
 				$("#chat-container").append(chat)
 			}
 			<%}%>
+			scrollToEnd();
 		}
 
 		webSocket.onclose = function(e) {
@@ -164,6 +167,7 @@
 			var chat = "<div class='chat-box'><div class='chat'>" + e.data
 					+ "</div></div>"
 			$("#chat-container").append(chat)
+			scrollToEnd();
 		}
 		
 		
@@ -194,6 +198,12 @@
 		function productPage(){ 
 			window.open("ProductPage.jsp?product_id=<%=product.getProduct_id()%>")
 		}
+		
+		function scrollToEnd() {
+	        // 채팅 컨테이너의 스크롤을 가장 아래로 이동시킵니다.
+	        var chatContainer = document.getElementById("chat-container");
+	        chatContainer.scrollTop = chatContainer.scrollHeight;
+	    }
 		
 		
 	</script>
