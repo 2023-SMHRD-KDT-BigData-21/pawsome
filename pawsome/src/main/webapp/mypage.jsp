@@ -128,10 +128,6 @@
     <div class="box6"><!--선택 버튼 목록-->
         <div class="checkList">
             <button class="selling">판매</button>
-            <span style="padding-right: 20px"></span>
-            <button class="buy">구매</button>
-            <span style="padding-right: 20px"></span>
-            <button class="choice">찜 목록</button>
         </div>
     </div>
     <!-- 판매게시글 정보 -->
@@ -158,6 +154,11 @@
             
         </div>
     </div>
+    <div class="box6"><!--선택 버튼 목록-->
+        <div class="checkList">
+            <button class="buy">구매</button>
+        </div>
+    </div>
     <!-- 구매게시글 정보 -->
 	<div class="box7"><!--상품 이미지 및 게시글 링크-->
         <div class="merchandiseList">
@@ -176,6 +177,11 @@
             <span style="padding-right: 20px"></span>
             <%} %>
             
+        </div>
+    </div>
+    <div class="box6"><!--선택 버튼 목록-->
+        <div class="checkList">
+            <button class="choice">찜 목록</button>
         </div>
     </div>
     <!-- 찜목록 게시글 정보 -->

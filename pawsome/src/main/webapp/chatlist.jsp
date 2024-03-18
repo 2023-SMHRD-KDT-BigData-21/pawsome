@@ -1,3 +1,8 @@
+<%@page import="com.soa.model.Member"%>
+<%@page import="com.soa.model.MemberDAO"%>
+<%@page import="java.math.BigDecimal"%>
+<%@page import="com.soa.model.ImageFileDAO"%>
+<%@page import="com.soa.model.ProductDAO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="com.soa.model.MessageLogDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
@@ -27,6 +32,20 @@
 	MessageLogDAO ldao = new MessageLogDAO();
 	
 	ArrayList<String> countparts = new ArrayList<String>();
+	
+	//제품사진 불러오기
+	ImageFileDAO idao = new ImageFileDAO();
+	List<String> ilist = new ArrayList();
+	for(int i = 0; i < list.size(); i++) {
+		BigDecimal p_id = new BigDecimal(list.get(i).getProduct_id());
+		ilist.add(idao.myProductImage(p_id));
+	}
+	//프로필사진 불러오기
+	MemberDAO mdao = new MemberDAO();
+	List<Member> mlist = new ArrayList();
+	Member member = mdao.idCheck(id);
+	member.getUser_img();
+	list.get(0).getSeller();
 %>
 	<div class="chatListContainer">
 		<div class="chatting">
@@ -38,8 +57,20 @@
 					<!--프로필 부분-->
 					<div class="circle">
 						<!-- img : 프로필사진 경로 -->
-						<img src="https://i.ytimg.com/vi/K19h13qQy9Y/maxresdefault.jpg"
-							alt="">
+						<%if(list.get(i).getBuyer().equals(id)){ %>
+							<%if(list.get(i).getBuyer() == null){ %>
+								<img src="https://www.studiopeople.kr/common/img/default_profile.png" alt="">
+							<%} else { %>
+								<img src="data:image/jpg;base64,<%=mdao.idCheck(list.get(i).getSeller()).getUser_img() %>" alt="">
+							<%} %>
+						<%} else {%>
+							<%if(list.get(i).getSeller() == null){ %>
+								<img src="https://www.studiopeople.kr/common/img/default_profile.png" alt="">
+							<%} else { %>
+								<img src="data:image/jpg;base64,<%=mdao.idCheck(list.get(i).getBuyer()).getUser_img() %>" alt="">
+							<%} %>
+						<%} %>
+						
 					</div>
 				</div>
 				<div class="middle">
@@ -72,7 +103,7 @@
 						<div class="photo">
 							<!-- img : 제품사진 경로 -->
 							<img
-								src="https://previews.123rf.com/images/yuliaavgust/yuliaavgust1303/yuliaavgust130300070/18411573-%EC%83%88%EC%9E%A5%EC%97%90-%EB%B3%B5%EA%B3%A0-%EC%BC%80%EC%9D%B4%EC%A7%80-%EB%B9%85-%EB%B8%94%EB%A3%A8-%EB%A8%B8-%EC%BD%94-%EC%95%84-%EB%9D%BC-ararauna%EC%97%90-%EC%95%B5%EB%AC%B4%EC%83%88.jpg"
+								src="data:image/jpg;base64,<%=ilist.get(i) %>"
 								alt="">
 						</div>
 					</a>
