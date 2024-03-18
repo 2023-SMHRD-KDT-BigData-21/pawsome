@@ -58,9 +58,13 @@
 	
 	pageContext.setAttribute("plist", plist);
 	pageContext.setAttribute("list", list);
+	
+	String s_word = request.getParameter("s_word");
 %>
 	<div data-include-path="header.jsp"></div>
-
+	<%if(s_word != null) {%>
+	<input type="hidden" id="s_word" value="<%=s_word %>" >
+	<%} %>
 	<!-- 상품list Section Begin -->
 	<div class="spad-align">
 		<section class="product spad" id="spad">
@@ -136,6 +140,24 @@
 				}
 			});
 		});
+		
+		let s_word = document.getElementById("s_word").value;
+		
+		if(s_word != null){
+			$.ajax({
+				url:'SearchController',
+				type:'post',
+			    data:{
+			      	"s_word":s_word
+			    },
+			    success:function(){
+			        console.log("요청성공!");
+			    },
+			    error:function(){
+			        console.log("요청실패!");   
+			         }
+			      })
+			}
 	</script>
 	<script src="assets/js/header.js"></script>
 </body>

@@ -144,8 +144,7 @@
 				var chat = "<div class='my-chat-box'><div class='chat my-chat'>"+ temp + "</div></div>"
 				$("#chat-container").append(chat)				
 			} else{
-				var chat = "<div class='chat-box'><div class='chat'>" + temp
-				+ "</div></div>"
+				var chat = "<div class='chat-box'><div class='chat'>" + temp + "</div></div>"
 				$("#chat-container").append(chat)
 			}
 			<%}%>

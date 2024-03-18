@@ -1,3 +1,6 @@
+<%@page import="com.google.gson.Gson"%>
+<%@page import="com.soa.model.Product"%>
+<%@page import="java.util.List"%>
 <%@page import="com.soa.model.MemberDAO"%>
 <%@page import="com.soa.model.Member"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -10,6 +13,8 @@
 <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/default.css">
 <link rel="stylesheet" href="assets/css/header.css">
+<script type="text/javascript"
+	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
 	<%
@@ -22,6 +27,8 @@
 	if(member!=null){
 		pageContext.setAttribute("member", member);
 	}
+	
+	
 	%>
 	<!--헤더-->
 	<div class="header">
@@ -43,7 +50,8 @@
 		<div class="box2">
 			<div class="search">
 				<input id="inputSearch" type="text" placeholder="찾으시는 상품을 입력해 주세요">
-				<i class="icon ion-md-search"></i>
+				<input type="hidden" id="searchResult" value="<%= new Gson().toJson(request.getAttribute("search_result")) %>">
+				<i class="icon ion-md-search" onclick="search()"></i>
 			</div>
 		</div>
 		<!--상단 우측 버튼-->
@@ -230,6 +238,32 @@
 			window.open("chatlist.jsp", "채팅하기", "width=640, height=800") // 새로운 창 띄우기 
 			// getContextPath : 현재위치,  채팅하기 : 창의 이름
 		} */
+		
+		let tmp = document.getElementById("searchResult");
+		
+		console.log(tmp);
+		
+		function search(){
+			let s_word = document.getElementById("inputSearch").value;
+			
+			if(s_word != null){
+				
+				$.ajax({
+			         url:'main.jsp', 
+			         type:'post',
+			         data:{
+			            "s_word":s_word
+			         },
+			         success:function(){
+			        	console.log("요청성공!");
+			         },
+			         error:function(){
+			            console.log("요청실패!");   
+			         }
+			      })
+			}
+			
+		}
 	</script>
 	<script src="assets/js/header.js"></script>
 </body>

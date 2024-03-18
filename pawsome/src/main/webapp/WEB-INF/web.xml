@@ -76,6 +76,12 @@
   	<description></description>
   	<servlet-class>com.soa.controller.UserLikeController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>SearchController</servlet-name>
+  	<display-name>SearchController</display-name>
+  	<description></description>
+  	<servlet-class>com.soa.controller.SearchController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinController</servlet-name>
   	<url-pattern>/JoinController</url-pattern>
@@ -123,5 +129,9 @@
   <servlet-mapping>
   	<servlet-name>UserLikeController</servlet-name>
   	<url-pattern>/UserLikeController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>SearchController</servlet-name>
+  	<url-pattern>/SearchController</url-pattern>
   </servlet-mapping>
 </web-app>

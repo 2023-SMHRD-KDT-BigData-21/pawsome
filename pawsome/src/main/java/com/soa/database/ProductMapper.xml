@@ -39,4 +39,9 @@
 		update product set product_status='Y', buyer_id=#{buyer_id} where product_id=#{product_id}
 	</update>
 	
+	<select id="search" parameterType="com.soa.model.Product"
+						resultType="com.soa.model.Product" >
+		select * from product where product_name LIKE CONCAT('%', #{product_name}, '%') order by product_reg_date desc				
+	</select>
+	
 </mapper>

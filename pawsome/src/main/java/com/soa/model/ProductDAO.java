@@ -76,6 +76,15 @@ public class ProductDAO {
 		sqlSession.close();
 		return res;
 	}
+
+	public List<Product> search(Product pd) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		
+		List<Product> list = sqlSession.selectList("com.soa.database.ProductMapper.search",pd);
+		sqlSession.close();
+		
+		return list;
+	}
 	
 	
 }
