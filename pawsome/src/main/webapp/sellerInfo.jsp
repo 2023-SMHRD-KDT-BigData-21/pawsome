@@ -58,5 +58,49 @@
             </div>
         </div>
     </div>
+    
+    
+    <!-- 판매글 리스트 불러오기 begin -->
+    <div  class="listBox">
+        <h3 class="listBoxTitle">판매글<span class="radix-icons--chevron-down"></span></h3>
+        <div class="listalign">
+
+            <!-- productList 클래스를 반복시켜주면 돼요 -->
+            <div class="productList">
+                <div class="productImg">
+                    <img src="https://thumbnail.10x10.co.kr/webimage/image/basic600/457/B004579162.jpg?cmd=thumb&w=400&h=400&fit=true&ws=false" alt="">
+                </div>
+                <div class="productText">
+                    <h3>제목</h3>
+                    <h3>가격</h3>
+                    <h3>날짜</h3>
+                </div>
+            </div>
+
+            <div class="productList">
+                <div class="productImg">
+                    <img src="https://thumbnail.10x10.co.kr/webimage/image/basic600/457/B004579162.jpg?cmd=thumb&w=400&h=400&fit=true&ws=false" alt="">
+                </div>
+                <div class="productText">
+                    <h3>제목</h3>
+                    <h3>가격</h3>
+                    <h3>날짜</h3>
+                </div>
+            </div>
+
+           <div class="productList">
+                <div class="productImg">
+                    <img src="https://thumbnail.10x10.co.kr/webimage/image/basic600/457/B004579162.jpg?cmd=thumb&w=400&h=400&fit=true&ws=false" alt="">
+                </div>
+                <div class="productText">
+                    <h3>제목</h3>
+                    <h3>가격</h3>
+                    <h3>날짜</h3>
+                </div>
+            </div>
+          
+        </div>        
+    </div>
+    <!-- 판매글 리스트 불러오기 end -->
 </body>
 </html>
