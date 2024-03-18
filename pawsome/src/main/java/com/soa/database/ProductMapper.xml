@@ -12,7 +12,7 @@
     </select>
     
     <select id="list" resultType="com.soa.model.Product">
-    	select * from product order by product_id desc
+    	select * from product order by product_reg_date desc
     </select>
     
     <select id="content" parameterType="int" resultType="com.soa.model.Product">

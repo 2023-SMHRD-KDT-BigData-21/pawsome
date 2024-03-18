@@ -66,7 +66,7 @@
                     </div>
                     <div class="innerBox">
                         <div class="inner">
-                            <a href="#" onclick="" class="chatBtn">구매신청</a>
+                            <a href="#" onclick="notLogin()" class="chatBtn">구매신청</a>
                         </div>
                         <div class="inner">
                             <button type="button" class="btn_like likeBtn">
@@ -180,14 +180,16 @@
 						<%=product.getProduct_content() %>
 					</div>
 					
-					<% if(sender.equals(receiver)){%>
+                    <% if(sender == null){%>
+					<% }else if(sender.equals(receiver)){%>
 					<div class="bottomBtn">
                         <div class="btnalign">
                             <button id="updateBtn">수정하기</button>
                             <button id="delBtn"><a href="ProductDeleteController?product_id=<%=product.getProduct_id()%>">삭제하기</a></button>
                         </div>
                     </div>
-                    <% } %>
+                    <% } else {%>
+                    <% }%>
 					<!-- 변경end -->
 				</div>
 			</div>
@@ -232,7 +234,8 @@
 		window.open("sellerInfo.jsp?seller_id="+seller_id, "판매자정보", "width=500, height=530")
 	}
 	
-	<%if(sender.equals(receiver)) {%>
+	<%if(sender== null) {%>
+	<%}else if(sender.equals(receiver)) {%>
 	/* (판매자시점)일 때만 함수를 실행해야 함. 안 그러면 오류*/
 	/* (판매자시점) 상태변경 버튼 클릭시 실행되는 함수 */
 
@@ -325,6 +328,11 @@
 				}
 			});
 		});
+		
+		function notLogin() {
+		    alert("로그인 후 이용해주세요");
+		    window.location.href = 'login.jsp';
+		}
 	</script>
 	<script src="assets/js/header.js"></script>
 </body>

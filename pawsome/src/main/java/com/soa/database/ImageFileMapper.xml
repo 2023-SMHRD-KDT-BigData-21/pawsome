@@ -7,7 +7,7 @@
 	</insert>
 	
 	<select id="list" resultType="String">
-    	select file_name1 from image_file order by product_id desc
+    	select file_name1 from image_file order by TO_NUMBER(product_id) desc
     </select>
 	
 	<select id="content" parameterType="int" resultType="com.soa.model.ImageFile">
