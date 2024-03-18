@@ -1,3 +1,44 @@
+.slider {
+  position: relative;
+  max-width: 600px; /* 슬라이더의 최대 너비를 설정하세요 */
+  margin: auto;
+  overflow: hidden;
+}
+
+.img-container {
+  display: flex;
+}
+
+.img-container > img {
+  max-width: 100%;
+  display: block; /* 이미지를 블록 요소로 만들어 줄 공간을 확보합니다. */
+  transition: transform 0.5s ease;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  z-index: 100;
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+
+
+
+
 .container {
     /* checkPage 가운데 정렬 */
     display: flex;

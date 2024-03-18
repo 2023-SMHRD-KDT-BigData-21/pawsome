@@ -40,5 +40,11 @@ public class Product {
 	public Product(String product_name) {
 		this.product_name = product_name;
 	}
+
+	public Product(String animal_cate, String product_cate) {
+		this.animal_cate = animal_cate;
+		this.product_cate = product_cate;
+		
+	}
 	
 }

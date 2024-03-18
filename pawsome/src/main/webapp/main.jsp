@@ -1,3 +1,4 @@
+<%@page import="com.google.gson.Gson"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.soa.converter.ImageToBase64"%>
 <%@page import="java.util.ArrayList"%>
@@ -60,7 +61,29 @@
 	pageContext.setAttribute("list", list);
 	
 	String s_word = request.getParameter("s_word");
+	
+	List<Product> catelist = (List<Product>)session.getAttribute("clist");
+    if(catelist != null){
+        for(Product product : catelist){
+		System.out.println(catelist);
+            // 여기에 원하는 대로 product 정보를 출력하는 코드를 작성하세요.
+        }
+		System.out.println(catelist);
+    }else{
+		System.out.println(catelist);
+        // catelist가 null일 경우의 처리 코드를 작성하세요.
+    }
+    
+    String data = (String) request.getAttribute("data");
+    Gson gson = new Gson();
+    catelist = gson.fromJson(data, List.class);
+    if(catelist != null){
+    System.out.println(catelist.size());
+    }
+    
+    
 %>
+	
 	<div data-include-path="header.jsp"></div>
 	<%if(s_word != null) {%>
 	<input type="hidden" id="s_word" value="<%=s_word %>" >
@@ -74,7 +97,7 @@
 					<%for(int i = 0; i < plist.size(); i++) { %>
 					<%if(plist.get(i).getDel_yn().equals("N")) { %>
 					<!-- 상품 div begin / 여기서부터 반복해서 쓰면 됩니다! -->
-					<div class="align2 col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+					<div class="align2 col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals" id="">
 						<div class="product__item">
 							<a href="ProductPage.jsp?product_id=<%=plist.get(i).getProduct_id()%>"> <!-- a : 해당 게시글페이지로 이동 --> <!-- data-setbg : "사진 경로" -->
 								<div class="product__item__pic set-bg"
@@ -158,6 +181,81 @@
 			         }
 			      })
 			}
+		
+		function createProductList(data) {
+			console.log(data);
+		    var productContainer = document.querySelector('.row.product__filter'); // 상품을 추가할 컨테이너 선택
+		    productContainer.innerHTML = ''; // 기존 내용을 비웁니다.
+		    
+		    /* for(var i =0 ; i<data.length ; i++){
+		    	var productDiv = `
+		            <div class="align2 col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+		                <div class="product__item">
+		                    <a href="ProductPage.jsp?product_id=data[i].product_id ">
+		                        <div class="product__item__pic set-bg" data-setbg="data:image/jpg;base64,여기에_이미지_데이터">
+		                        </div>
+		                    </a>
+		                    <div class="product__item__text">
+		                        <a href="ProductPage.jsp?product_id=data[i].product_id">
+		                            <h6>data[i].product_name</h6>
+		                            <h5>data[i].product_price원</h5>
+		                            
+		                        </a>
+		                    </div>
+		                </div>
+		            </div>
+		        `;
+		        productContainer.insertAdjacentHTML('beforeend', productDiv);
+		    	
+		    } */
+		    
+		    data.forEach(function(product) {
+		        var productDiv = 
+		        	` 
+		            <div class="align2 col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
+		                <div class="product__item">
+		                    <a href="ProductPage.jsp?product_id=` + product.product_id + `">
+		                        <div class="product__item__pic set-bg" data-setbg="data:image/jpg;base64,여기에_이미지_데이터">
+		                        </div>
+		                    </a>
+		                    <div class="product__item__text">
+		                        <a href="ProductPage.jsp?product_id=` + product.product_id + `">
+		                            <h6>` + product.product_name + `</h6>
+		                            <h5>` + product.product_price + `원</h5>
+		                            
+		                        </a>
+		                    </div>
+		                </div>
+		            </div>
+		        ` ;
+		        productContainer.insertAdjacentHTML('beforeend', productDiv);
+		    });
+		}
+		
+		var data;
+		function cate(animal_cate, product_cate) {
+		    $.ajax({
+		        url: 'CateController',
+		        type: 'post',
+		        contentType: "application/json; charset=utf-8", // contentType 추가
+		        data: JSON.stringify({ // JSON 형태로 데이터 변환
+		            "animal_cate": animal_cate,
+		            "product_cate": product_cate
+		        }),
+		        success: function(response) {
+			        console.log("요청 성공");
+			        data = response;
+			        console.log(data);
+			        console.log(data[0].product_id);
+			        createProductList(data); // 여기에서 상품 목록 생성 함수 호출
+		        },
+		        error: function() {
+		            // 오류 발생 시 로직
+		        }
+		    });
+		}
+		
+		
 	</script>
 	<script src="assets/js/header.js"></script>
 </body>

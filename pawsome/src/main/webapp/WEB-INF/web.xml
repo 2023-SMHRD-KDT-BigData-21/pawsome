@@ -82,6 +82,12 @@
   	<description></description>
   	<servlet-class>com.soa.controller.SearchController</servlet-class>
   </servlet>
+  <servlet>
+  	<servlet-name>CateController</servlet-name>
+  	<display-name>CateController</display-name>
+  	<description></description>
+  	<servlet-class>com.soa.controller.CateController</servlet-class>
+  </servlet>
   <servlet-mapping>
   	<servlet-name>JoinController</servlet-name>
   	<url-pattern>/JoinController</url-pattern>
@@ -133,5 +139,9 @@
   <servlet-mapping>
   	<servlet-name>SearchController</servlet-name>
   	<url-pattern>/SearchController</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>CateController</servlet-name>
+  	<url-pattern>/CateController</url-pattern>
   </servlet-mapping>
 </web-app>

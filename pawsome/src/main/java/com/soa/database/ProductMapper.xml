@@ -44,4 +44,8 @@
 		select * from product where product_name LIKE CONCAT('%', #{product_name}, '%') order by product_reg_date desc				
 	</select>
 	
+	<select id="catelist" parameterType="com.soa.model.Product" resultType="com.soa.model.Product">
+    	select * from product where animal_cate=#{animal_cate} and product_cate=#{product_cate} order by product_reg_date desc
+    </select>
+	
 </mapper>

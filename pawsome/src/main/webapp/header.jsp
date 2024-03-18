@@ -97,24 +97,24 @@
 			<div class="innerCategory">
 				<!-- <span style="padding-right: 20px"></span>카테고리 -->
 				<div class="dropdown">
-					<button class="dropbtn" name="g001">
+					<button class="dropbtn" name="g001" data-value="01">
 						강아지 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#" name="g002">사료</a>
-                        <a href="#" name="g002">간식</a>
-                        <a href="#" name="g002">영양제</a>
-                        <a href="#" name="g002">장난감</a>
-                        <a href="#" name="g002">급식기</a>
-                        <a href="#" name="g002">의류</a>
-                        <a href="#" name="g002">악세서리</a>
-                        <a href="#" name="g002">외출용품</a>
-                        <a href="#" name="g002">하우스</a>
-                        <a href="#" name="g002">미용용품</a>
-                        <a href="#" name="g002">목욕용품</a>
-                        <a href="#" name="g002">배변용품</a>
-                        <a href="#" name="g002">훈련용품</a>
-                        <a href="#" name="g002">기타</a>
+						<a href="#" name="g002" data-value="01" onclick="cate('01', '01')">사료</a>
+                        <a href="#" name="g002" data-value="02">간식</a>
+                        <a href="#" name="g002" data-value="03">영양제</a>
+                        <a href="#" name="g002" data-value="04">장난감</a>
+                        <a href="#" name="g002" data-value="05">급식기</a>
+                        <a href="#" name="g002" data-value="06">의류</a>
+                        <a href="#" name="g002" data-value="07">악세서리</a>
+                        <a href="#" name="g002" data-value="08">외출용품</a>
+                        <a href="#" name="g002" data-value="09">하우스</a>
+                        <a href="#" name="g002" data-value="10">미용용품</a>
+                        <a href="#" name="g002" data-value="11">목욕용품</a>
+                        <a href="#" name="g002" data-value="12">배변용품</a>
+                        <a href="#" name="g002" data-value="13">훈련용품</a>
+                        <a href="#" name="g002" data-value="31">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">

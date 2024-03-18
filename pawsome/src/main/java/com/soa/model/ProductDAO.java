@@ -85,6 +85,13 @@ public class ProductDAO {
 		
 		return list;
 	}
+
+	public List<Product> cate(Product pd) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		List<Product> list = sqlSession.selectList("com.soa.database.ProductMapper.catelist",pd);
+		sqlSession.close();
+		return list;
+	}
 	
 	
 }
