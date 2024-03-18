@@ -7,7 +7,7 @@
 	
 	<select id="getlog" parameterType="com.soa.model.MessageLog"
 						resultType="com.soa.model.MessageLog">
-		select * from message_log where room_no=#{room_no} and sender=#{sender}
+		select * from message_log where room_no=#{room_no} order by send_date
 	</select>
 	<select id="getlast" parameterType="String"
 						resultType="String">

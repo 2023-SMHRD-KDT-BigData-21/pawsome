@@ -16,6 +16,10 @@ public class MessageLog {
 		this.m_content = m_content;
 	}
 	
+	public MessageLog(String room_no) {
+		this.room_no = room_no;
+	}
+	
 	String room_no;
 	String seq;
 	String sender;

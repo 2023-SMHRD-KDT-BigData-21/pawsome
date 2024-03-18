@@ -38,11 +38,13 @@
 	String room_no = Integer.toString(rnum);
 	System.out.println(rnum);
 	
-	MessageLog log = new MessageLog(room_no,sender);
+//	MessageLog log = new MessageLog(room_no,sender);
+	MessageLog log = new MessageLog(room_no);
 	MessageLogDAO ldao = new MessageLogDAO();
 	List<MessageLog> list = ldao.getLog(log);
 	pageContext.setAttribute("list",list);
 	System.out.println(list.size());
+	//list.get(0).getM_content();
 	
 	//상대방(판매자)프로필사진 불러오기
 	MemberDAO mdao = new MemberDAO();
@@ -112,7 +114,7 @@
 		      })
 			
 			webSocket.send(msg) // 소켓서버로 msg를 보냄
-
+			
 			var chat = "<div class='my-chat-box'><div class='chat my-chat'>"+ msg + "</div></div>"
 			$("#chat-container").append(chat)
 				input.value = "" // 채팅 input 비우기
@@ -125,8 +127,14 @@
 			let temp =""
 			<%for(int i = 0; i < list.size(); i++){%>
 			temp = "<%=list.get(i).getM_content()%>"
-			var chat = "<div class='my-chat-box'><div class='chat my-chat'>"+ temp + "</div></div>"
-			$("#chat-container").append(chat)
+			if(<%=list.get(i).getSender().equals(sender)%>){
+				var chat = "<div class='my-chat-box'><div class='chat my-chat'>"+ temp + "</div></div>"
+				$("#chat-container").append(chat)				
+			} else{
+				var chat = "<div class='chat-box'><div class='chat'>" + temp
+				+ "</div></div>"
+				$("#chat-container").append(chat)
+			}
 			<%}%>
 		}
 
