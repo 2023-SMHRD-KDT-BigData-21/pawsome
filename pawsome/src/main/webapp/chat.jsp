@@ -120,6 +120,19 @@
 				input.value = "" // 채팅 input 비우기
 				input.focus();
 			})
+		
+			$(function() {
+			    // inputMessage 필드에 keypress 이벤트 리스너를 추가합니다.
+			    $("#inputMessage").keypress(function(e) {
+			        // 눌린 키가 Enter (keyCode 13)인 경우
+			        if(e.which == 13) {
+			            // 기본 이벤트를 방지합니다. (Enter 키로 인한 폼 제출 방지)
+			            e.preventDefault();
+			            // 전송 버튼 클릭과 같은 로직을 실행합니다.
+			            $("#btn-submit").click();
+			        }
+			    });
+			});
 
 		// onOpen, onClose, onError, onMessage
 		webSocket.onopen = function(e) {//소켓 서버에 연결이 되면 실행
