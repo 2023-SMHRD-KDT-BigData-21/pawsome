@@ -102,130 +102,130 @@
 					</button>
 					<div class="dropdown-content">
 						<a href="#" name="g002" data-value="01" onclick="cate('01', '01')">사료</a>
-                        <a href="#" name="g002" data-value="02" onclick="cate('01', '02')">간식</a>
-                        <a href="#" name="g002" data-value="03" onclick="cate('01', '03')">영양제</a>
-                        <a href="#" name="g002" data-value="04" onclick="cate('01', '04')">장난감</a>
-                        <a href="#" name="g002" data-value="05" onclick="cate('01', '05')">급식기</a>
-                        <a href="#" name="g002" data-value="06" onclick="cate('01', '06')">의류</a>
-                        <a href="#" name="g002" data-value="07" onclick="cate('01', '07')">악세서리</a>
-                        <a href="#" name="g002" data-value="08" onclick="cate('01', '08')">외출용품</a>
-                        <a href="#" name="g002" data-value="09" onclick="cate('01', '09')">하우스</a>
-                        <a href="#" name="g002" data-value="10" onclick="cate('01', '10')">미용용품</a>
-                        <a href="#" name="g002" data-value="11" onclick="cate('01', '11')">목욕용품</a>
-                        <a href="#" name="g002" data-value="12" onclick="cate('01', '12')">배변용품</a>
-                        <a href="#" name="g002" data-value="13" onclick="cate('01', '13')">훈련용품</a>
-                        <a href="#" name="g002" data-value="31" onclick="cate('01', '31')">기타</a>
+                        <a href="#" name="g002" data-value="02">간식</a>
+                        <a href="#" name="g002" data-value="03">영양제</a>
+                        <a href="#" name="g002" data-value="04">장난감</a>
+                        <a href="#" name="g002" data-value="05">급식기</a>
+                        <a href="#" name="g002" data-value="06">의류</a>
+                        <a href="#" name="g002" data-value="07">악세서리</a>
+                        <a href="#" name="g002" data-value="08">외출용품</a>
+                        <a href="#" name="g002" data-value="09">하우스</a>
+                        <a href="#" name="g002" data-value="10">미용용품</a>
+                        <a href="#" name="g002" data-value="11">목욕용품</a>
+                        <a href="#" name="g002" data-value="12">배변용품</a>
+                        <a href="#" name="g002" data-value="13">훈련용품</a>
+                        <a href="#" name="g002" data-value="31">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
-					<button class="dropbtn" name="g001" data-value="02">
+					<button class="dropbtn" name="g001">
 						고양이 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#" name="g002" data-value="01" onclick="cate('02', '14')">건사료</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '15')">습식사료</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '02')">간식</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '03')">영양제</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '04')">장난감</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '05')">급식기</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '06')">의류</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '07')">악세서리</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '08')">외출용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '16')">캣타워</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '09')">하우스</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '10')">미용용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '11')">목욕용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '12')">배변용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '13')">훈련용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('02', '31')">기타</a>
+						<a href="#" name="g002">건사료</a>
+                        <a href="#" name="g002">습식사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">의류</a>
+                        <a href="#" name="g002">악세서리</a>
+                        <a href="#" name="g002">외출용품</a>
+                        <a href="#" name="g002">캣타워</a>
+                        <a href="#" name="g002">하우스</a>
+                        <a href="#" name="g002">미용용품</a>
+                        <a href="#" name="g002">목욕용품</a>
+                        <a href="#" name="g002">배변용품</a>
+                        <a href="#" name="g002">훈련용품</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
-					<button class="dropbtn" name="g001" data-value="03">
+					<button class="dropbtn" name="g001">
 						관상어 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#" name="g002" data-value="01" onclick="cate('03', '01')">사료</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('03', '17')">수초</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('03', '18')">수조/어항</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('03', '19')">수질관리용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('03', '20')">여과용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('03', '21')">수조장식</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('03', '22')">온도계</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('03', '23')">청소용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('03', '24')">부화용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('03', '31')">기타</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">수초</a>
+                        <a href="#" name="g002">수조/어항</a>
+                        <a href="#" name="g002">수질관리용품</a>
+                        <a href="#" name="g002">여과용품</a>
+                        <a href="#" name="g002">수조장식</a>
+                        <a href="#" name="g002">온도계</a>
+                        <a href="#" name="g002">청소용품</a>
+                        <a href="#" name="g002">부화용품</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
-					<button class="dropbtn" name="g001" data-value="04">
+					<button class="dropbtn" name="g001">
 						반려조 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#" name="g002" data-value="01" onclick="cate('04', '01')">사료</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '02')">간식</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '03')">영양제</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '04')">장난감</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '05')">급식기</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '08')">외출용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '11')">목욕용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '13')">훈련용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '25')">새장</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '26')">횃대</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '27')">보온용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('04', '31')">기타</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">외출용품</a>
+                        <a href="#" name="g002">목욕용품</a>
+                        <a href="#" name="g002">훈련용품</a>
+                        <a href="#" name="g002">새장</a>
+                        <a href="#" name="g002">횃대</a>
+                        <a href="#" name="g002">보온용품</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
-					<button class="dropbtn" name="g001" data-value="05">
+					<button class="dropbtn" name="g001">
 						파충류 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#" name="g002" data-value="01" onclick="cate('05', '01')">사료</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('05', '02')">간식</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('05', '03')">영양제</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('05', '04')">장난감</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('05', '05')">급식기</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('05', '09')">하우스</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('05', '22')">온도계</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('05', '23')">청소용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('05', '28')">채집통</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('05', '29')">바닥재</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('05', '31')">기타</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">하우스</a>
+                        <a href="#" name="g002">온도계</a>
+                        <a href="#" name="g002">청소용품</a>
+                        <a href="#" name="g002">채집통</a>
+                        <a href="#" name="g002">바닥재</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
-					<button class="dropbtn" name="g001" data-value="06">
+					<button class="dropbtn" name="g001">
 						설치류 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#" name="g002" data-value="01" onclick="cate('06', '01')">사료</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('06', '02')">간식</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('06', '03')">영양제</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('06', '04')">장난감</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('06', '05')">급식기</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('06', '08')">외출용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('06', '09')">하우스</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('06', '30')">베딩</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('06', '31')">기타</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">외출용품</a>
+                        <a href="#" name="g002">하우스</a>
+                        <a href="#" name="g002">베딩</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 				<div class="dropdown">
-					<button class="dropbtn" name="g001" data-value="07">
+					<button class="dropbtn" name="g001">
 						기타 <span class="radix-icons--triangle-down"></span>
 					</button>
 					<div class="dropdown-content">
-						<a href="#" name="g002" data-value="01" onclick="cate('07', '01')">사료</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('07', '02')">간식</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('07', '03')">영양제</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('07', '04')">장난감</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('07', '05')">급식기</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('07', '06')">의류</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('07', '08')">외출용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('07', '09')">하우스</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('07', '12')">배변용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('07', '13')">훈련용품</a>
-                        <a href="#" name="g002" data-value="01" onclick="cate('07', '31')">기타</a>
+						<a href="#" name="g002">사료</a>
+                        <a href="#" name="g002">간식</a>
+                        <a href="#" name="g002">영양제</a>
+                        <a href="#" name="g002">장난감</a>
+                        <a href="#" name="g002">급식기</a>
+                        <a href="#" name="g002">의류</a>
+                        <a href="#" name="g002">외출용품</a>
+                        <a href="#" name="g002">하우스</a>
+                        <a href="#" name="g002">배변용품</a>
+                        <a href="#" name="g002">훈련용품</a>
+                        <a href="#" name="g002">기타</a>
 					</div>
 				</div>
 			</div>
