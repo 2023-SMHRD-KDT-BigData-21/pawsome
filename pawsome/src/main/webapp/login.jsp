@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>pawsome</title>
 <link rel="stylesheet" href="assets/css/default.css">
 <link rel="stylesheet" href="assets/css/login.css">
 </head>
@@ -71,7 +71,7 @@
 					success: res => {
 						const kakao_account = res.kakao_account;
 						console.log(kakao_account);
-						window.location.href = "index.jsp";
+						window.location.href = "main.jsp";
 					}
 				});
 			},

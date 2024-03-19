@@ -9,7 +9,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>pawsome</title>
 <link href="https://unpkg.com/ionicons@4.5.10-0/dist/css/ionicons.min.css" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/default.css">
 <link rel="stylesheet" href="assets/css/header.css">

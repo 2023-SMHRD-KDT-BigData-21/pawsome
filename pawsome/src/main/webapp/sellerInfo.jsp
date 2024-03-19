@@ -11,7 +11,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>pawsome</title>
 <link rel="stylesheet" href="assets/css/sellerInfo.css">
 </head>
 <body>

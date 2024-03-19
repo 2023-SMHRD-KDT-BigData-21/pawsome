@@ -57,8 +57,8 @@ public class ProductController extends HttpServlet {
 		ImageFileDAO imgdao = new ImageFileDAO();
 		int result = imgdao.imgInsert(imageFile,res);
 		
-		PrintWriter writer = response.getWriter();
 		response.setContentType("text/html; charset=UTF-8");
+		PrintWriter writer = response.getWriter();
 		System.out.println(res);
 		if (result > 0) { // 게시글 등록 성공
 		    System.out.println(result);
