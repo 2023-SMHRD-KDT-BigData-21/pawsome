@@ -34,7 +34,7 @@
 	MessageRoomDAO dao = new MessageRoomDAO();
 	
 	MessageRoom res = dao.createMessageRoom(room);
-	
+	Thread.sleep(4000);
 	int rnum = dao.roomCheck(res);
 	String room_no = Integer.toString(rnum);
 	System.out.println(rnum);	

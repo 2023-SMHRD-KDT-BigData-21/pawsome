@@ -5,7 +5,7 @@
 		select * from message_room where buyer=#{buyer} and seller=#{seller}
 	</select>
 	<select id="checkrnum" parameterType="com.soa.model.MessageRoom" resultType="String">
-		select room_no from message_room where buyer=#{buyer} and seller=#{seller}
+		select room_no from message_room where (buyer=#{buyer,jdbcType=NULL} and seller=#{seller,jdbcType=NULL}) or (buyer=#{seller,jdbcType=NULL} and seller=#{buyer,jdbcType=NULL})
 	</select>
 	<insert id="create" parameterType="com.soa.model.MessageRoom">
 		insert into message_room values(message_room_seq.NEXTVAL,#{product_id},#{buyer},#{seller},SYSDATE)

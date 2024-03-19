@@ -30,7 +30,7 @@ public class MessageRoomDAO {
 
 	public int roomCheck(MessageRoom room) {
 		SqlSession sqlSession = sessionFactory.openSession(true);
-		System.out.println(room.getBuyer());
+		//System.out.println(room.getBuyer());
 		
 		String res = sqlSession.selectOne("com.soa.database.ChatRoomMapper.checkrnum", room);
 		System.out.println(res);
