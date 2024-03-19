@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>pawsome</title>
 <meta charset="UTF-8">
 <meta name="description" content="Male_Fashion Template">
 <meta name="keywords" content="Male_Fashion, unica, creative, html">

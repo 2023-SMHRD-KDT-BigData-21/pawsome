@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>pawsome</title>
 <link rel="stylesheet" href="assets/css/default.css">
 <link rel="stylesheet" type="text/css" href="assets/css/mypage.css">
 </head>
