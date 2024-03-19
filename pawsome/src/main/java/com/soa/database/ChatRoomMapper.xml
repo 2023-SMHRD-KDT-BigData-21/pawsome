@@ -14,4 +14,13 @@
 		select * from message_room where (seller=#{id})or(buyer=#{id}) order by create_date desc
 	</select>
 
+	<!-- test -->
+	<select id="findMessageRoomByUsers" parameterType="map" resultType="com.soa.model.MessageRoom">
+		select * from message_room where (buyer=#{userId1} and seller=#{userId2})
+		or (buyer=#{userId2} and seller=#{userId1})
+	</select>
+	
+	<insert id="createMessageRoom" parameterType="com.soa.model.MessageRoom">
+			insert into message_room values(message_room_seq.NEXTVAL, #{product_id}, #{buyer},#{seller},SYSDATE)
+	</insert>
 </mapper>

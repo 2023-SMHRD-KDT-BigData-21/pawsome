@@ -17,7 +17,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Chatting</title>
 <script type="text/javascript"
 	src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 <link rel="stylesheet" href="assets/css/chatstyle.css">
@@ -33,17 +33,19 @@
 	
 	MessageRoomDAO dao = new MessageRoomDAO();
 	
-	int res = dao.createRoom(room);
-	int rnum = dao.roomCheck(room);
-	String room_no = Integer.toString(rnum);
-	System.out.println(rnum);
+	MessageRoom res = dao.createMessageRoom(room);
 	
-//	MessageLog log = new MessageLog(room_no,sender);
+	int rnum = dao.roomCheck(res);
+	String room_no = Integer.toString(rnum);
+	System.out.println(rnum);	
+	
 	MessageLog log = new MessageLog(room_no);
 	MessageLogDAO ldao = new MessageLogDAO();
+		
 	List<MessageLog> list = ldao.getLog(log);
 	pageContext.setAttribute("list",list);
 	System.out.println(list.size());
+//	MessageLog log = new MessageLog(room_no,sender);
 	//list.get(0).getM_content();
 	
 	//상대방(판매자)프로필사진 불러오기

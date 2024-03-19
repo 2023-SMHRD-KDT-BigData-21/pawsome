@@ -1,6 +1,8 @@
 package com.soa.model;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -47,5 +49,26 @@ public class MessageRoomDAO {
 		sqlSession.close();
 		
 		return list;
+	}
+	
+	public MessageRoom createMessageRoom(MessageRoom room) {
+		
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		
+		String userId1 = room.getSeller();
+		String userId2 = room.getBuyer();
+		
+		Map<String, String> params = new HashMap<>();
+		params.put("userId1", userId1);
+		params.put("userId2", userId2);
+		MessageRoom existingRoom = sqlSession.selectOne("com.soa.database.ChatRoomMapper.findMessageRoomByUsers",params);
+		
+		if(existingRoom == null) {
+			sqlSession.insert("com.soa.database.ChatRoomMapper.createMessageRoom",room);
+		}
+		
+		sqlSession.close();
+		
+		return existingRoom ;
 	}
 }
