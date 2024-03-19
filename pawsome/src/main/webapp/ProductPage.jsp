@@ -1,3 +1,5 @@
+<%@page import="java.math.BigDecimal"%>
+<%@page import="com.soa.model.UserLikeDAO"%>
 <%@page import="org.apache.ibatis.reflection.SystemMetaObject"%>
 <%@page import="com.soa.model.UserLike"%>
 <%@page import="com.soa.model.Product"%>
@@ -30,6 +32,10 @@
 	String receiver = product.getSeller_id();
 	UserLike check = (UserLike)session.getAttribute("check");
 	
+	UserLikeDAO udao = new UserLikeDAO();
+	BigDecimal p_id = new BigDecimal(request.getParameter("product_id"));
+	int likes = udao.countLike(p_id);
+	
 	System.out.println(sender);
 	System.out.println(receiver);
 	System.out.println("check : " + check);
@@ -50,8 +56,55 @@
                 <div class="textBox">
                     <div class="innerBox">
                         <div class="inner">
-                        <%=product.getAnimal_cate() %> > 
-                        <%=product.getProduct_cate() %></div>
+                        <%if(product.getAnimal_cate().equals("01")) {%>
+                        강아지
+                        <%} else if(product.getAnimal_cate().equals("02")) {%>
+                        고양이
+                        <%} else if(product.getAnimal_cate().equals("03")) {%>
+                        관상어
+                        <%} else if(product.getAnimal_cate().equals("04")) {%>
+                        반려조
+                        <%} else if(product.getAnimal_cate().equals("05")) {%>
+                        파충류
+                        <%} else if(product.getAnimal_cate().equals("06")) {%>
+                        설치류
+                        <%} else if(product.getAnimal_cate().equals("07")) {%>
+                        기타
+                        <%} %>
+                        > 
+                        <%if(product.getProduct_cate().equals("01")) {%>사료
+                        <%}else if(product.getProduct_cate().equals("02")) { %>간식
+                        <%}else if(product.getProduct_cate().equals("03")) { %>영양제
+                        <%}else if(product.getProduct_cate().equals("04")) { %>장난감
+                        <%}else if(product.getProduct_cate().equals("05")) { %>급식류
+                        <%}else if(product.getProduct_cate().equals("06")) { %>의류
+                        <%}else if(product.getProduct_cate().equals("07")) { %>악세서리
+                        <%}else if(product.getProduct_cate().equals("08")) { %>외출용품
+                        <%}else if(product.getProduct_cate().equals("09")) { %>하우스
+                        <%}else if(product.getProduct_cate().equals("10")) { %>미용
+                        <%}else if(product.getProduct_cate().equals("11")) { %>목욕용품
+                        <%}else if(product.getProduct_cate().equals("12")) { %>배변용품
+                        <%}else if(product.getProduct_cate().equals("13")) { %>훈련용품
+                        <%}else if(product.getProduct_cate().equals("14")) { %>건사료
+                        <%}else if(product.getProduct_cate().equals("15")) { %>습식사료
+                        <%}else if(product.getProduct_cate().equals("16")) { %>캣타워
+                        <%}else if(product.getProduct_cate().equals("17")) { %>수초
+                        <%}else if(product.getProduct_cate().equals("18")) { %>수조/어항
+                        <%}else if(product.getProduct_cate().equals("19")) { %>수질관리용품
+                        <%}else if(product.getProduct_cate().equals("20")) { %>여과용품
+                        <%}else if(product.getProduct_cate().equals("21")) { %>수조장식
+                        <%}else if(product.getProduct_cate().equals("22")) { %>온도계
+                        <%}else if(product.getProduct_cate().equals("23")) { %>청소용품
+                        <%}else if(product.getProduct_cate().equals("24")) { %>부화용품
+                        <%}else if(product.getProduct_cate().equals("25")) { %>새장
+                        <%}else if(product.getProduct_cate().equals("26")) { %>횃대
+                        <%}else if(product.getProduct_cate().equals("27")) { %>보온용품
+                        <%}else if(product.getProduct_cate().equals("28")) { %>채집통
+                        <%}else if(product.getProduct_cate().equals("29")) { %>바닥재
+                        <%}else if(product.getProduct_cate().equals("30")) { %>베딩
+                        <%}else if(product.getProduct_cate().equals("31")) { %>기타
+                        <%} %>
+                        </div>
                         <%if(product.getProduct_status().equals("N")) {%>
 						<div class="inner">판매중</div>
 						<%}else {%>
@@ -69,6 +122,9 @@
                             <a href="#" onclick="notLogin()" class="chatBtn">구매신청</a>
                         </div>
                         <div class="inner">
+                            <a href="#" onclick="notLogin()" class="sellerInfo">판매자정보</a>
+                        </div>
+                        <div class="inner">
                             <button type="button" class="btn_like likeBtn">
                                 <span class="img_emoti">좋아요</span>
                                 <span class="ani_heart_m"></span>
@@ -82,8 +138,55 @@
                 <div class="textBox">
                     <div class="innerBox">
                         <div class="inner">
-                        <%=product.getAnimal_cate() %> > 
-                        <%=product.getProduct_cate() %></div>
+                        <%if(product.getAnimal_cate().equals("01")) {%>
+                        강아지
+                        <%} else if(product.getAnimal_cate().equals("02")) {%>
+                        고양이
+                        <%} else if(product.getAnimal_cate().equals("03")) {%>
+                        관상어
+                        <%} else if(product.getAnimal_cate().equals("04")) {%>
+                        반려조
+                        <%} else if(product.getAnimal_cate().equals("05")) {%>
+                        파충류
+                        <%} else if(product.getAnimal_cate().equals("06")) {%>
+                        설치류
+                        <%} else if(product.getAnimal_cate().equals("07")) {%>
+                        기타
+                        <%} %>
+                        > 
+                        <%if(product.getProduct_cate().equals("01")) {%>사료
+                        <%}else if(product.getProduct_cate().equals("02")) { %>간식
+                        <%}else if(product.getProduct_cate().equals("03")) { %>영양제
+                        <%}else if(product.getProduct_cate().equals("04")) { %>장난감
+                        <%}else if(product.getProduct_cate().equals("05")) { %>급식류
+                        <%}else if(product.getProduct_cate().equals("06")) { %>의류
+                        <%}else if(product.getProduct_cate().equals("07")) { %>악세서리
+                        <%}else if(product.getProduct_cate().equals("08")) { %>외출용품
+                        <%}else if(product.getProduct_cate().equals("09")) { %>하우스
+                        <%}else if(product.getProduct_cate().equals("10")) { %>미용
+                        <%}else if(product.getProduct_cate().equals("11")) { %>목욕용품
+                        <%}else if(product.getProduct_cate().equals("12")) { %>배변용품
+                        <%}else if(product.getProduct_cate().equals("13")) { %>훈련용품
+                        <%}else if(product.getProduct_cate().equals("14")) { %>건사료
+                        <%}else if(product.getProduct_cate().equals("15")) { %>습식사료
+                        <%}else if(product.getProduct_cate().equals("16")) { %>캣타워
+                        <%}else if(product.getProduct_cate().equals("17")) { %>수초
+                        <%}else if(product.getProduct_cate().equals("18")) { %>수조/어항
+                        <%}else if(product.getProduct_cate().equals("19")) { %>수질관리용품
+                        <%}else if(product.getProduct_cate().equals("20")) { %>여과용품
+                        <%}else if(product.getProduct_cate().equals("21")) { %>수조장식
+                        <%}else if(product.getProduct_cate().equals("22")) { %>온도계
+                        <%}else if(product.getProduct_cate().equals("23")) { %>청소용품
+                        <%}else if(product.getProduct_cate().equals("24")) { %>부화용품
+                        <%}else if(product.getProduct_cate().equals("25")) { %>새장
+                        <%}else if(product.getProduct_cate().equals("26")) { %>횃대
+                        <%}else if(product.getProduct_cate().equals("27")) { %>보온용품
+                        <%}else if(product.getProduct_cate().equals("28")) { %>채집통
+                        <%}else if(product.getProduct_cate().equals("29")) { %>바닥재
+                        <%}else if(product.getProduct_cate().equals("30")) { %>베딩
+                        <%}else if(product.getProduct_cate().equals("31")) { %>기타
+                        <%} %>
+                        </div>
                         <%if(product.getProduct_status().equals("N")) {%>
 						<div class="inner">판매중</div>
 						<%}else {%>
@@ -112,7 +215,7 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="inner likeCnt">찜개수</div>
+                        <div class="inner likeCnt">찜개수 ❤️<%=likes %></div>
                     </div>
                 </div>
                 <!-- 판매자일 때 영역 end -->
@@ -121,8 +224,55 @@
                 <div class="textBox">
                     <div class="innerBox">
                         <div class="inner">
-                        <%=product.getAnimal_cate() %> > 
-                        <%=product.getProduct_cate() %></div>
+                        <%if(product.getAnimal_cate().equals("01")) {%>
+                        강아지
+                        <%} else if(product.getAnimal_cate().equals("02")) {%>
+                        고양이
+                        <%} else if(product.getAnimal_cate().equals("03")) {%>
+                        관상어
+                        <%} else if(product.getAnimal_cate().equals("04")) {%>
+                        반려조
+                        <%} else if(product.getAnimal_cate().equals("05")) {%>
+                        파충류
+                        <%} else if(product.getAnimal_cate().equals("06")) {%>
+                        설치류
+                        <%} else if(product.getAnimal_cate().equals("07")) {%>
+                        기타
+                        <%} %>
+                        > 
+                        <%if(product.getProduct_cate().equals("01")) {%>사료
+                        <%}else if(product.getProduct_cate().equals("02")) { %>간식
+                        <%}else if(product.getProduct_cate().equals("03")) { %>영양제
+                        <%}else if(product.getProduct_cate().equals("04")) { %>장난감
+                        <%}else if(product.getProduct_cate().equals("05")) { %>급식류
+                        <%}else if(product.getProduct_cate().equals("06")) { %>의류
+                        <%}else if(product.getProduct_cate().equals("07")) { %>악세서리
+                        <%}else if(product.getProduct_cate().equals("08")) { %>외출용품
+                        <%}else if(product.getProduct_cate().equals("09")) { %>하우스
+                        <%}else if(product.getProduct_cate().equals("10")) { %>미용
+                        <%}else if(product.getProduct_cate().equals("11")) { %>목욕용품
+                        <%}else if(product.getProduct_cate().equals("12")) { %>배변용품
+                        <%}else if(product.getProduct_cate().equals("13")) { %>훈련용품
+                        <%}else if(product.getProduct_cate().equals("14")) { %>건사료
+                        <%}else if(product.getProduct_cate().equals("15")) { %>습식사료
+                        <%}else if(product.getProduct_cate().equals("16")) { %>캣타워
+                        <%}else if(product.getProduct_cate().equals("17")) { %>수초
+                        <%}else if(product.getProduct_cate().equals("18")) { %>수조/어항
+                        <%}else if(product.getProduct_cate().equals("19")) { %>수질관리용품
+                        <%}else if(product.getProduct_cate().equals("20")) { %>여과용품
+                        <%}else if(product.getProduct_cate().equals("21")) { %>수조장식
+                        <%}else if(product.getProduct_cate().equals("22")) { %>온도계
+                        <%}else if(product.getProduct_cate().equals("23")) { %>청소용품
+                        <%}else if(product.getProduct_cate().equals("24")) { %>부화용품
+                        <%}else if(product.getProduct_cate().equals("25")) { %>새장
+                        <%}else if(product.getProduct_cate().equals("26")) { %>횃대
+                        <%}else if(product.getProduct_cate().equals("27")) { %>보온용품
+                        <%}else if(product.getProduct_cate().equals("28")) { %>채집통
+                        <%}else if(product.getProduct_cate().equals("29")) { %>바닥재
+                        <%}else if(product.getProduct_cate().equals("30")) { %>베딩
+                        <%}else if(product.getProduct_cate().equals("31")) { %>기타
+                        <%} %>
+                        </div>
                         <%if(product.getProduct_status().equals("N")) {%>
 						<div class="inner">판매중</div>
 						<%}else {%>
@@ -149,12 +299,6 @@
                         <div class="inner">
                             <a href="#" onclick="sellerInfo()" class="sellerInfo">판매자정보</a>
                         </div>
-                        <!-- <div class="inner">
-                            <button type="button" class="btn_like likeBtn">
-                                <span class="img_emoti">좋아요</span>
-                                <span class="ani_heart_m"></span>
-                            </button>
-                        </div> -->
                     </div>
                 </div>
                 <!-- 구매자일 때 영역 end -->

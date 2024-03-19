@@ -65,13 +65,8 @@
 	List<Product> catelist = (List<Product>)session.getAttribute("clist");
     if(catelist != null){
         for(Product product : catelist){
-		System.out.println(catelist);
-            // 여기에 원하는 대로 product 정보를 출력하는 코드를 작성하세요.
         }
-		System.out.println(catelist);
     }else{
-		System.out.println(catelist);
-        // catelist가 null일 경우의 처리 코드를 작성하세요.
     }
     
     String data = (String) request.getAttribute("data");
@@ -187,35 +182,14 @@
 		    var productContainer = document.querySelector('.row.product__filter'); // 상품을 추가할 컨테이너 선택
 		    productContainer.innerHTML = ''; // 기존 내용을 비웁니다.
 		    
-		    /* for(var i =0 ; i<data.length ; i++){
-		    	var productDiv = `
-		            <div class="align2 col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
-		                <div class="product__item">
-		                    <a href="ProductPage.jsp?product_id=data[i].product_id ">
-		                        <div class="product__item__pic set-bg" data-setbg="data:image/jpg;base64,여기에_이미지_데이터">
-		                        </div>
-		                    </a>
-		                    <div class="product__item__text">
-		                        <a href="ProductPage.jsp?product_id=data[i].product_id">
-		                            <h6>data[i].product_name</h6>
-		                            <h5>data[i].product_price원</h5>
-		                            
-		                        </a>
-		                    </div>
-		                </div>
-		            </div>
-		        `;
-		        productContainer.insertAdjacentHTML('beforeend', productDiv);
-		    	
-		    } */
-		    
 		    data.forEach(function(product) {
 		        var productDiv = 
 		        	` 
 		            <div class="align2 col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6 mix new-arrivals">
 		                <div class="product__item">
 		                    <a href="ProductPage.jsp?product_id=` + product.product_id + `">
-		                        <div class="product__item__pic set-bg" data-setbg="data:image/jpg;base64,여기에_이미지_데이터">
+		                        <div class="product__item__pic set-bg" data-setbg="data:image/jpg;base64,">
+		                        	<img src="https://us.123rf.com/450wm/bearsky23/bearsky231610/bearsky23161000012/63637375-%EB%8B%A4%EB%A5%B8-%EC%9B%B9-%EC%82%AC%EC%9D%B4%ED%8A%B8%EB%A1%9C-%EC%9D%B4%EB%8F%99%ED%95%98%EA%B8%B0%EC%9C%84%ED%95%9C-%EC%99%B8%EB%B6%80-%EB%A7%81%ED%81%AC-%EC%95%84%EC%9D%B4%EC%BD%98.jpg">
 		                        </div>
 		                    </a>
 		                    <div class="product__item__text">

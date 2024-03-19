@@ -15,4 +15,8 @@
 	<select id="likeproduct" parameterType="String" resultType="BigDecimal">
 		select product_id from user_like where user_id=#{user_id}
 	</select>
+	
+	<select id="countlike" parameterType="BigDecimal" resultType="int">
+		select count(product_id) from user_like where product_id=#{product_id}
+	</select>
 </mapper>

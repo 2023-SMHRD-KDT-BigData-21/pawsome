@@ -42,5 +42,13 @@ public class UserLikeDAO {
 		sqlSession.close();
 		return list;
 	}
+	
+	// 해당 게시글의 좋아요 수 int로 반환
+	public int countLike(BigDecimal product_id) {
+		SqlSession sqlSession = sessionFactory.openSession(true);
+		int countLike = sqlSession.selectOne("com.soa.database.UserLikeMapper.countlike", product_id);
+		sqlSession.close();
+		return countLike;
+	}
 
 }
