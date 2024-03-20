@@ -24,13 +24,14 @@
             <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=HTML5&logoColor=white"/>
             <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=CSS3&logoColor=white"/>
             <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white"/>
+            <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=Python&logoColor=white"/> 
         </td>
     </tr>
     <tr>
         <td>라이브러리</td>
         <td>
             <img src="https://img.shields.io/badge/BootStrap-7952B3?style=for-the-badge&logo=BootStrap&logoColor=white"/>
-            <img src="https://img.shields.io/badge/Socket.io-010101?style=for-the-badge&logo=Socket.io&logoColor=white">
+             + 웹소켓API, 카카오API
         </td>
     </tr>
     <tr>
@@ -61,12 +62,9 @@
         </td>
     </tr>
 </table>
-
-
+<br><br>
 ## 시스템 아키텍처
-<br>
-![KakaoTalk_20240320_170030685](https://github.com/2023-SMHRD-KDT-BigData-21/pawsome/assets/156382431/2e232b3b-d5e0-4b4a-8a7a-e9acd1997c76)
-
+![KakaoTalk_20240320_171224795](https://github.com/2023-SMHRD-KDT-BigData-21/pawsome/assets/156382431/37ce7403-1e37-4160-8245-4c4b927d79ac)
 <br><br>
 ## 유스케이스
 ![KakaoTalk_20240320_170027523](https://github.com/2023-SMHRD-KDT-BigData-21/pawsome/assets/156382431/9127e27c-6f8f-4658-9a8d-59e092c81a71)
