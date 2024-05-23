@@ -63,15 +63,16 @@
     </tr>
 </table>
 <br><br>
-## 시스템 아키텍처
-![KakaoTalk_20240320_171224795](https://github.com/2023-SMHRD-KDT-BigData-21/pawsome/assets/156382431/37ce7403-1e37-4160-8245-4c4b927d79ac)
-<br><br>
-## 유스케이스
-![KakaoTalk_20240320_170027523](https://github.com/2023-SMHRD-KDT-BigData-21/pawsome/assets/156382431/9127e27c-6f8f-4658-9a8d-59e092c81a71)
+## 시스템 아키텍처 <br>
+![시스템 아키텍쳐](https://github.com/2023-SMHRD-KDT-BigData-21/pawsome/assets/156382431/d4c624ea-bf21-4d1e-a990-227f0f69a2fd)
 
 <br><br>
+## 유스케이스
+![유스케이스](https://github.com/2023-SMHRD-KDT-BigData-21/pawsome/assets/156382431/fa1e3f28-5f4f-4009-a75f-87ebae71b149)
+<br><br>
+
 ## 서비스 흐름도
-![KakaoTalk_20240320_170028841](https://github.com/2023-SMHRD-KDT-BigData-21/pawsome/assets/156382431/226d6f03-77c0-4667-a55e-1256e1f74d7b)
+![스크린샷 2024-05-23 124019](https://github.com/2023-SMHRD-KDT-BigData-21/pawsome/assets/156382431/b4abb417-d652-4600-aca1-57e29054be0a)
 
 <br><br>
 
